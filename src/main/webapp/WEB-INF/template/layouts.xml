@@ -9,6 +9,7 @@
 	<definition name="layouts" template="/WEB-INF/template/layouts.jsp">
 		<put-attribute name="Top" value="/WEB-INF/template/Top.jsp"/>
 		<!-- 내용은 동적으로 변하기때문에 value에 ""지정-->
+		<put-attribute name="Left" value="/WEB-INF/template/Left.jsp" />
 		<put-attribute name="Body" value=""/>
 		<put-attribute name="Footer" value="/WEB-INF/template/Footer.jsp"/>
 	</definition>
