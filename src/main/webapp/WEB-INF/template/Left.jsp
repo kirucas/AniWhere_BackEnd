@@ -38,7 +38,7 @@
     <ul class="chat-list">
         <li class="list active">
             <div class="profile">
-                <img src="assets/images/faces/face1.jpg" alt="image">
+                <img src="<c:url value='/resources/assets/images/faces/face1.jpg' />" alt="image">
                 <span class="online"></span>
             </div>
             <div class="info">
@@ -49,7 +49,7 @@
         </li>
         <li class="list">
             <div class="profile">
-                <img src="assets/images/faces/face2.jpg" alt="image">
+                <img src="<c:url value='/resources/assets/images/faces/face2.jpg' />" alt="image">
                 <span class="offline"></span>
             </div>
             <div class="info">
@@ -63,7 +63,7 @@
         </li>
         <li class="list">
             <div class="profile">
-                <img src="assets/images/faces/face3.jpg" alt="image">
+                <img src="<c:url value='/resources/assets/images/faces/face3.jpg' />" alt="image">
                 <span class="online"></span>
             </div>
             <div class="info">
@@ -74,7 +74,7 @@
         </li>
         <li class="list">
             <div class="profile">
-                <img src="assets/images/faces/face4.jpg" alt="image">
+                <img src="" alt="image"><c:url value='/resources/assets/images/faces/face4.jpg' />
                 <span class="offline"></span>
             </div>
             <div class="info">
@@ -85,7 +85,7 @@
         </li>
         <li class="list">
             <div class="profile">
-                <img src="assets/images/faces/face5.jpg" alt="image">
+                <img src="<c:url value='/resources/assets/images/faces/face5.jpg' />" alt="image">
                 <span class="online"></span>
             </div>
             <div class="info">
@@ -96,7 +96,7 @@
         </li>
         <li class="list">
             <div class="profile">
-                <img src="assets/images/faces/face6.jpg" alt="image">
+                <img src="<c:url value='/resources/assets/images/faces/face6.jpg' />" alt="image">
                 <span class="online"></span>
             </div>
             <div class="info">

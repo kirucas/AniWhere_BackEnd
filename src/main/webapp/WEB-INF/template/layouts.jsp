@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/puse-icons-feather/feather.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.base.css' />">
-    <link rel="stylesheet" href=".<c:url value='/resources/assets/vendors/css/vendor.bundle.addons.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.addons.css' />">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -39,10 +39,13 @@
 			<tiles:insertAttribute name="Left" />
 			<!-- left navigation bar end -->
 			
-			<div class="main-panal">
-				<!-- content start -->
-				<tiles:insertAttribute name="Body" />
-				<!-- content end -->
+			<div class="main-panel">
+			
+				<div class="content-wrapper">
+					<!-- content start -->
+					<tiles:insertAttribute name="Body" />
+					<!-- content end -->
+				</div>
 				
 				<!-- footer start -->
 				<tiles:insertAttribute name="Footer" />

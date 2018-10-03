@@ -5,8 +5,15 @@
 <%@ page session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<h1>
-	Hello world!  
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
+<div class="row">
+	<div class="col-12 grid-margin">
+	<h1>
+		Hello world!  
+	</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 grid-margin">
+		<P>The time on the server is ${serverTime}.</P>
+	</div>
+</div>
