@@ -142,7 +142,7 @@
                     <a class="dropdown-item mt-2"> Manage Accounts </a>
                     <a class="dropdown-item"> Change Password </a>
                     <a class="dropdown-item"> Check Inbox </a>
-                    <a class="dropdown-item"> Sign Out </a>
+                    <a class="dropdown-item" href="<c:url value='/sign_in.aw' />"> Sign Out </a> 
                 </div>
             </li>
         </ul>
