@@ -73,16 +73,13 @@
               </div>
               <ul class="auth-footer">
                 <li>
-                  <a href="#">Conditions</a>
+                  <a href="#">문의하기</a>
                 </li>
                 <li>
-                  <a href="#">Help</a>
-                </li>
-                <li>
-                  <a href="#">Terms</a>
+                  <a href="#">도움말</a>
                 </li>
               </ul>
-              <p class="footer-text text-center">copyright © 2018 Bootstrapdash. All rights reserved.</p>
+              <p class="footer-text text-center">copyright © 2018 AniWhere. All rights reserved.</p>
             </div>
           </div>
         </div>

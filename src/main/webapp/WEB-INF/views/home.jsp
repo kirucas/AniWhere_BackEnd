@@ -15,5 +15,6 @@
 <div class="row">
 	<div class="col-12 grid-margin">
 		<P>The time on the server is ${serverTime}.</P>
+		<a href="<c:url value='/sign_in.aw'/>">로그인 페이지</a>
 	</div>
 </div>
