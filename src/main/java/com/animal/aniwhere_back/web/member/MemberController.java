@@ -10,4 +10,11 @@ public class MemberController {
 	public String member_info() throws Exception {
 		return "member/member.tiles";
 	}
+	
+	@RequestMapping("/animalInfo.aw")
+	public String animal_info() throws Exception {
+		return "member/animal.tiles";
+	}
+	
+	
 }
