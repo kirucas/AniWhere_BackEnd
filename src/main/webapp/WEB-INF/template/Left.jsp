@@ -269,27 +269,27 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<c:url value='/cat/main.aw'/>">
               	<img src="<c:url value='/resources/images/animal/cat.png'/>" style="width:30px;height:30px"/>&nbsp;&nbsp;고양이
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<c:url value='/rna/main.aw'/>">
               	<img src="<c:url value='/resources/images/animal/reptiles.png'/>" style="width:30px;height:30px"/>&nbsp;&nbsp;파충류&양서류
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<c:url value='/bird/main.aw'/>">
               	<img src="<c:url value='/resources/images/animal/bird.png'/>" style="width:30px;height:30px"/>&nbsp;&nbsp;조류
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<c:url value='/etc/main.aw'/>">
               	<img src="<c:url value='/resources/images/animal/rat.png'/>" style="width:30px;height:30px"/>&nbsp;&nbsp;기타 포유류
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<c:url value='/freeboard.aw'/>">
               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               	자유 게시판
               </a>
