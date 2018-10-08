@@ -310,12 +310,12 @@
         <div class="collapse" id="market">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<c:url value='/buy.aw'/>">
               	&nbsp;&nbsp;삽니다
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<c:url value='/sell.aw'/>">
               	&nbsp;&nbsp;팝니다
               </a>
             </li>
