@@ -439,7 +439,7 @@
       
       <!-- 공지사항 메뉴 시작 -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<c:url value='/notice.aw'/>">
           <i class="menu-icon mdi mdi-flag-outline"></i>
           <span class="menu-title">공지사항</span>
         </a>
