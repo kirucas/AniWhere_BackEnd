@@ -1,0 +1,44 @@
+package com.animal.aniwhere_back.service.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.animal.aniwhere_back.service.AllCommentDTO;
+import com.animal.aniwhere_back.service.AllCommentService;
+
+@Service("AllComment")
+public class AllCommentServiceImpl implements AllCommentService {
+
+	@Resource(name="AllCommentDAO")
+	private AllCommentDAO dao;
+	
+	@Override
+	public List<AllCommentDTO> selectList(Map map) {
+		return dao.selectList(map);
+	}////////// selectList
+
+	@Override
+	public void insert(Map map) {
+		dao.insert(map);
+	}////////// insert
+
+	@Override
+	public void update(Map map) {
+		dao.update(map);
+	}////////// update
+
+	@Override
+	public void delete(Map map) {
+		dao.delete(map);
+	}////////// delete
+
+	@Override
+	public int commentCount(Map map) {
+		return dao.commentCount(map);
+	}////////// commentCount
+
+}//////////////////// AllCommentServiceImpl class

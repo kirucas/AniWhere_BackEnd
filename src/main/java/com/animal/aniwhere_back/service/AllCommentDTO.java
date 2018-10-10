@@ -8,7 +8,7 @@ public class AllCommentDTO {
 	private String cmt_content;
 	private String hit;
 	private java.sql.Date regidate;
-	
+
 	// 작성자 별명을 저장하기 위한 속성 추가
 	private String mem_name;
 
