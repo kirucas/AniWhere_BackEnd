@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BuyController {
 	
-	@RequestMapping("/buy.aw")
-	public String dog_main() throws Exception {
+	@RequestMapping("/market/buy.aw")
+	public String buy() throws Exception {
 		return "market/buy.tiles";
 	}
 }
