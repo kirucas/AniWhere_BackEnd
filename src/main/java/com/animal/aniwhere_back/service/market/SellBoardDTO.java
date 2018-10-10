@@ -1,7 +1,7 @@
-package com.animal.aniwhere_back.service;
+package com.animal.aniwhere_back.service.market;
 
-public class FindBoardDTO {
-
+public class SellBoardDTO {
+	
 	private String no;
 	private String mem_no;
 	private String title;
@@ -87,4 +87,4 @@ public class FindBoardDTO {
 		this.animal_name = animal_name;
 	}//////////
 	
-}//////////////////// FindBoardDTO class
+}//////////////////// SellBoardDTO class

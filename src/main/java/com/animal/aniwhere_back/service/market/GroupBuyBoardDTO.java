@@ -1,14 +1,16 @@
-package com.animal.aniwhere_back.service;
+package com.animal.aniwhere_back.service.market;
 
-public class SellBoardDTO {
-	
+public class GroupBuyBoardDTO {
+
 	private String no;
+	private String animal_code;
 	private String mem_no;
 	private String title;
 	private String content;
 	private java.sql.Date regidate;
 	private String count;
-	private String animal_code;
+	private String buy_count;
+	private java.sql.Date deadline;
 	
 	// 작성자 별명을 저장하기 위한 속성 추가
 	private String mem_nickname;
@@ -21,6 +23,14 @@ public class SellBoardDTO {
 	
 	public void setNo(String no) {
 		this.no = no;
+	}//////////
+	
+	public String getAnimal_code() {
+		return animal_code;
+	}//////////
+	
+	public void setAnimal_code(String animal_code) {
+		this.animal_code = animal_code;
 	}//////////
 	
 	public String getMem_no() {
@@ -63,12 +73,20 @@ public class SellBoardDTO {
 		this.count = count;
 	}//////////
 	
-	public String getAnimal_code() {
-		return animal_code;
+	public String getBuy_count() {
+		return buy_count;
 	}//////////
 	
-	public void setAnimal_code(String animal_code) {
-		this.animal_code = animal_code;
+	public void setBuy_count(String buy_count) {
+		this.buy_count = buy_count;
+	}//////////
+	
+	public java.sql.Date getDeadline() {
+		return deadline;
+	}//////////
+	
+	public void setDeadline(java.sql.Date deadline) {
+		this.deadline = deadline;
 	}//////////
 	
 	public String getMem_nickname() {
@@ -87,4 +105,4 @@ public class SellBoardDTO {
 		this.animal_name = animal_name;
 	}//////////
 	
-}//////////////////// SellBoardDTO class
+}//////////////////// GroupBuyBoardDTO class

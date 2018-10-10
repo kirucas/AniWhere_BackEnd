@@ -1,4 +1,4 @@
-package com.animal.aniwhere_back.service;
+package com.animal.aniwhere_back.service.member;
 
 public class AnimalDTO {
 

@@ -1,6 +1,6 @@
-package com.animal.aniwhere_back.service;
+package com.animal.aniwhere_back.service.miss;
 
-public class BuyBoardDTO {
+public class SeeBoardDTO {
 
 	private String no;
 	private String mem_no;
@@ -87,4 +87,4 @@ public class BuyBoardDTO {
 		this.animal_name = animal_name;
 	}//////////
 	
-}//////////////////// BuyBoardDTO class
+}//////////////////// SeeBoardDTO class
