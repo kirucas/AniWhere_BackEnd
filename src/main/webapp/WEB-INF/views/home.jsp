@@ -89,18 +89,15 @@
         <div class="card bg-warning text-white">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
-<!--               <div>
-                <h3 class="mb-0 font-weight-bold">서울</h3>
+               <div>
+                <h3 class="mb-0 font-weight-bold" id="weather_city">서울</h3>
                 <small class="font-weight-light">DAY - 12:07 PM</small>
               </div>
               <div class="d-flex align-items-center">
-                <h1 class="mr-3 font-weight-bold">11°C</h1>
-                <i class="icon-md mdi mdi-weather-rainy"></i>
-              </div> -->
-              <p>
+                <h1 class="mr-3 font-weight-bold"><p id="weather_cel"></p></h1>
+                <img src="#" id="weather_img" />
+              </div> 
  				
- 				<img src="#" id="weather" />
-				</p>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ public class ReservationDTO {
 	private String store_no;
 	private java.sql.Date apply_date; // 신청일
 	private java.sql.Date booking_date; // 예약일
-	
+
 	// 신청자의 이름 저장을 위한 속성 추가
 	private String mem_name;
 
@@ -58,5 +58,5 @@ public class ReservationDTO {
 	public void setMem_name(String mem_name) {
 		this.mem_name = mem_name;
 	}//////////
-	
+
 }//////////////////// ReservationDTO class

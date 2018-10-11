@@ -10,4 +10,5 @@ public class MapController {
 	public String map() throws Exception {
 		return "where/map.tiles";
 	}
+	
 }
