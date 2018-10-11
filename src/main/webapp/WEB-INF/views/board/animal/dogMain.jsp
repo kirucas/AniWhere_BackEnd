@@ -81,7 +81,8 @@
                                      </tbody>
                                  </table>
                                  <!-- 페이징 -->
-                                 <div class="row">
+                                 <div class="container" style="text-align:center;">
+                                 <div class="row" style="display:inline-block;">
                                      <div class="col-md-12 text-center">
                                          <nav>
                                              <ul class="pagination rounded-flat pagination-success">
@@ -110,6 +111,7 @@
                                              </ul>
                                          </nav>
                                      </div>
+                                 </div>
                                  </div>
                                  <!-- 페이징 끝 -->
 
