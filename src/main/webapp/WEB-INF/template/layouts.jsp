@@ -68,6 +68,9 @@
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="<c:url value='/resources/assets/js/demo_1/dashboard.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/demo_1/dashboard_2.js' />"></script>
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="<c:url value='/resources/assets/js/shared/google-charts.js'/>"></script>
     <!-- End custom js for this page-->
 </body>
 
