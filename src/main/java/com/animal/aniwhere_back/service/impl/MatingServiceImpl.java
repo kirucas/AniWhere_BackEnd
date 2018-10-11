@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.MatingDTO;
 
-@Service("MatingService")
+@Service("matingService")
 public class MatingServiceImpl implements AllBoardService {
 
-	@Resource(name = "MatingDAO")
+	@Resource(name = "matingDAO")
 	private MatingDAO dao;
 
 	@Override

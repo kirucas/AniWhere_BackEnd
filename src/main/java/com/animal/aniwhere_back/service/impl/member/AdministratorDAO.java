@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.member.AdministratorDTO;
 
-@Repository("AdminDAO")
+@Repository("adminDAO")
 public class AdministratorDAO implements AllBoardService {
 
 	@Resource(name = "template")

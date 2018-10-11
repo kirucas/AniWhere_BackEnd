@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.member.AdministratorDTO;
 
-@Service("AdminService")
+@Service("adminService")
 public class AdministratorServiceImpl implements AllBoardService {
 
-	@Resource(name = "AdminDAO")
+	@Resource(name = "adminDAO")
 	private AdministratorDAO dao;
 	
 	@Override

@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.member.MemberDTO;
 
-@Service("MemberService")
+@Service("memberService")
 public class MemberServiceImpl implements AllBoardService {
 
-	@Resource(name = "MemberDAO")
+	@Resource(name = "memberDAO")
 	private MemberDAO dao;
 	
 	@Override

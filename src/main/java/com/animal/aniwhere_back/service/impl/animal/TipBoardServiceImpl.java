@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.animal.TipBoardDTO;
 
-@Service("TipService")
+@Service("tipService")
 public class TipBoardServiceImpl implements AllBoardService {
 
-	@Resource(name = "TipBoardDAO")
+	@Resource(name = "tipBoardDAO")
 	private TipBoardDAO dao;
 	
 	@Override

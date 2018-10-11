@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.miss.FindDTO;
 
-@Service("FindService")
+@Service("findService")
 public class FindServiceImpl implements AllBoardService {
 
-	@Resource(name = "FindDAO")
+	@Resource(name = "findDAO")
 	private FindDAO dao;
 	
 	@Override

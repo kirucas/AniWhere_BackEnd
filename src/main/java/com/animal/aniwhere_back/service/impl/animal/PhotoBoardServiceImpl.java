@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.animal.PhotoBoardDTO;
 
-@Service("PhotoService")
+@Service("photoService")
 public class PhotoBoardServiceImpl implements AllBoardService {
 
-	@Resource(name = "PhotoBoardDAO")
+	@Resource(name = "photoBoardDAO")
 	private PhotoBoardDAO dao;
 	
 	@Override

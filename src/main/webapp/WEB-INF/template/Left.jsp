@@ -141,7 +141,7 @@
 			<div class="collapse" id="animal_tab">
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item">
-						<a class="nav-link" href="">
+						<a class="nav-link" href="<c:url value='/dog/main.aw' />">
 							<img src="<c:url value='/resources/images/animal/dog.png'/>" />&nbsp;&nbsp;&nbsp;강아지
 						</a>
 					</li>
@@ -226,7 +226,7 @@
 			<div class="collapse" id="location_tab">
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item">
-						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;지도</a>
+						<a class="nav-link" href="<c:url value="/location/map.aw" />">&nbsp;&nbsp;&nbsp;지도</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;예약 목록</a>

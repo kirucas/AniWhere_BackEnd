@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.market.SellDTO;
 
-@Service("SellService")
+@Service("sellService")
 public class SellServiceImpl implements AllBoardService {
 
-	@Resource(name = "SellDAO")
+	@Resource(name = "sellDAO")
 	private SellDAO dao;
 	
 	@Override

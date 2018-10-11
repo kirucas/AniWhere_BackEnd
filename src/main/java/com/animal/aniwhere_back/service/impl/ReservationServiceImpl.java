@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.ReservationDTO;
 
-@Service("ReservationService")
+@Service("reservationService")
 public class ReservationServiceImpl implements AllBoardService {
 
-	@Resource(name = "ReservationDAO")
+	@Resource(name = "reservationDAO")
 	private ReservationDAO dao;
 
 	@Override

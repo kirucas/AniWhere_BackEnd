@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.animal.QuestBoardDTO;
 
-@Service("QuestSevice")
+@Service("questSevice")
 public class QuestBoardServiceImpl implements AllBoardService {
 
-	@Resource(name = "QuestBoardDAO")
+	@Resource(name = "questBoardDAO")
 	private QuestBoardDAO dao;
 	
 	@Override

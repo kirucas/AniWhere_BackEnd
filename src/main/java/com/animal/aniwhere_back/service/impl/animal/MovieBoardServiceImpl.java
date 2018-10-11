@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.animal.MovieBoardDTO;
 
-@Service("MovieService")
+@Service("movieService")
 public class MovieBoardServiceImpl implements AllBoardService {
 
-	@Resource(name = "MovieBoardDAO")
+	@Resource(name = "movieBoardDAO")
 	private MovieBoardDAO dao;
 
 	@Override

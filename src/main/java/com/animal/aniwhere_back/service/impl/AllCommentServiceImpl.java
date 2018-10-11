@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllCommentDTO;
 import com.animal.aniwhere_back.service.AllCommentService;
 
-@Service("AllComment")
+@Service("allCommentService")
 public class AllCommentServiceImpl implements AllCommentService {
 
-	@Resource(name="AllCommentDAO")
+	@Resource(name = "allCommentDAO")
 	private AllCommentDAO dao;
-	
+
 	@Override
 	public List<AllCommentDTO> selectList(Map map) {
 		return dao.selectList(map);

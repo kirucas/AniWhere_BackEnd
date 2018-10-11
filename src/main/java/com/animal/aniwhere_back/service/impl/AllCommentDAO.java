@@ -14,9 +14,9 @@ import com.animal.aniwhere_back.service.AllCommentService;
 @Repository
 public class AllCommentDAO implements AllCommentService {
 
-	@Resource(name="template")
+	@Resource(name = "template")
 	private SqlSessionTemplate template;
-	
+
 	@Override
 	public List<AllCommentDTO> selectList(Map map) {
 		// TODO Auto-generated method stub

@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.miss.SeeDTO;
 
-@Service("SeeService")
+@Service("seeService")
 public class SeeServiceImpl implements AllBoardService {
 
-	@Resource(name = "SeeDAO")
+	@Resource(name = "seeDAO")
 	private SeeDAO dao;
 	
 	@Override
