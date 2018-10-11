@@ -28,11 +28,11 @@
                 <div class="row w-100">
                     <div class="col-lg-4 mx-auto">
                         <div class="auto-form-wrapper">
-                            <form action="<c:url value='/admin/signInProcess.aw' />">
+                            <form action="<c:url value='/admin/signInProcess.aw' />" method="post">
                                 <div class="form-group">
                                     <label class="label">아이디</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="아이디">
+                                        <input type="text" class="form-control" placeholder="아이디" name="am_id">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -43,7 +43,7 @@
                                 <div class="form-group">
                                     <label class="label">비밀번호</label>
                                     <div class="input-group">
-                                        <input type="password" class="form-control" placeholder="*********">
+                                        <input type="password" class="form-control" placeholder="*********" name="am_pw">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -52,7 +52,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-success submit-btn btn-block" type="submit">로그인</button>
+                                    <button class="btn btn-success submit-btn btn-block">로그인</button>
                                 </div>
                                 <div class="form-group d-flex justify-content-between">
                                     <div class="form-check form-check-flat mt-0">
@@ -90,15 +90,15 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="<c:url value='/resources/assets/vendondor.bundle.base.js' />"></script>
-    <script src="<c:url value='/resources/assets/vendondor.bundle.addons.js' />"></script>
+    <script src="<c:url value='/resources/assets/vendors/js/vendor.bundle.base.js' />"></script>
+    <script src="<c:url value='/resources/assets/vendors/js/vendor.bundle.addons.js' />"></script>
     <!-- endinject -->
     <!-- inject:js -->
-    <script src="<c:url value='/resources/asseared/off-canvas.js' />"></script>
-    <script src="<c:url value='/resources/asseared/hoverable-collapse.js' />"></script>
-    <script src="<c:url value='/resources/asseared/misc.js' />"></script>
-    <script src="<c:url value='/resources/asseared/settings.js' />"></script>
-    <script src="<c:url value='/resources/asseared/todolist.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/shared/off-canvas.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/shared/hoverable-collapse.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/shared/misc.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/shared/settings.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/shared/todolist.js' />"></script>
     <!-- endinject -->
 </body>
 </html>
