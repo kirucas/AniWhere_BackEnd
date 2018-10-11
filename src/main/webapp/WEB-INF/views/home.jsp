@@ -19,15 +19,16 @@
 	</div>
 </div>
 -->
+
 <div class="row">
   <div class="col-md-7 grid-margin">
     <div class="row">
       <div class="col-12 col-sm-6 col-md-5 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h2 class="mb-0">230</h2>
-            <p class="text-gray">All Transactions</p>
-            <canvas id="dashoard-line-chart" height="165"></canvas>
+            <h2 class="mb-0">19,999,999,999명</h2>
+	          <p class="text-gray">전체 방문자 수</p>
+	          <canvas id="dashoard-line-chart" height="165"></canvas>
           </div>
         </div>
       </div>
@@ -88,14 +89,18 @@
         <div class="card bg-warning text-white">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
-              <div>
-                <h3 class="mb-0 font-weight-bold">New York</h3>
+<!--               <div>
+                <h3 class="mb-0 font-weight-bold">서울</h3>
                 <small class="font-weight-light">DAY - 12:07 PM</small>
               </div>
               <div class="d-flex align-items-center">
-                <h1 class="mr-3 font-weight-bold">34°</h1>
+                <h1 class="mr-3 font-weight-bold">11°C</h1>
                 <i class="icon-md mdi mdi-weather-rainy"></i>
-              </div>
+              </div> -->
+              <p>
+ 				
+ 				<img src="#" id="weather" />
+				</p>
             </div>
           </div>
         </div>
@@ -103,102 +108,26 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <p class="text-gray">TUESDAY, APR 9, 2018</p>
-            <ul class="bullet-line-list pb-3">
-              <li>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="d-flex">
-                    <img class="img-xs rounded-circle" src="../../../assets/images/faces/face9.jpg" alt="profile image">
-                    <div class="ml-3">
-                      <h6 class="mb-0">Snapchat Hosts</h6>
-                      <small class="text-muted"> Admin Dashboard </small>
-                    </div>
-                  </div>
-                  <div>
-                    <small class="d-block mb-0">06</small>
-                    <small class="text-muted d-block">pm</small>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="d-flex">
-                    <img class="img-xs rounded-circle" src="../../../assets/images/faces/face3.jpg" alt="profile image">
-                    <div class="ml-3">
-                      <h6 class="mb-0">Revise Wireframes</h6>
-                      <small class="text-muted"> Company website </small>
-                    </div>
-                  </div>
-                  <div>
-                    <small class="d-block mb-0">11</small>
-                    <small class="text-muted d-block">pm</small>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="d-flex">
-                    <img class="img-xs rounded-circle" src="../../../assets/images/faces/face4.jpg" alt="profile image">
-                    <div class="ml-3">
-                      <h6 class="mb-0">Expert instruction</h6>
-                      <small class="text-muted"> Profile App </small>
-                    </div>
-                  </div>
-                  <div>
-                    <small class="d-block mb-0">12</small>
-                    <small class="text-muted d-block">pm</small>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <p class="text-gray mt-4">TUESDAY, APR 10, 2018</p>
-            <ul class="bullet-line-list">
-              <li>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="d-flex">
-                    <img class="img-xs rounded-circle" src="../../../assets/images/faces/face7.jpg" alt="profile image">
-                    <div class="ml-3">
-                      <h6 class="mb-0">Great Logo</h6>
-                      <small class="text-muted"> admin logo </small>
-                    </div>
-                  </div>
-                  <div>
-                    <small class="d-block mb-0">04</small>
-                    <small class="text-muted d-block">pm</small>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="d-flex">
-                    <img class="img-xs rounded-circle" src="../../../assets/images/faces/face25.jpg" alt="profile image">
-                    <div class="ml-3">
-                      <h6 class="mb-0">Branding Mockup</h6>
-                      <small class="text-muted"> Company website </small>
-                    </div>
-                  </div>
-                  <div>
-                    <small class="d-block mb-0">08</small>
-                    <small class="text-muted d-block">pm</small>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="d-flex">
-                    <img class="img-xs rounded-circle" src="../../../assets/images/faces/face12.jpg" alt="profile image">
-                    <div class="ml-3">
-                      <h6 class="mb-0">Awesome Mobile App</h6>
-                      <small class="text-muted"> Profile App </small>
-                    </div>
-                  </div>
-                  <div>
-                    <small class="d-block mb-0">09</small>
-                    <small class="text-muted d-block">pm</small>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <p class="text-gray">2018 10/11  목요일</p>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
+            	오늘의 동물<br/>
           </div>
         </div>
       </div>
@@ -210,13 +139,12 @@
     <div class="card">
       <div class="card-body">
         <div class="d-flex">
-          <i class="mdi mdi-clock icon-lg"></i>
+          <i class="mdi mdi-file-outline icon-lg"></i>
           <div class="d-flex flex-column ml-2">
             <span class="d-flex flex-column">
-              <small class="mb-0">BOUNCE RATE</small>
-              <p class="font-weight-bold">32.16%</p>
+              <small class="mb-0">전체 게시글 등록수</small>
+              <p class="font-weight-bold">25개</p>
             </span>
-            <small>65.45% on average time</small>
           </div>
         </div>
       </div>
@@ -226,13 +154,12 @@
     <div class="card">
       <div class="card-body">
         <div class="d-flex">
-          <i class="mdi mdi-cart-outline icon-lg"></i>
+          <i class="mdi mdi-account-outline icon-lg"></i>
           <div class="d-flex flex-column ml-2">
             <span class="d-flex flex-column">
-              <small class="mb-0">TODAY SALES</small>
-              <p class="font-weight-bold">$489,271</p>
+              <small class="mb-0">전체 회원수</small>
+              <p class="font-weight-bold">30</p>
             </span>
-            <small>$489,271 before tax</small>
           </div>
         </div>
       </div>
@@ -245,10 +172,9 @@
           <i class="mdi mdi-laptop icon-lg"></i>
           <div class="d-flex flex-column ml-2">
             <span class="d-flex flex-column">
-              <small class="mb-0">UNIQUE VISITS</small>
-              <p class="font-weight-bold">74.50%</p>
+              <small class="mb-0">오늘의 게시글 등록수</small>
+              <p class="font-weight-bold">74</p>
             </span>
-            <small>80% average duration</small>
           </div>
         </div>
       </div>
@@ -261,135 +187,14 @@
           <i class="mdi mdi-earth icon-lg"></i>
           <div class="d-flex flex-column ml-2">
             <span class="d-flex flex-column">
-              <small class="mb-0">TODAY'S VISITS</small>
-              <p class="font-weight-bold">6,775,440</p>
+              <small class="mb-0">오늘의 방문자</small>
+              <p class="font-weight-bold">440</p>
             </span>
-            <small>45% higher yesterday</small>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-6 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body">
-        <div class="d-flex justify-content-between border-bottom">
-          <h4 class="card-title">Daily Earnings</h4>
-          <i class="mdi mdi-trending-down"></i>
-        </div>
-        <div class="wrapper pt-4">
-          <div class="d-flex justify-content-center align-items-center mb-4">
-            <div id="dashboardTrendingProgress"></div>
-            <h2 class="mb-0 ml-3 font-weight-bold">456</h2>
-          </div>
-          <div class="text-center">
-            <div class="btn btn-inverse-danger">5% Decrease</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body">
-        <div class="d-flex justify-content-between border-bottom">
-          <h4 class="card-title">Marketing Campaign</h4>
-          <i class="mdi mdi-trending-up"></i>
-        </div>
-        <div class="wrapper pt-4">
-          <div class="d-flex justify-content-center align-items-end mb-4">
-            <div class="w-25">
-              <canvas id="dashboardTrendingBars" height="180"></canvas>
-            </div>
-            <h2 class="mb-0 ml-3 font-weight-bold">760</h2>
-          </div>
-          <div class="text-center">
-            <div class="btn btn-inverse-success">5% Increase</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-12 grid-margin">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Ticket Comments</h4>
-        <div class="table-responsive">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Assigned</th>
-                <th>Latest Comment</th>
-                <th>Last reply</th>
-                <th>Impact</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="form-check form-check-flat">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
-                      <img class="mr-2" src="../../../assets/images/faces/face14.jpg" alt="profile image"> Benjamin Bowman </label>
-                  </div>
-                </td>
-                <td>How To Write Better Advertising Copy</td>
-                <td>10-12-2018</td>
-                <td>$15,000</td>
-                <td>
-                  <div class="badge badge-success"></div>Active</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="form-check form-check-flat">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" checked>
-                      <img class="mr-2" src="../../../assets/images/faces/face4.jpg" alt="profile image"> Mark Pope </label>
-                  </div>
-                </td>
-                <td>Influencing The Influencer</td>
-                <td>10-12-2018</td>
-                <td>$210,000</td>
-                <td>
-                  <div class="badge badge-danger"></div>Closed</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="form-check form-check-flat">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
-                      <img class="mr-2" src="../../../assets/images/faces/face7.jpg" alt="profile image"> Ian Brown </label>
-                  </div>
-                </td>
-                <td>The Universe Through A Child S Eyes</td>
-                <td>10-12-2018</td>
-                <td>$543,000</td>
-                <td>
-                  <div class="badge badge-warning"></div>Pending</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="form-check form-check-flat">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
-                      <img class="mr-2" src="../../../assets/images/faces/face9.jpg" alt="profile image"> Chase Mullins </label>
-                  </div>
-                </td>
-                <td>Trade Show Promotions</td>
-                <td>10-12-2018</td>
-                <td>$925,000</td>
-                <td>
-                  <div class="badge badge-success"></div>Active</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
