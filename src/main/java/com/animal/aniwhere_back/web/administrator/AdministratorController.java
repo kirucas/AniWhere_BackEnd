@@ -11,8 +11,8 @@ public class AdministratorController {
 	public String sign_in() throws Exception {
 		return "administrator/sign_in";
 	}////////// sign_in
-	
-	@RequestMapping(value="/admin/signInProcess.aw", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/admin/signInProcess.aw", method = RequestMethod.GET)
 	public String signInProcess() throws Exception {
 		return "home.tiles";
 	}////////// signInProcess
