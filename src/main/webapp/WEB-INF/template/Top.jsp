@@ -28,7 +28,7 @@
 				<a href="" class="nav-link">Top Menu Sample</a>
 			</li>
 			<li class="nav-item">
-				<a href="" class="nav-link">
+				<a href="<c:url value='/statistics.aw'/>" class="nav-link">
 					<i class="mdi mdi-elevation-rise"></i>통계
 				</a>
 			</li>
