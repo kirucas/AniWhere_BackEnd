@@ -10,10 +10,10 @@
 <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
 
 	<div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-		<a class="navbar-brand brand-logo" href="<c:url value='/' />">
+		<a class="navbar-brand brand-logo" href="<c:url value='/main.aw' />">
 			<img src="<c:url value='/resources/images/logoLong.png'/>" alt="logo" />
 		</a>
-		<a class="navbar-brand brand-logo-mini" href="<c:url value='/' />">
+		<a class="navbar-brand brand-logo-mini" href="<c:url value='/main.aw' />">
 			<img src="<c:url value='/resources/images/logo.png'/>" alt="logo" style="width:100%;height:100%"/>
 		</a>
 	</div>
