@@ -6,4 +6,4 @@ var options = { //지도를 생성할 때 필요한 기본 옵션
 };
 
 var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
-/****** Daum Map 출력을 위환 코드 ******/
+/****** Daum Map 출력을 위환 코드 */

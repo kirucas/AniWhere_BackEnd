@@ -177,17 +177,17 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ['Task', 'Hours per Day'],
-    ['Work', 11],
-    ['Eat', 2],
-    ['Commute', 2],
-    ['Watch TV', 2],
-    ['Sleep', 7]
+    ['강아지', 400],
+    ['고양이', 300],
+    ['파충류&양서류', 99],
+    ['조류', 154],
+    ['기타 포유류', 149]
   ]);
 
   var options = {
-    title: 'My Daily Activities',
+    title: '동물 종류별 통계',
     pieHole: 0.4,
-    colors: ['#76C1FA', '#63CF72', '#F36368', '#FABA66'],
+    colors: ['#76C1FA', '#63CF72', '#F36368', '#FABA66','#ff0000'],
     chartArea: {
       width: 500
     },
