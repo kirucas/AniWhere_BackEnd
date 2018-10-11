@@ -146,27 +146,27 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">
+						<a class="nav-link" href="<c:url value='/cat/main.aw'/>">
 							<img src="<c:url value='/resources/images/animal/cat.png'/>" />&nbsp;&nbsp;&nbsp;고양이
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">
+						<a class="nav-link" href="<c:url value='/rna/main.aw'/>">
 							<img src="<c:url value='/resources/images/animal/reptiles.png'/>" />&nbsp;&nbsp;&nbsp;파충류&양서류
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">
+						<a class="nav-link" href="<c:url value='/bird/main.aw'/>">
 							<img src="<c:url value='/resources/images/animal/bird.png'/>" />&nbsp;&nbsp;&nbsp;조류
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">
+						<a class="nav-link" href="<c:url value='/etc/main.aw'/>">
 							<img src="<c:url value='/resources/images/animal/rat.png'/>" />&nbsp;&nbsp;&nbsp;기타 포유류
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;자유 게시판</a>
+						<a class="nav-link" href="<c:url value='/freeboard.aw'/>">&nbsp;&nbsp;&nbsp;자유 게시판</a>
 					</li>
 				</ul>
 			</div>
@@ -180,13 +180,13 @@
 			<div class="collapse" id="market_tab">
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item">
-						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;삽니다</a>
+						<a class="nav-link" href="<c:url value='/market/buy.aw'/>">&nbsp;&nbsp;&nbsp;삽니다</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;팝니다</a>
+						<a class="nav-link" href="<c:url value='/market/sell.aw'/>">&nbsp;&nbsp;&nbsp;팝니다</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;공동 구매</a>
+						<a class="nav-link" href="<c:url value='/market/groupbuy.aw'/>">&nbsp;&nbsp;&nbsp;공동 구매</a>
 					</li>
 				</ul>
 			</div>
@@ -200,19 +200,19 @@
 			<div class="collapse" id="shelter_tab">
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item">
-						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;봤어요</a>
+						<a class="nav-link" href="<c:url value='/miss/see.aw'/>">&nbsp;&nbsp;&nbsp;봤어요</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;찾아요</a>
+						<a class="nav-link" href="<c:url value='/miss/find.aw'/>">&nbsp;&nbsp;&nbsp;찾아요</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;보호소</a>
+						<a class="nav-link" href="<c:url value='/miss/shelter.aw'/>">&nbsp;&nbsp;&nbsp;보호중인 동물</a>
 					</li>
 				</ul>
 			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" data-toggle="collapse" href="#">
+			<a class="nav-link" href="<c:url value='/mating.aw'/>">
 				<img src="<c:url value='/resources/images/heart.png'/>" />
 				<span class="menu-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;만나요</span>
 			</a>
@@ -226,10 +226,10 @@
 			<div class="collapse" id="location_tab">
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item">
-						<a class="nav-link" href="<c:url value="/location/map.aw" />">&nbsp;&nbsp;&nbsp;지도</a>
+						<a class="nav-link" href="<c:url value='/where/map.aw'/>">&nbsp;&nbsp;&nbsp;지도</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">&nbsp;&nbsp;&nbsp;예약 목록</a>
+						<a class="nav-link" href="<c:url value='/where/reservation.aw'/>">&nbsp;&nbsp;&nbsp;예약 목록</a>
 					</li>
 				</ul>
 			</div>
@@ -243,17 +243,17 @@
 			<div class="collapse" id="member_tab">
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item">
-						<a class="nav-link" href="">회원 정보</a>
+						<a class="nav-link" href="<c:url value='/memberInfo.aw'/>">회원 정보</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">동물 정보</a>
+						<a class="nav-link" href="<c:url value='/animalInfo.aw'/>">동물 정보</a>
 					</li>
 				</ul>
 			</div>
 		</li>
 
 		<li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<c:url value='/notice.aw'/>">
                 <i class="menu-icon mdi mdi-flag-outline"></i>
                 <span class="menu-title">공지사항</span>
             </a>
@@ -267,7 +267,7 @@
 			<div class="collapse" id="administrator_tab">
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item">
-						<a class="nav-link" href="">관리자 명단</a>
+						<a class="nav-link" href="<c:url value='/adminInfo.aw'/>">관리자 명단</a>
 					</li>
 				</ul>
 			</div>

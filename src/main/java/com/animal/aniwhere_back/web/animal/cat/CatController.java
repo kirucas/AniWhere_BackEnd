@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CatController {
 	
 	@RequestMapping("/cat/main.aw")
-	public String dog_main() throws Exception {
+	public String cat_main() throws Exception {
 		return "board/animal/catMain.tiles";
 	}
 }

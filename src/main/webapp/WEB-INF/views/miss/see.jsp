@@ -6,12 +6,12 @@
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">팝니다</h4>
+          <h4 class="card-title">봤어요</h4>
           <table class="table">
             <thead>
               <tr>
                 <th>번호</th>
-                <th>동물분류</th>
+                <th>카테고리</th>
                 <th>제목</th>
                 <th>글쓴이</th>
                 <th>날짜</th>
@@ -20,43 +20,43 @@
             <tbody>
               <tr>
                 <td>1</td>
-                <td>강아지</td>
+                <td>봤어요</td>
                 <td>
-                	강아지 팝니다. <label class="badge badge-success">20</label>
+                	안녕하세요 샘플입니다. <label class="badge badge-success">20</label>
                 </td>
                 <td>최성욱</td>
                 <td>2018-10-04</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>강아지</td>
+                <td>봤어요</td>
                 <td>
-                	강아지 팝니다. <label class="badge badge-success">15</label>
+                	안녕하세요 샘플입니다. <label class="badge badge-success">15</label>
                 </td>
                 <td>최성욱</td>
                 <td>2018-10-04</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>강아지</td>
+                <td>봤어요</td>
                 <td>
-                	강아지 팝니다. <label class="badge badge-success">1</label>
+                	안녕하세요 샘플입니다. <label class="badge badge-success">1</label>
                 </td>
                 <td>최성욱</td>
                 <td>2018-10-04</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>강아지</td>
-                <td>강아지 팝니다. </td>
+                <td>봤어요</td>
+                <td>안녕하세요 샘플입니다.</td>
                 <td>최성욱</td>
                 <td>2018-10-04</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>강아지</td>
+                <td>봤어요</td>
                 <td>
-                	강아지 팝니다.  <label class="badge badge-success">99</label>
+                	안녕하세요 샘플입니다. <label class="badge badge-success">99</label>
                 </td>
                 <td>최성욱</td>
                 <td>2018-10-04</td>

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FreeboardController {
 	
 	@RequestMapping("/freeboard.aw")
-	public String dog_main() throws Exception {
+	public String freeboard() throws Exception {
 		return "board/animal/freeboard.tiles";
 	}
 }

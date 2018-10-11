@@ -4,11 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MapController {
+public class ReservationController {
 	
-	@RequestMapping("/where/map.aw")
-	public String map() throws Exception {
-		return "where/map.tiles";
+	@RequestMapping("/where/reservation.aw")
+	public String reservation() throws Exception {
+		return "where/reservation.tiles";
 	}
-	
 }

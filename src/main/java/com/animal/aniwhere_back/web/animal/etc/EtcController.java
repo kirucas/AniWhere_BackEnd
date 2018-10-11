@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EtcController {
 	
 	@RequestMapping("/etc/main.aw")
-	public String dog_main() throws Exception {
+	public String etc_main() throws Exception {
 		return "board/animal/etcMain.tiles";
 	}
 }

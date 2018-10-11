@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class NoticeController {
 	
 	@RequestMapping("/notice.aw")
-	public String dog_main() throws Exception {
+	public String notice() throws Exception {
 		return "notice/notice.tiles";
 	}
 }
