@@ -31,22 +31,75 @@
                             </li>
                         </ul>
                         <div class="tab-content tab-content-basic">
+                        <!-- 전체 통계 -->
                         <div class="tab-pane fade show active" id="statisticsAll" role="tabpanel" aria-labelledby="statistics_all">
-                            <div class="col-md-5 grid-margin">
+                            <div class="col-md-12 grid-margin">
 							    <div class="row">
-							       <div class="col-md-12 grid-margin stretch-card">
-							         <div class="card">
-							           <div class="card-body">
-							             <h4 class="card-title">전체 동물 종류별 통계</h4>
-							             <div class="google-chart-container">
-							               <div id="Donut-chart" class="google-charts"></div>
-							             </div>
-							           </div>
-							         </div>
-							       </div>
-							     </div>
+	       							<div class="col-md-12 grid-margin stretch-card">
+						                <div class="card">
+						                  <div class="card-body">
+						                    <h4 class="card-title">회원가입 통계</h4>
+						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						                      <div id="member-chart" class="google-charts"></div>
+						                    </div>
+						                  </div>
+						                </div>
+						              </div>
+						              <div class="col-md-6 grid-margin stretch-card">
+						                <div class="card">
+						                  <div class="card-body">
+						                    <h4 class="card-title">전체 게시글 통계</h4>
+						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						                      <div id="board-chart" class="google-charts"></div>
+						                    </div>
+						                  </div>
+						                </div>
+						              </div>
+						               <div class="col-md-6 grid-margin stretch-card">
+								         <div class="card">
+								           <div class="card-body">
+								             <h4 class="card-title">전체 동물 종류별 통계</h4>
+								             <div class="google-chart-container">
+								               <div id="animal-chart" class="google-charts"></div>
+								             </div>
+								           </div>
+								         </div>
+								       </div>
+						              <div class="col-md-12 grid-margin stretch-card">
+						                <div class="card">
+						                  <div class="card-body">
+						                    <h4 class="card-title">만나요 통계</h4>
+						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						                      <div id="mating-chart" class="google-charts"></div>
+						                    </div>
+						                  </div>
+						                </div>
+						              </div>
+						              <div class="col-md-12 grid-margin stretch-card">
+						                <div class="card">
+						                  <div class="card-body">
+						                    <h4 class="card-title">유기동물 통계</h4>
+						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						                      <div id="miss-chart" class="google-charts"></div>
+						                    </div>
+						                  </div>
+						                </div>
+						              </div>
+						              <div class="col-md-12 grid-margin stretch-card">
+						                <div class="card">
+						                  <div class="card-body">
+						                    <h4 class="card-title">예약 통계</h4>
+						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						                      <div id="reservation-chart" class="google-charts"></div>
+						                    </div>
+						                  </div>
+						                </div>
+						              </div>
+							     </div><!-- row -->
 							</div>
-                            </div>
+
+                           </div><!-- tap -->
+                            <!-- 전체 통계 끝 -->
                             <div class="tab-pane fade" id="statisticsDog" role="tabpanel" aria-labelledby="statistics_dog">
 								강아지 통계 위치
                             </div>
