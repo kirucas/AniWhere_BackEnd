@@ -15,6 +15,7 @@
 	<!-- plugins:css -->
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/puse-icons-feather/feather.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.base.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.addons.css' />">
     <!-- endinject -->

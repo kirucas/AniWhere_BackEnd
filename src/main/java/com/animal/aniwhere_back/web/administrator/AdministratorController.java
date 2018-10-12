@@ -1,5 +1,6 @@
 package com.animal.aniwhere_back.web.administrator;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -10,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.support.SessionStatus;
 
 import com.animal.aniwhere_back.service.impl.member.AdministratorServiceImpl;
 import com.animal.aniwhere_back.service.member.AdministratorDTO;
@@ -46,9 +46,9 @@ public class AdministratorController {
 	}////////// signInProcess
 
 	@RequestMapping(value = "/admin/sign_out.aw")
-	public String signOut(SessionStatus session, Model model) throws Exception {
+	public String signOut(HttpSession session, Model model) throws Exception {
 
-		session.setComplete();
+		session.invalidate();
 
 		model.addAttribute("signOutSuccess", "성공적으로 로그아웃 했습니다 ㅂㅂ~");
 
@@ -83,5 +83,15 @@ public class AdministratorController {
 		return string_level;
 
 	}////////// amLeveltoString
-
+	
+	@RequestMapping("/adminInfo.aw")
+	public String admin_info(Model model) throws Exception {
+		
+		List<AdministratorDTO> list = service.selectList(null);
+		
+		model.addAttribute("admin_list", list);
+		
+		return "administrator/admin.tiles";
+	}////////// admin_info
+	
 }//////////////////// AdministratorController class

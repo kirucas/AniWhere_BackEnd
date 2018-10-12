@@ -43,7 +43,12 @@
 			<li class="nav-item dropdown d-none d-xl-inline-block">
 				<a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown">
 					<span class="profile-text">반갑습니다. ${am_id}님!</span>
-					<img class="img-xs rounded-circle" src="<c:url value='/resources/assets/images/faces/choi.jpg'/>" alt="Profile-image" />
+					<c:if test="${am_profile eq '#@!no_exist!@#' }" var="result">
+							<img class="img-xs rounded-circle" src="<c:url value='/resources/images/profile_404.jpg'/>" alt="profile-image" />
+						</c:if>
+						<c:if test="${not result }">
+							<img class="img-xs rounded-circle" src="<c:url value='${am_profile}' />" alt="profile-image" />
+						</c:if>
 				</a>
 				<div class="dropdown-menu dropdown-menu-right navbar-dropdown">
 					<a class="dropdown-item mt-2"> 회원 정보 수정 </a>

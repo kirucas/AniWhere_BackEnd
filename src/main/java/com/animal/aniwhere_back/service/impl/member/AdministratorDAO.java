@@ -19,7 +19,7 @@ public class AdministratorDAO implements AllMemberService {
 	
 	@Override
 	public List<AdministratorDTO> selectList(Map map) {
-		return null;
+		return template.selectList("adminSelectList", map);
 	}////////// selectList
 
 	@Override

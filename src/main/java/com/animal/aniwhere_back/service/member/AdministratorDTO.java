@@ -47,5 +47,5 @@ public class AdministratorDTO {
 	public void setAm_profile_link(String am_profile_link) {
 		this.am_profile_link = am_profile_link;
 	}//////////
-	
+
 }//////////////////// AdministratorDTO class

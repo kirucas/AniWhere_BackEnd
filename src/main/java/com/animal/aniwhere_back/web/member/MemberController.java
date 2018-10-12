@@ -16,10 +16,4 @@ public class MemberController {
 		return "member/animal.tiles";
 	}
 	
-	@RequestMapping("/adminInfo.aw")
-	public String admin_info() throws Exception {
-		return "member/admin.tiles";
-	}
-	
-	
 }
