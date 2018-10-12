@@ -8,11 +8,11 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.member.AdministratorDTO;
+import com.animal.aniwhere_back.service.member.AllMemberService;
 
 @Repository("adminDAO")
-public class AdministratorDAO implements AllBoardService {
+public class AdministratorDAO implements AllMemberService {
 
 	@Resource(name = "template")
 	private SqlSessionTemplate template;
@@ -30,7 +30,7 @@ public class AdministratorDAO implements AllBoardService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public AdministratorDTO selectOne(Map map) {
-		return null;
+		return template.selectOne("adminSelectOne", map);
 	}////////// selectOne
 
 	@Override
@@ -47,5 +47,10 @@ public class AdministratorDAO implements AllBoardService {
 	public int delete(Map map) {
 		return 0;
 	}////////// delete
+
+	@Override
+	public boolean isMember(Map map) {
+		return (Integer)template.selectOne("adminMemberCheck", map) == 1 ? true : false;
+	}////////// isMember
 
 }//////////////////// AdministratorDAO class

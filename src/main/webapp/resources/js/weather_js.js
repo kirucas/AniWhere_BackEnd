@@ -3,7 +3,8 @@
  */
 
 $(function(){
-	console.log("wha dhkfk tq");
+	
+	/*console.log("wha dhkfk tq");
 	var apiURI = "http://api.openweathermap.org/data/2.5/weather?q="+"Seoul"+"&appid="+"618cbdbc4dd1290f2eddf7d1aecd8f07";
     $.ajax({
         url: apiURI,
@@ -28,7 +29,21 @@ $(function(){
             $("#weather_cel").text(cel.substring(0,4)+"°C");
             $("#weather_city").text(resp.name);
         }
-    })
+    });*/
 
+    $.ajax({
+    	url: "http://api.openweathermap.org/data/2.5/weather?q="+"Seoul"+"&appid="+"618cbdbc4dd1290f2eddf7d1aecd8f07",
+    	dataType: "json",
+    	success: printWeather,
+    	error: function(error){
+    		console.log("error : " + error);
+    	}
+    });
     
 });
+
+var printWeather = function(data){
+	$("#weather_img").prop("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+	$("#weather_cel").prop("value", String(data.main.temp-273.15).substring(0,4)+"°C");
+	$("#weather_city").prop("value", data.name);
+};

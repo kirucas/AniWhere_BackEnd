@@ -8,11 +8,11 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.member.AllMemberService;
 import com.animal.aniwhere_back.service.member.MemberDTO;
 
 @Repository
-public class MemberDAO implements AllBoardService {
+public class MemberDAO implements AllMemberService {
 
 	@Resource(name = "template")
 	private SqlSessionTemplate template;
@@ -47,5 +47,10 @@ public class MemberDAO implements AllBoardService {
 	public int delete(Map map) {
 		return 0;
 	}////////// delete
+
+	@Override
+	public boolean isMember(Map map) {
+		return false;
+	}////////// isMemeber
 
 }//////////////////// MemberDAO class

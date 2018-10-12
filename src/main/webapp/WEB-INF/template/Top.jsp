@@ -6,6 +6,7 @@
 <style>
     @import '<c:url value="/resources/css/top_css.css" />';
 </style>
+
 <!-- Top nav bar start -->
 <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
 
@@ -41,14 +42,14 @@
 			</li>
 			<li class="nav-item dropdown d-none d-xl-inline-block">
 				<a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown">
-					<span class="profile-text">반갑습니다. 성욱님!</span>
+					<span class="profile-text">반갑습니다. ${am_id}님!</span>
 					<img class="img-xs rounded-circle" src="<c:url value='/resources/assets/images/faces/choi.jpg'/>" alt="Profile-image" />
 				</a>
 				<div class="dropdown-menu dropdown-menu-right navbar-dropdown">
 					<a class="dropdown-item mt-2"> 회원 정보 수정 </a>
                     <a class="dropdown-item"> 비밀번호 변경 </a>
                     <a class="dropdown-item"> 마이페이지 </a>
-                    <a class="dropdown-item" href="<c:url value='/sign_in.aw' />"> 로그아웃 </a>
+                    <a class="dropdown-item" href="<c:url value='/admin/sign_out.aw' />"> 로그아웃 </a>
 				</div>
 			</li>
 		</ul>
