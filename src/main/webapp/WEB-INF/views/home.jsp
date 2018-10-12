@@ -84,46 +84,46 @@
     </div>
     <div class="col-md-5 grid-margin">
         <div class="row">
-            <div class="col-md-12 grid-margin">
+            <!-- <div class="col-md-12 grid-margin">
                 <div class="card bg-warning text-white">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
-                                <h3 class="mb-0 font-weight-bold" id="weather_city">서울</h3>
+                                <h3 class="mb-0 font-weight-bold"><span id="weather_city"></span></h3>
                                 <small class="font-weight-light">DAY - 12:07 PM</small>
                             </div>
                             <div class="d-flex align-items-center">
-                                <h1 class="mr-3 font-weight-bold"><p id="weather_cel"></p></h1>
+                                <h1 class="mr-3 font-weight-bold"><span id="weather_cel"></span></h1>
                                 <img src="#" id="weather_img" />
                             </div>
 
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
                         <p class="text-gray">2018 10/11  목요일</p>
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
-                        오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
+						오늘의 동물<br />
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                     <div class="d-flex flex-column ml-2">
                         <span class="d-flex flex-column">
                             <small class="mb-0">전체 게시글 등록수</small>
-                            <p class="font-weight-bold">25개</p>
+                            <span class="font-weight-bold">25개</span>
                         </span>
                     </div>
                 </div>
@@ -154,7 +154,7 @@
                     <div class="d-flex flex-column ml-2">
                         <span class="d-flex flex-column">
                             <small class="mb-0">전체 회원수</small>
-                            <p class="font-weight-bold">30</p>
+                            <span class="font-weight-bold">30</span>
                         </span>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                     <div class="d-flex flex-column ml-2">
                         <span class="d-flex flex-column">
                             <small class="mb-0">오늘의 게시글 등록수</small>
-                            <p class="font-weight-bold">74</p>
+                            <span class="font-weight-bold">74</span>
                         </span>
                     </div>
                 </div>
@@ -184,7 +184,7 @@
                     <div class="d-flex flex-column ml-2">
                         <span class="d-flex flex-column">
                             <small class="mb-0">오늘의 방문자</small>
-                            <p class="font-weight-bold">440</p>
+                            <span class="font-weight-bold">440</span>
                         </span>
                     </div>
                 </div>
@@ -192,5 +192,3 @@
         </div>
     </div>
 </div>
-
-

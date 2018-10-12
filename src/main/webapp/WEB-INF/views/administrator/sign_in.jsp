@@ -20,8 +20,21 @@
     <link rel="stylesheet" href="<c:url value='/resources/assets/css/shared/style.css' />">
     <!-- endinject -->
     <link rel="shortcut icon" href="<c:url value='/resources/assets/images/favicon.png' />" />
+    
 </head>
 <body>
+	
+	<c:if test="${not empty signInFail }">
+		<script>
+			alert("${signInFail}");
+		</script>
+	</c:if>
+	<c:if test="${not empty signOutSuccess }">
+		<script>
+			alert("${signOutSuccess}");
+		</script>
+	</c:if>
+
     <div class="container-scroller">
         <div class="container-fluid page-body-wrapper full-page-wrapper">
             <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
@@ -32,7 +45,7 @@
                                 <div class="form-group">
                                     <label class="label">아이디</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="아이디" name="am_id">
+                                        <input type="text" class="form-control" placeholder="Username" name="am_id">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -52,29 +65,25 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-success submit-btn btn-block">로그인</button>
+                                    <button class="btn btn-primary submit-btn btn-block">로그인</button>
                                 </div>
                                 <div class="form-group d-flex justify-content-between">
                                     <div class="form-check form-check-flat mt-0">
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" checked>자동 로그인
+                                            <input type="checkbox" class="form-check-input" checked>아이디 저장
                                         </label>
                                     </div>
-                                    <a href="#" class="text-small forgot-password text-black">비밀번호를<br /> 잊어버렸어요!</a>
+                                    <a href="#" class="text-small forgot-password text-black">비밀번호를 잊어버렸어요</a>
                                 </div>
-                                <!-- <div class="form-group">
-                                  <button class="btn btn-block g-login">
-                                    <img class="mr-3" src="assets/images/file-icons/icon-google.svg" alt="">Google로 로그인</button>
-                                </div> -->
                                 <div class="text-block text-center my-3">
                                     <span class="text-small font-weight-semibold">아직 회원이 아니세요?</span>
-                                    <a href="<c:url value='/main.aw' />" class="text-black text-small">새 아이디 만들어요.</a>
+                                    <a href="register.html" class="text-black text-small">가입하러 가기</a>
                                 </div>
                             </form>
                         </div>
                         <ul class="auth-footer">
                             <li>
-                                <a href="#">문의하기</a>
+                                <a href="<c:url value='/main.aw' />">문의하기</a>
                             </li>
                             <li>
                                 <a href="#">도움말</a>
@@ -90,15 +99,19 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
+  
     <script src="<c:url value='/resources/assets/vendors/js/vendor.bundle.base.js' />"></script>
     <script src="<c:url value='/resources/assets/vendors/js/vendor.bundle.addons.js' />"></script>
+   
     <!-- endinject -->
     <!-- inject:js -->
+
     <script src="<c:url value='/resources/assets/js/shared/off-canvas.js' />"></script>
     <script src="<c:url value='/resources/assets/js/shared/hoverable-collapse.js' />"></script>
     <script src="<c:url value='/resources/assets/js/shared/misc.js' />"></script>
     <script src="<c:url value='/resources/assets/js/shared/settings.js' />"></script>
     <script src="<c:url value='/resources/assets/js/shared/todolist.js' />"></script>
+    
     <!-- endinject -->
 </body>
 </html>

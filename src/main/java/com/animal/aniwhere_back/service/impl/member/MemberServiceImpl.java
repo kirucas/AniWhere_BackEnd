@@ -7,11 +7,11 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.member.AllMemberService;
 import com.animal.aniwhere_back.service.member.MemberDTO;
 
 @Service("memberService")
-public class MemberServiceImpl implements AllBoardService {
+public class MemberServiceImpl implements AllMemberService {
 
 	@Resource(name = "memberDAO")
 	private MemberDAO dao;
@@ -46,5 +46,10 @@ public class MemberServiceImpl implements AllBoardService {
 	public int delete(Map map) {
 		return dao.delete(map);
 	}////////// delete
+
+	@Override
+	public boolean isMember(Map map) {
+		return dao.isMember(map);
+	}////////// isMember
 
 }//////////////////// MemberServiceImpl class
