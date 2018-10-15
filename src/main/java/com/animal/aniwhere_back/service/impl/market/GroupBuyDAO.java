@@ -19,33 +19,33 @@ public class GroupBuyDAO implements AllBoardService {
 	
 	@Override
 	public List<GroupBuyDTO> selectList(Map map) {
-		return null;
+		return template.selectList("groupbuySelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("groupbuyCount", map);
 	}////////// getTotalRecord
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public GroupBuyDTO selectOne(Map map) {
-		return null;
+		return template.selectOne("groupbuySelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		return template.insert("groupbuyInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("groupbuyUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("groupbuyDelete", map);
 	}////////// delete
 
 }//////////////////// GroupBuyDAO class

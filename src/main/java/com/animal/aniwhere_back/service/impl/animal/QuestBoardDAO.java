@@ -19,33 +19,33 @@ public class QuestBoardDAO implements AllBoardService {
 	
 	@Override
 	public List<QuestBoardDTO> selectList(Map map) {
-		return null;
+		return template.selectList("questSelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("questCount", map);
 	}////////// getTotalRecord
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public QuestBoardDTO selectOne(Map map) {
-		return null;
+		return template.selectOne("questSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		return template.insert("questInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("questUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("questDelete", map);
 	}////////// delete
 
 }//////////////////// QuestBoardDAO class

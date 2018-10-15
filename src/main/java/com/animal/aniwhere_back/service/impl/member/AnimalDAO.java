@@ -19,33 +19,33 @@ public class AnimalDAO implements AllBoardService {
 	
 	@Override
 	public List<AnimalDTO> selectList(Map map) {
-		return null;
+		return template.selectList("animalSelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("animalCount", map);
 	}////////// getTotalRecord
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public AnimalDTO selectOne(Map map) {
-		return null;
+		return template.selectOne("animalSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		return template.insert("animalInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("animalUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("animalDelete", map);
 	}////////// delete
 
 }//////////////////// AnimalDAO class

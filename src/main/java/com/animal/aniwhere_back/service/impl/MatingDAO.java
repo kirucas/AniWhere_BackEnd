@@ -19,33 +19,33 @@ public class MatingDAO implements AllBoardService {
 
 	@Override
 	public List<MatingDTO> selectList(Map map) {
-		return null;
+		return template.selectList("matingSelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("matingCount", map);
 	}////////// getTotalRecord
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public MatingDTO selectOne(Map map) {
-		return null;
+		return template.selectOne("matingSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		return template.insert("matingInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("matingUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("matingDelete", map);
 	}////////// delete
 
 }//////////////////// MatingBoardDAO
