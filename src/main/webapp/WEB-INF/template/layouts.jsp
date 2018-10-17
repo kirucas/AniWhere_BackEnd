@@ -76,6 +76,7 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4e7a6796733219cf42afaa0cc7475a98"></script>
     <%-- <script src="<c:url value='/resources/js/weather_js.js' />"></script> --%><!-- weather api error로 인해서 현재 제거 -->
     <script src="<c:url value='/resources/js/integration_js.js' />"></script>
+    <jsp:include page="/resources/js/animal_board.jsp" />
     <!-- End custom js for this page-->
 </body>
 

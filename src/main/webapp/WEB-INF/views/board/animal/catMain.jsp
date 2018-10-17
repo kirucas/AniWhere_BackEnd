@@ -25,61 +25,67 @@
                         <div class="tab-content tab-content-basic">
                             <div class="tab-pane fade show active" id="catPhoto" role="tabpanel" aria-labelledby="cat_photo">
                                  <table class="table">
-                                     <thead>
-                                         <tr>
-                                             <th>번호</th>
-                                             <th>카테고리</th>
-                                             <th>제목</th>
-                                             <th>글쓴이</th>
-                                             <th>날짜</th>
-                                         </tr>
-                                     </thead>
-                                     <tbody>
-                                         <tr>
-                                             <td>1</td>
-                                             <td>자유</td>
-                                             <td>
-				안녕하세요 샘플입니다. <label class="badge badge-success">20</label>
-                                             </td>
-                                             <td>최성욱</td>
-                                             <td>2018-10-04</td>
-                                         </tr>
-                                         <tr>
-                                             <td>2</td>
-                                             <td>자유</td>
-                                             <td>
-				안녕하세요 샘플입니다. <label class="badge badge-success">15</label>
-                                             </td>
-                                             <td>최성욱</td>
-                                             <td>2018-10-04</td>
-                                         </tr>
-                                         <tr>
-                                             <td>3</td>
-                                             <td>자유</td>
-                                             <td>
-				안녕하세요 샘플입니다. <label class="badge badge-success">1</label>
-                                             </td>
-                                             <td>최성욱</td>
-                                             <td>2018-10-04</td>
-                                         </tr>
-                                         <tr>
-                                             <td>4</td>
-                                             <td>자유</td>
-                                             <td>안녕하세요 샘플입니다.</td>
-                                             <td>최성욱</td>
-                                             <td>2018-10-04</td>
-                                         </tr>
-                                         <tr>
-                                             <td>5</td>
-                                             <td>자유</td>
-                                             <td>
-				안녕하세요 샘플입니다. <label class="badge badge-success">99</label>
-                                             </td>
-                                             <td>최성욱</td>
-                                             <td>2018-10-04</td>
-                                         </tr>
-                                     </tbody>
-                                 </table>
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>글쓴이</th>
+                                            <th>날짜</th>
+                                            <th>조회수</th>
+                                            <th>추천수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+												안녕하세요 샘플입니다. <label class="badge badge-success">20</label>
+                                            </td>
+                                            <td>최성욱</td>
+                                            <td>2018-10-04</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>
+												안녕하세요 샘플입니다. <label class="badge badge-success">15</label>
+                                            </td>
+                                            <td>최성욱</td>
+                                            <td>2018-10-04</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>
+												안녕하세요 샘플입니다. <label class="badge badge-success">1</label>
+                                            </td>
+                                            <td>최성욱</td>
+                                            <td>2018-10-04</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>안녕하세요 샘플입니다.</td>
+                                            <td>최성욱</td>
+                                            <td>2018-10-04</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>
+												안녕하세요 샘플입니다. <label class="badge badge-success">99</label>
+                                            </td>
+                                            <td>최성욱</td>
+                                            <td>2018-10-04</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                  <!-- 페이징 -->
                                  <div class="container" style="text-align:center;">
                                  <div class="row" style="display:inline-block;">
