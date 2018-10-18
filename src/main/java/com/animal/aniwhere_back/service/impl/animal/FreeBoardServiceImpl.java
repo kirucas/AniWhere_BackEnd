@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.animal.FreeBoardDTO;
 
-@Service("freeBoardService")
+@Service("freeService")
 public class FreeBoardServiceImpl implements AllBoardService {
 
 	@Resource(name = "freeBoardDAO")

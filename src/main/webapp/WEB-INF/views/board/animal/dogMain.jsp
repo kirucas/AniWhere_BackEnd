@@ -10,20 +10,20 @@
                     <div class="col-md-12 pl-md-11">
                         <ul class="nav nav-tabs tab-basic" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="photo" title="dog" data-toggle="tab" href="#dogPhoto" role="tab" aria-controls="dogPhoto" aria-selected="true">사진</a>
+                                <a class="nav-link active" id="phototab" title="dog" data-toggle="tab" href="#photo" role="tab" aria-controls="dogPhoto" aria-selected="true">사진</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="movie" title="dog" data-toggle="tab" href="#dogMovie" role="tab" aria-controls="dogMovie" aria-selected="false">동영상</a>
+                                <a class="nav-link" id="movietab" title="dog" data-toggle="tab" href="#movie" role="tab" aria-controls="dogMovie" aria-selected="false">동영상</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="tip" title="dog" data-toggle="tab" href="#dogTip" role="tab" aria-controls="dogTip" aria-selected="false">팁</a>
+                                <a class="nav-link" id="tiptab" title="dog" data-toggle="tab" href="#tip" role="tab" aria-controls="dogTip" aria-selected="false">팁</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="qna" title="dog" data-toggle="tab" href="#dogQna" role="tab" aria-controls="dogQna" aria-selected="false">Q&A</a>
+                                <a class="nav-link" id="qnatab" title="dog" data-toggle="tab" href="#qna" role="tab" aria-controls="dogQna" aria-selected="false">Q&A</a>
                             </li>
                         </ul>
                         <div class="tab-content tab-content-basic">
-                            <div class="tab-pane fade show active" id="dogPhoto" role="tabpanel">
+                            <div class="tab-pane fade show active" id="photo" role="tabpanel">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -37,55 +37,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>
-												안녕하세요 샘플입니다. <label class="badge badge-success">20</label>
-                                            </td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>
-												안녕하세요 샘플입니다. <label class="badge badge-success">15</label>
-                                            </td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>
-												안녕하세요 샘플입니다. <label class="badge badge-success">1</label>
-                                            </td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>안녕하세요 샘플입니다.</td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>
-												안녕하세요 샘플입니다. <label class="badge badge-success">99</label>
-                                            </td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                        	<td colspan="6">구분선</td>
+                                        	<td colspan="6" style="text-align: center">구분선</td>
                                         </tr>
                                         <c:if test="${not empty list}" var="photoCheck">
 	                                        <c:forEach items="${list }" var="item">
@@ -143,14 +95,53 @@
                                 <!-- 페이징 끝 -->
 
                             </div>
-                            <div class="tab-pane fade" id="dogMovie" role="tabpanel">
-								동영상 게시판 위치
+                            <div class="tab-pane fade" id="movie" role="tabpanel">
+								<table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>작성자</th>
+                                            <th>날짜</th>
+                                            <th>조회수</th>
+                                            <th>추천수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="tab-pane fade" id="dogTip" role="tabpanel">
-								팁 게시판 위치
+                            <div class="tab-pane fade" id="tip" role="tabpanel">
+								<table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>작성자</th>
+                                            <th>날짜</th>
+                                            <th>조회수</th>
+                                            <th>추천수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="tab-pane fade" id="dogQna" role="tabpanel">
-								Q&A 게시판 위치
+                            <div class="tab-pane fade" id="qna" role="tabpanel">
+								<table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>작성자</th>
+                                            <th>날짜</th>
+                                            <th>조회수</th>
+                                            <th>추천수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

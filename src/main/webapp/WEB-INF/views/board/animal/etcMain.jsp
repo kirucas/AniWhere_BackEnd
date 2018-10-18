@@ -10,20 +10,20 @@
                     <div class="col-md-12 pl-md-11">
                         <ul class="nav nav-tabs tab-basic" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="etc_photo" data-toggle="tab" href="#etcPhoto" role="tab" aria-controls="etcPhoto" aria-selected="true">사진</a>
+                                <a class="nav-link active" id="phototab" title="etc" data-toggle="tab" href="#photo" role="tab" aria-controls="etcPhoto" aria-selected="true">사진</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="etc_movie" data-toggle="tab" href="#etcMovie" role="tab" aria-controls="etcMovie" aria-selected="false">동영상</a>
+                                <a class="nav-link" id="movietab" title="etc" data-toggle="tab" href="#movie" role="tab" aria-controls="etcMovie" aria-selected="false">동영상</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="etc_tip" data-toggle="tab" href="#etcTip" role="tab" aria-controls="etcTip" aria-selected="false">팁</a>
+                                <a class="nav-link" id="tiptab" title="etc" data-toggle="tab" href="#tip" role="tab" aria-controls="etcTip" aria-selected="false">팁</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="etc_qna" data-toggle="tab" href="#etcQna" role="tab" aria-controls="etcQna" aria-selected="false">Q&A</a>
+                                <a class="nav-link" id="qnatab" title="etc" data-toggle="tab" href="#qna" role="tab" aria-controls="etcQna" aria-selected="false">Q&A</a>
                             </li>
                         </ul>
                         <div class="tab-content tab-content-basic">
-                            <div class="tab-pane fade show active" id="etcPhoto" role="tabpanel" aria-labelledby="etc_photo">
+                            <div class="tab-pane fade show active" id="photo" role="tabpanel" aria-labelledby="etc_photo">
                                  <table class="table">
                                     <thead>
                                         <tr>
@@ -37,53 +37,25 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>
-												안녕하세요 샘플입니다. <label class="badge badge-success">20</label>
-                                            </td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
+                                        	<td colspan="6" style="text-align: center">구분선</td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>
-												안녕하세요 샘플입니다. <label class="badge badge-success">15</label>
-                                            </td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>
-												안녕하세요 샘플입니다. <label class="badge badge-success">1</label>
-                                            </td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>안녕하세요 샘플입니다.</td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>
-												안녕하세요 샘플입니다. <label class="badge badge-success">99</label>
-                                            </td>
-                                            <td>최성욱</td>
-                                            <td>2018-10-04</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                        </tr>
+                                        <c:if test="${not empty list}" var="photoCheck">
+	                                        <c:forEach items="${list }" var="item">
+	                                        	<tr>
+	                                        		<td>${item.photo_no}</td>
+	                                        		<td>${item.photo_title }</td>
+	                                        		<td>${item.mem_nickname }</td>
+	                                        		<td>${item.photo_regidate }</td>
+	                                        		<td>${item.photo_count }</td>
+	                                        		<td>${item.photo_hit }</td>
+	                                        	</tr>
+	                                        </c:forEach>
+                                        </c:if>
+                                        <c:if test="${not photoCheck}">
+                                        	<tr>
+                                        		<td colspan="6" style="text-align: center;">현재 등록된 글이 없습니다.</td>
+                                        	</tr>
+                                        </c:if>
                                     </tbody>
                                 </table>
                                  <!-- 페이징 -->
@@ -122,14 +94,53 @@
                                  <!-- 페이징 끝 -->
 
                             </div>
-                            <div class="tab-pane fade" id="etcMovie" role="tabpanel" aria-labelledby="etc_movie">
-								동영상 게시판 위치
+                            <div class="tab-pane fade" id="movie" role="tabpanel" aria-labelledby="etc_movie">
+                            	<table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>작성자</th>
+                                            <th>날짜</th>
+                                            <th>조회수</th>
+                                            <th>추천수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="tab-pane fade" id="etcTip" role="tabpanel" aria-labelledby="etc_tip">
-								팁 게시판 위치
+                            <div class="tab-pane fade" id="tip" role="tabpanel" aria-labelledby="etc_tip">
+                            	<table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>작성자</th>
+                                            <th>날짜</th>
+                                            <th>조회수</th>
+                                            <th>추천수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="tab-pane fade" id="etcQna" role="tabpanel" aria-labelledby="etc_qna">
-                                Q&A 게시판 위치
+                            <div class="tab-pane fade" id="qna" role="tabpanel" aria-labelledby="etc_qna">
+                            	<table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>작성자</th>
+                                            <th>날짜</th>
+                                            <th>조회수</th>
+                                            <th>추천수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
