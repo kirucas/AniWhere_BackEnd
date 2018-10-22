@@ -8,6 +8,14 @@
 	<select id="groupbuyCount" parameterType="java.util.Map" resultType="int">
 		SELECT COUNT(*)
 		FROM market_group_buy
+		
+		SELECT COUNT(*)
+		FROM (
+			SELECT mgb.*, mem_nickname, animal_name
+			FROM market_group_buy mgb JOIN member mb ON mbg.mem_no=mb.mem_no
+			JOIN animal_category ac ON mbg.animal_code = ac.animal_code
+			WHERE 
+			)
 	</select>
 	
 	<select id="groupbuySelectList" parameterType="java.util.Map" resultType="GroupDTO">
