@@ -20,59 +20,6 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>자유</td>
-                            <td>
-                                안녕하세요 샘플입니다. <label class="badge badge-success">20</label>
-                            </td>
-                            <td>최성욱</td>
-                            <td>2018-10-04</td>
-                            <td>2</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>자유</td>
-                            <td>
-                                안녕하세요 샘플입니다. <label class="badge badge-success">15</label>
-                            </td>
-                            <td>최성욱</td>
-                            <td>2018-10-04</td>
-                            <td>2</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>자유</td>
-                            <td>
-                                안녕하세요 샘플입니다. <label class="badge badge-success">1</label>
-                            </td>
-                            <td>최성욱</td>
-                            <td>2018-10-04</td>
-                            <td>2</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>자유</td>
-                            <td>안녕하세요 샘플입니다.</td>
-                            <td>최성욱</td>
-                            <td>2018-10-04</td>
-                            <td>2</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>자유</td>
-                            <td>
-                                안녕하세요 샘플입니다. <label class="badge badge-success">99</label>
-                            </td>
-                            <td>최성욱</td>
-                            <td>2018-10-04</td>
-                            <td>2</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
                         	<td colspan="7" style="text-align: center;">구분선</td>
                         </tr>
                         <c:if test="${not empty list }" var="freeCheck">
