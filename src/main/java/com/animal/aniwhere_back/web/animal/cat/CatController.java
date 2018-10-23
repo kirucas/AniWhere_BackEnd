@@ -25,7 +25,7 @@ import com.animal.aniwhere_back.service.impl.animal.TipBoardServiceImpl;
 @Controller
 public class CatController {
 	
-	public static final String CATEGORY = "cat_";
+	public static final String ANI_CATEGORY = "2";
 
 	@Resource(name = "photoService")
 	private PhotoBoardServiceImpl pService;
@@ -44,7 +44,9 @@ public class CatController {
 		
 		Map map = new HashMap();
 
-		map.put("table_name", CATEGORY + "photo");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
@@ -63,7 +65,9 @@ public class CatController {
 
 		Map map = new HashMap();
 
-		map.put("table_name", CATEGORY + "photo");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
@@ -95,7 +99,9 @@ public class CatController {
 
 		Map map = new HashMap();
 
-		map.put("table_name", CATEGORY + "movie");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 
 		List<MovieBoardDTO> list = mService.selectList(map);
 
@@ -128,7 +134,9 @@ public class CatController {
 
 		Map map = new HashMap();
 
-		map.put("table_name", CATEGORY + "tip");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 
 		List<TipBoardDTO> list = tService.selectList(map);
 
@@ -161,7 +169,9 @@ public class CatController {
 		
 		Map map = new HashMap();
 		
-		map.put("table_name", CATEGORY + "quest");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 		
 		List<QuestBoardDTO> list = qService.selectList(map);
 		
