@@ -25,6 +25,7 @@
 		<typeAlias type="com.animal.aniwhere_back.service.NoticeDTO" alias="NoticeDTO" />
 		<typeAlias type="com.animal.aniwhere_back.service.StoreLocationDTO" alias="StoreDTO" />
 		<typeAlias type="com.animal.aniwhere_back.service.market.GroupBuyingListDTO" alias="BuyingDTO" />
+		<typeAlias type="com.animal.aniwhere_back.service.miss.LostAnimalDTO" alias="LostDTO" />
 	</typeAliases>
 
 	<!-- 매퍼파일(SQL쿼리 결과와 자바빈 매핑) 정보 설정 -->
@@ -45,5 +46,7 @@
 		<mapper resource="mybatis/Tip.xml" />
 		<mapper resource="mybatis/Notice.xml" />
 		<mapper resource="mybatis/StoreLocation.xml" />
+		<mapper resource="mybatis/BuyingList.xml" />
+		<mapper resource="mybatis/LostAnimal.xml" />
 	</mappers>
 </configuration>
