@@ -18,6 +18,8 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
@@ -31,13 +33,15 @@ import com.animal.aniwhere_back.service.impl.miss.LostAnimalServiceImpl;
 @Component
 public class SchedulerService {
 
+	private static final String SERVICE_KEY = "1zLzET%2FMkwIpN%2F3VKRAl5vki1mzNsqQ5oKnR3oCnr1YWgOCtn8JOvSdIT8DYsv9vjCCUGt%2F0ENoh8ity5agNiQ%3D%3D";
+	
 	@Resource(name = "lostAniService")
 	private LostAnimalServiceImpl serviceLost;
 	
 	@Resource(name = "StoreLocService")
 	private StoreLocationServiceImpl serviceStore;
 	
-	@Scheduled(cron = "0 47 * * * *")
+	@Scheduled(cron = "0 40 * * * *")
 	public void doingScheduled() throws Exception {
 		System.out.println("doingScheduled method start");
 		AnotherThread thread = new AnotherThread();
@@ -58,7 +62,7 @@ public class SchedulerService {
 	public void getAllApiData() {
 
 		// api data insert & update
-		getApiLostAnimal();
+		//getApiLostAnimal();
 		getApiStoreLocation();
 
 	}////////// getAllApiData
@@ -72,7 +76,7 @@ public class SchedulerService {
 		HttpURLConnection conn = null;
 		try {
 
-			urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=1zLzET%2FMkwIpN%2F3VKRAl5vki1mzNsqQ5oKnR3oCnr1YWgOCtn8JOvSdIT8DYsv9vjCCUGt%2F0ENoh8ity5agNiQ%3D%3D"); /* Service Key */
+			urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=" + SERVICE_KEY); /* Service Key */
 			
 			Calendar calendar = Calendar.getInstance();
 
@@ -163,27 +167,28 @@ public class SchedulerService {
 					default:
 						map.put(node.getNodeName(), node.getTextContent());
 					}
-					
+
 				}
-				
+
 				queryOperatingLost(map);
-				
+
 				System.out.println();
-				
+
 			}
 
 			System.out.println("nList length : " + nList.getLength());
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if(rd != null)
+			if (rd != null)
 				try {
 					rd.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			if(conn != null) conn.disconnect();
+			if (conn != null)
+				conn.disconnect();
 		}
 		
 		System.out.println("getApiLostAnimal method end");
@@ -214,6 +219,67 @@ public class SchedulerService {
 
 	public void getApiStoreLocation() {
 
+		StringBuilder urlBuilder = null;
+		HttpURLConnection conn = null;
+		BufferedReader rd = null;
+		
+		try {
+			urlBuilder = new StringBuilder("http://apis.data.go.kr/B553077/api/open/sdsc/storeListInUpjong"); /*URL*/
+	        urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + SERVICE_KEY); /*Service Key*/
+	        urlBuilder.append("&" + URLEncoder.encode("divId","UTF-8") + "=" + URLEncoder.encode("indsSclsCd", "UTF-8")); /* 구분 ID : 소분류 */
+	        urlBuilder.append("&" + URLEncoder.encode("key","UTF-8") + "=" + URLEncoder.encode("D09A01", "UTF-8")); /* 업종 코드 값(소분류 코드) */
+	        urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /* 페이지당 건수 */
+	        urlBuilder.append("&" + URLEncoder.encode("type", "UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /* 요청 타입(JSON) */
+	        
+	        URL url = new URL(urlBuilder.toString());
+	        conn = (HttpURLConnection) url.openConnection();
+	        conn.setRequestMethod("GET");
+	        conn.setRequestProperty("Content-type", "application/json");
+	        
+	        System.out.println("Response code: " + conn.getResponseCode());
+	        if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+	            rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	        } else {
+	            rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+	        }
+	        
+	        StringBuilder sb = new StringBuilder();
+	        String line;
+	        while ((line = rd.readLine()) != null) {
+	            sb.append(line);
+	        }
+	        
+	        
+	        JSONParser parser = new JSONParser();
+	        JSONObject rootObject = (JSONObject) parser.parse(sb.toString());
+	        
+	        System.out.println(rootObject.toJSONString());
+	        
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rd != null)
+				try {
+					rd.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			if(conn != null)
+				conn.disconnect();
+		}
+        
+		/*
+		D09A01
+		D09A02
+		D25A16
+		D25A25
+		Q12A07
+		S04A01
+		S04A02
+		S04A03
+		*/
+        
 	}////////// getApiStoreLocation
 	
 	public void queryOperatingStore(Map<String, Object> map) {
