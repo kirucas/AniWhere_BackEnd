@@ -36,34 +36,36 @@
                             <div class="col-md-12 grid-margin">
 							    <div class="row">
 	       							<div class="col-md-12 grid-margin stretch-card">
-						                <div class="card">
-						                  <div class="card-body">
-						                    <h4 class="card-title">회원가입 통계</h4>
-						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
-						                      <div id="member-chart" class="google-charts"></div>
+						                <!-- <div class="card">
+						                  <div class="card-body"> -->
+						                    <!-- <h4 class="card-title">회원가입 통계</h4> -->
+						                    <div class="col-md-12">
+							                    <div class="google-chart-container d-flex justify-content-center h-100">
+							                      <div id="member-chart" class="google-charts"></div>
+							                    </div>
 						                    </div>
-						                  </div>
-						                </div>
+						                  <!-- </div>
+						                </div> -->
 						              </div>
-						              <div class="col-md-6 grid-margin stretch-card">
-						                <div class="card">
+						              <div class="col-md-6 grid-margin<!--  stretch-card -->">
+						                <!-- <div class="card">
 						                  <div class="card-body">
-						                    <h4 class="card-title">전체 게시글 통계</h4>
+						                    <h4 class="card-title">전체 게시글 통계</h4> -->
 						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
 						                      <div id="board-chart" class="google-charts"></div>
 						                    </div>
-						                  </div>
-						                </div>
+						                <!--   </div>
+						                </div>-->
 						              </div>
 						               <div class="col-md-6 grid-margin stretch-card">
-								         <div class="card">
+								        <!--  <div class="card">
 								           <div class="card-body">
-								             <h4 class="card-title">전체 동물 종류별 통계</h4>
+								             <h4 class="card-title">전체 동물 종류별 통계</h4> -->
 								             <div class="google-chart-container">
 								               <div id="animal-chart" class="google-charts"></div>
 								             </div>
-								           </div>
-								         </div>
+								           <!-- </div>
+								         </div> -->
 								       </div>
 						              <div class="col-md-12 grid-margin stretch-card">
 						                <div class="card">
@@ -100,21 +102,54 @@
 
                            </div><!-- tap -->
                             <!-- 전체 통계 끝 -->
+                            
+                            <!-- 강아지 통계 시작 -->
                             <div class="tab-pane fade" id="statisticsDog" role="tabpanel" aria-labelledby="statistics_dog">
-								강아지 통계 위치
-                            </div>
+	                            <div class="col-md-12 grid-margin">
+								    <div class="row">
+										<div class="col-md-12 grid-margin stretch-card">
+							                <div class="card">
+							                  <div class="card-body">
+							                    <h4 class="card-title">강아지 게시글 통계</h4>
+							                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+							                      <div id="dog-board-chart" class="google-charts"></div>
+							                    </div>
+							                  </div>
+							                </div>
+							              </div>
+						              
+									</div><!-- row -->
+								</div><!-- col-md-12 -->
+                            </div><!-- tab-pane -->
+                            <!-- 강아지 통계 끝 -->
+                            
+                            
+                            <!-- 고양이 통계 시작 -->
                             <div class="tab-pane fade" id="statisticsCat" role="tabpanel" aria-labelledby="statistics_cat">
 								고양이 통계 위치
                             </div>
+                            <!-- 고양이 통계 끝 -->
+                            
+                            
+                            <!-- 파양 통계 시작 -->
                             <div class="tab-pane fade" id="statisticsRna" role="tabpanel" aria-labelledby="statistics_rna">
                                 	파충류&양서류 통계 위치
                             </div>
+                            <!-- 파양 통계 끝 -->
+                            
+                            
+                            <!-- 조류 통계 시작 -->
                             <div class="tab-pane fade" id="statisticsBird" role="tabpanel" aria-labelledby="statistics_bird">
                                 	조류 통계 위치
                             </div>
+                            <!-- 조류 통계 끝 -->
+                            
+                            
+                            <!-- 기타 포유류 통계 시작 -->
                             <div class="tab-pane fade" id="statisticsEtc" role="tabpanel" aria-labelledby="statistics_etc">
                                 	기타 포유류 통계 위치
                             </div>
+                            <!-- 기타 포유류 통계 끝 -->
                         </div>
                     </div>
                 </div>
