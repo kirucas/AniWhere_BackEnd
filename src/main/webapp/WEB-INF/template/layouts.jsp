@@ -15,6 +15,7 @@
 	<!-- plugins:css -->
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/puse-icons-feather/feather.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.base.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.addons.css' />">
     <!-- endinject -->
@@ -72,9 +73,10 @@
     <script src="<c:url value='/resources/assets/js/demo_1/dashboard_2.js' />"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="<c:url value='/resources/assets/js/shared/google-charts.js'/>"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4e7a6796733219cf42afaa0cc7475a98"></script>
-    <script src="<c:url value='/resources/js/weather_js.js' />"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a4fb652ba7630c5395293fd0480943a"></script>
+    <%-- <script src="<c:url value='/resources/js/weather_js.js' />"></script> --%><!-- weather api error로 인해서 현재 제거 -->
     <script src="<c:url value='/resources/js/integration_js.js' />"></script>
+    <jsp:include page="/resources/js/animal_board.jsp" />
     <!-- End custom js for this page-->
 </body>
 

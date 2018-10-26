@@ -19,33 +19,33 @@ public class ReservationDAO implements AllBoardService {
 
 	@Override
 	public List<ReservationDTO> selectList(Map map) {
-		return null;
+		return template.selectList("reservationSelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("reservationCount", map);
 	}////////// getTotalRecord
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public ReservationDTO selectOne(Map map) {
-		return null;
+		return template.selectOne("reservationSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		return template.insert("reservationInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("reservationUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("reservationDelete", map);
 	}////////// delete
 
 }//////////////////// ReservationDAO class

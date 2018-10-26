@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.animal.QuestBoardDTO;
 
-@Service("questSevice")
+@Service("questService")
 public class QuestBoardServiceImpl implements AllBoardService {
 
 	@Resource(name = "questBoardDAO")

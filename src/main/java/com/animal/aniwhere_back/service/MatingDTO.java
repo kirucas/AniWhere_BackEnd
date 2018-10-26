@@ -10,6 +10,7 @@ public class MatingDTO {
 	// 해당 동물의 정보를 저장하기 위한 속성 추가
 	private String ani_name;
 	private String ani_age;
+	private String ani_gender;
 	private String ani_species;
 	private String ani_kind;
 	private String ani_pic;
@@ -104,6 +105,14 @@ public class MatingDTO {
 
 	public void setMem_nickname(String mem_nickname) {
 		this.mem_nickname = mem_nickname;
+	}//////////
+
+	public String getAni_gender() {
+		return ani_gender;
+	}//////////
+	
+	public void setAni_gender(String ani_gender) {
+		this.ani_gender = ani_gender;
 	}//////////
 
 }//////////////////// MatinBoardDTO class

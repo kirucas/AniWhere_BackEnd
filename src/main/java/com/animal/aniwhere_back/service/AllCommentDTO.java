@@ -10,7 +10,7 @@ public class AllCommentDTO {
 	private java.sql.Date regidate;
 
 	// 작성자 별명을 저장하기 위한 속성 추가
-	private String mem_name;
+	private String mem_nickname;
 
 	public String getCmt_no() {
 		return cmt_no;
@@ -60,12 +60,12 @@ public class AllCommentDTO {
 		this.regidate = regidate;
 	}//////////
 
-	public String getMem_name() {
-		return mem_name;
+	public String getMem_nickname() {
+		return mem_nickname;
 	}//////////
 
-	public void setMem_name(String mem_name) {
-		this.mem_name = mem_name;
+	public void setMem_nickname(String mem_nickname) {
+		this.mem_nickname = mem_nickname;
 	}//////////
 
 }//////////////////// PhotoCommentDTO class

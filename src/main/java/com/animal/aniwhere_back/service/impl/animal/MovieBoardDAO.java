@@ -19,33 +19,33 @@ public class MovieBoardDAO implements AllBoardService {
 
 	@Override
 	public List<MovieBoardDTO> selectList(Map map) {
-		return null;
+		return template.selectList("movieSelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("movieCount", map);
 	}////////// getTotalRecord
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public MovieBoardDTO selectOne(Map map) {
-		return null;
+		return template.selectOne("movieSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		return template.insert("movieInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("movieUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("movieDelete", map);
 	}////////// delete
 
 }//////////////////// MovieBoardDAO class

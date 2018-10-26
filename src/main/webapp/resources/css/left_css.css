@@ -19,7 +19,7 @@
     height: 100%;
 }
 
-.nav-link img {
+.nav-link>img {
 	width: 30px;
 	height: 30px;
 }
