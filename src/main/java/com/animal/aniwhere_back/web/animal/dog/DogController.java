@@ -25,7 +25,7 @@ import com.animal.aniwhere_back.service.impl.animal.TipBoardServiceImpl;
 @Controller
 public class DogController {
 
-	public static final String CATEGORY = "dog_";
+	public static final String ANI_CATEGORY = "1";
 
 	@Resource(name = "photoService")
 	private PhotoBoardServiceImpl pService;
@@ -44,13 +44,13 @@ public class DogController {
 
 		Map map = new HashMap();
 
-		map.put("table_name", CATEGORY + "photo");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
 		model.addAttribute("list", list);
-
-		System.out.println("/dog/main.aw");
 
 		return "board/animal/dogMain.tiles";
 	}////////// dog_main
@@ -59,11 +59,11 @@ public class DogController {
 	@RequestMapping(value = "/dog/photo_list.awa", produces = "text/plain; charset=UTF-8")
 	public String photo_list() throws Exception {
 
-		System.out.println("list start");
-
 		Map map = new HashMap();
 
-		map.put("table_name", CATEGORY + "photo");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
@@ -81,8 +81,6 @@ public class DogController {
 			collections.add(record);
 		}
 
-		System.out.println("list end");
-
 		return JSONArray.toJSONString(collections);
 
 	}////////// photo_list
@@ -91,11 +89,11 @@ public class DogController {
 	@RequestMapping(value = "/dog/movie_list.awa", produces = "text/plain; charset=UTF-8")
 	public String movie_list() throws Exception {
 
-		System.out.println("movie list start");
-
 		Map map = new HashMap();
 
-		map.put("table_name", CATEGORY + "movie");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 
 		List<MovieBoardDTO> list = mService.selectList(map);
 
@@ -112,9 +110,6 @@ public class DogController {
 
 			collections.add(record);
 		}
-		System.out.println(collections);
-		System.out.println(JSONArray.toJSONString(collections));
-		System.out.println("movie list end");
 
 		return JSONArray.toJSONString(collections);
 
@@ -124,11 +119,11 @@ public class DogController {
 	@RequestMapping(value = "/dog/tip_list.awa", produces = "text/plain; charset=UTF-8")
 	public String tip_list() throws Exception {
 
-		System.out.println("tip list start");
-
 		Map map = new HashMap();
 
-		map.put("table_name", CATEGORY + "tip");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 
 		List<TipBoardDTO> list = tService.selectList(map);
 
@@ -147,8 +142,6 @@ public class DogController {
 			collections.add(record);
 		}
 
-		System.out.println("tip list end");
-
 		return JSONArray.toJSONString(collections);
 
 	}////////// tip_list
@@ -157,11 +150,11 @@ public class DogController {
 	@RequestMapping(value = "/dog/quest_list.awa", produces = "text/plain; charset=UTF-8")
 	public String quest_list() throws Exception {
 		
-		System.out.println("quest list start");
-		
 		Map map = new HashMap();
 		
-		map.put("table_name", CATEGORY + "quest");
+		map.put("ani_category", ANI_CATEGORY);
+		map.put("start", 1);
+		map.put("end", pService.getTotalRecord(map));
 		
 		List<QuestBoardDTO> list = qService.selectList(map);
 		
@@ -180,8 +173,6 @@ public class DogController {
 			
 			collections.add(record);
 		}
-		
-		System.out.println("quest list end");
 		
 		return JSONArray.toJSONString(collections);
 		

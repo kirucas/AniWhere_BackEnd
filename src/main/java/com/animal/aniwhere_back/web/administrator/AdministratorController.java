@@ -28,7 +28,6 @@ public class AdministratorController {
 
 	@RequestMapping(value = "/admin/signInProcess.aw", method = RequestMethod.POST)
 	public String signInProcess(@RequestParam Map map, Model model, HttpSession session) throws Exception {
-		System.out.println(String.format("signInProcess - id는 : %s | pw는 : %s", map.get("am_id"), map.get("am_pw")));
 
 		if (!service.isMember(map)) {
 			model.addAttribute("signInFail", "ID or PW가 틀립니다");
