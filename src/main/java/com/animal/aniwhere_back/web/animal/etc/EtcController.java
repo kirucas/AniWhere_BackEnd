@@ -101,7 +101,7 @@ public class EtcController {
 
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", mService.getTotalRecord(map));
 
 		List<MovieBoardDTO> list = mService.selectList(map);
 
@@ -136,7 +136,7 @@ public class EtcController {
 
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", tService.getTotalRecord(map));
 
 		List<TipBoardDTO> list = tService.selectList(map);
 
@@ -171,7 +171,7 @@ public class EtcController {
 		
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", qService.getTotalRecord(map));
 		
 		List<QuestBoardDTO> list = qService.selectList(map);
 		
