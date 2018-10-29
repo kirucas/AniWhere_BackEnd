@@ -71,7 +71,7 @@ public class DogController {
 
 		for (PhotoBoardDTO dto : list) {
 			Map record = new HashMap();
-			record.put("photo_no", dto.getPhoto_no());
+			record.put("no", dto.getNo());
 			record.put("photo_title", dto.getPhoto_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("photo_regidate", dto.getPhoto_regidate().toString());
@@ -101,7 +101,7 @@ public class DogController {
 
 		for (MovieBoardDTO dto : list) {
 			Map record = new HashMap();
-			record.put("movie_no", dto.getMovie_no());
+			record.put("no", dto.getNo());
 			record.put("movie_title", dto.getMovie_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("movie_regidate", dto.getMovie_regidate().toString());
@@ -132,7 +132,7 @@ public class DogController {
 		for (TipBoardDTO dto : list) {
 			Map record = new HashMap();
 
-			record.put("tip_no", dto.getTip_no());
+			record.put("no", dto.getNo());
 			record.put("tip_title", dto.getTip_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("tip_regidate", dto.getTip_regidate().toString());
@@ -163,7 +163,7 @@ public class DogController {
 		for(QuestBoardDTO dto : list) {
 			Map record = new HashMap();
 			
-			record.put("quest_no", dto.getQuest_no());
+			record.put("no", dto.getNo());
 			record.put("quest_title", dto.getQuest_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("quest_regidate", dto.getQuest_regidate().toString());

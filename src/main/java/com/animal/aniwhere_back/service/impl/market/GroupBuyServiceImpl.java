@@ -7,11 +7,11 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.AllCommonService;
 import com.animal.aniwhere_back.service.market.GroupBuyDTO;
 
 @Service("groupBuyService")
-public class GroupBuyServiceImpl implements AllBoardService {
+public class GroupBuyServiceImpl implements AllCommonService {
 
 	@Resource(name = "groupBuyDAO")
 	private GroupBuyDAO dao;

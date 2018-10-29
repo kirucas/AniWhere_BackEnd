@@ -10,7 +10,6 @@ import java.net.URLEncoder;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.xml.parsers.DocumentBuilderFactory;
