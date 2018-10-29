@@ -38,27 +38,48 @@
 					</tbody>
 				</table>
 				<!-- 페이징 -->
-				<div class="container" style="text-align: center;">
-					<div class="row" style="display: inline-block;">
-						<div class="col-md-12 text-center">
-							<nav>
-							<ul class="pagination rounded-flat pagination-success">
-								<li class="page-item"><a class="page-link" href="#"> <i
-										class="mdi mdi-chevron-left"></i>
-								</a></li>
-								<li class="page-item active"><a class="page-link" href="#">1</a>
+						<!-- <nav>
+							<ul class="pagination rounded-flat pagination-success d-flex justify-content-center">
+								<li class="page-item">
+									<a class="page-link" href="#">
+										<i class="fa fa-angle-double-left"></i>
+									</a>
 								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">
+										<i class="fa fa-angle-left"></i>
+									</a>
+								</li>
+								<li class="page-item active"><a class="page-link" href="#">1</a></li>
 								<li class="page-item"><a class="page-link" href="#">2</a></li>
 								<li class="page-item"><a class="page-link" href="#">3</a></li>
 								<li class="page-item"><a class="page-link" href="#">4</a></li>
-								<li class="page-item"><a class="page-link" href="#"> <i
-										class="mdi mdi-chevron-right"></i>
-								</a></li>
+								<li class="page-item">
+									<a class="page-link" href="#">
+										<i class="fa fa-angle-right"></i>
+									</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">
+										<i class="fa fa-angle-double-right"></i>
+									</a>
+								</li>
 							</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
+						</nav> -->
+						<%-- ${pagingString} --%>
+						<nav>
+							<ul class='pagination rounded-flat pagination-success d-flex justify-content-center'>
+								<li class='page-item'>
+									<a href='#'>1</a>
+								</li>
+								<li class='page-item'>
+									<a class='page-link' href='buy.aw?nowPage=2'>2</a>
+								</li>
+								<li class='page-item'>
+									<a class='page-link' href='buy.aw?nowPage=3'>3</a>
+								</li>
+							</ul>
+						</nav>
 				<!-- 페이징 끝 -->
 
 			</div>

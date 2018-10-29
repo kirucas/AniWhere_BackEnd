@@ -36,13 +36,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                        	<td colspan="6" style="text-align: center">구분선</td>
-                                        </tr>
                                         <c:if test="${not empty list}" var="photoCheck">
 	                                        <c:forEach items="${list }" var="item">
 	                                        	<tr>
-	                                        		<td>${item.photo_no}</td>
+	                                        		<td>${item.no}</td>
 	                                        		<td>${item.photo_title }</td>
 	                                        		<td>${item.mem_nickname }</td>
 	                                        		<td>${item.photo_regidate }</td>

@@ -8,11 +8,13 @@ import java.util.Vector;
 import javax.annotation.Resource;
 
 import org.json.simple.JSONArray;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.animal.MovieBoardDTO;
 import com.animal.aniwhere_back.service.animal.PhotoBoardDTO;
 import com.animal.aniwhere_back.service.animal.QuestBoardDTO;
@@ -38,19 +40,33 @@ public class DogController {
 
 	@Resource(name = "questService")
 	private QuestBoardServiceImpl qService;
+	
+	@Value("${PAGESIZE}")
+	private int pageSize;
+	@Value("${BLOCKPAGE}")
+	private int blockPage;
 
 	@RequestMapping("/dog/main.aw")
 	public String dog_main(Model model) throws Exception {
 
 		Map map = new HashMap();
-
+		
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", pageSize);
+		
+		int totalRecordCount = pService.getTotalRecord(map);
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
 		model.addAttribute("list", list);
+		
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, 1, "");
+		
+		model.addAttribute("pagingString", pagingString);
+		model.addAttribute("totalRecordCount", totalRecordCount);
+		model.addAttribute("nowPage", 1);
+		model.addAttribute("pageSize", pageSize);
 
 		return "board/animal/dogMain.tiles";
 	}////////// dog_main

@@ -46,21 +46,14 @@ public class SchedulerService {
 	
 	@Scheduled(cron = "0 0 21 * * *")
 	public void doingScheduled() throws Exception {
-		System.out.println("doingScheduled method start");
 		AnotherThread thread = new AnotherThread();
 		thread.start();
-//		getAllApiData();
-		System.out.println("doingScheduled method end");
 	}////////// doingScheduled
 
 	class AnotherThread extends Thread {
 		@Override
 		public void run() {
-			System.out.println("Thread Start Point");
-			
 			getAllApiData();
-
-			System.out.println("Thread End Point");
 		}
 	};
 	
@@ -104,8 +97,6 @@ public class SchedulerService {
 			urlBuilder.append("&" + URLEncoder.encode("endde", "UTF-8") + "=" + URLEncoder.encode(endDate, "UTF-8")); /* 유기날짜 (검색 종료일) (YYYYMMDD) */
 			urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("500", "UTF-8")); /* 페이지당 보여줄 개수 */
 			
-			System.out.println("시작 : " + startDate + " | 끝 : " + endDate);
-		
 			URL url = new URL(urlBuilder.toString());
 			conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
@@ -203,11 +194,9 @@ public class SchedulerService {
 	}////////// getApiLostAnimal
 	
 	public void queryOperatingLost(Map<String, Object> map) {
-		System.out.println("queryOperating method start");
 		System.out.println(map.toString());
 
 		if (map.get("processState").toString().contains("종료")) {
-			System.out.println("종료된 아이");
 			serviceLost.delete(map);
 		} else {
 			System.out.println(serviceLost.selectOne(map));
@@ -216,12 +205,10 @@ public class SchedulerService {
 			if (serviceLost.selectOne(map) != null) {
 				serviceLost.update(map);
 			} else {
-				System.out.println("들어옴");
 				System.out.println(serviceLost.insert(map));
 			}
 		}
 
-		System.out.println("queryOperating method end");
 	}////////// queryOperating
 
 	public void getApiStoreLocation(String store_code) {
@@ -293,7 +280,6 @@ public class SchedulerService {
 				try {
 					rd.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			if(conn != null)
@@ -304,7 +290,6 @@ public class SchedulerService {
 	
 	public void queryOperatingStore(Map<String, Object> map) {
 		
-		System.out.println("queryOperatingStore method start");
 		System.out.println(map.toString());
 		
 		if(serviceStore.selectOne(map) != null) {
@@ -313,8 +298,6 @@ public class SchedulerService {
 		else {
 			serviceStore.insert(map);
 		}
-		
-		System.out.println("queryOperatingStore method end");
 		
 	}////////// queryOperatingStore
 	

@@ -96,7 +96,7 @@ var appendPhoto = function(data){
 		$.each(data, function(colName, value){
 			tableString += '<tr>';
 			
-			tableString += '<td>' + value.photo_no + '</td>';
+			tableString += '<td>' + value.no + '</td>';
 			tableString += '<td>' + value.photo_title + '</td>';
 			tableString += '<td>' + value.mem_nickname + '</td>';
 			tableString += '<td>' + value.photo_regidate + '</td>';
@@ -122,7 +122,7 @@ var appendMovie = function(data){
 		$.each(data, function(colName, value){
 			tableString += '<tr>';
 			
-			tableString += '<td>' + value.movie_no + '</td>';
+			tableString += '<td>' + value.no + '</td>';
 			tableString += '<td>' + value.movie_title + '</td>';
 			tableString += '<td>' + value.mem_nickname + '</td>';
 			tableString += '<td>' + value.movie_regidate + '</td>';
@@ -148,7 +148,7 @@ var appendTip = function(data){
 		$.each(data, function(colNme, value){
 			tableString += '<tr>';
 			
-			tableString += '<td>' + value.tip_no + '</td>';
+			tableString += '<td>' + value.no + '</td>';
 			tableString += '<td>' + value.tip_title + '</td>';
 			tableString += '<td>' + value.mem_nickname + '</td>';
 			tableString += '<td>' + value.tip_regidate + '</td>';
@@ -174,7 +174,7 @@ var appendQuest = function(data){
 		$.each(data, function(colName, value){
 			tableString += '<tr>';
 			
-			tableString += '<td>' + value.quest_no + '</td>';
+			tableString += '<td>' + value.no + '</td>';
 			if(value.quest_checking == '0'){
 				tableString += '<td><span class="badge badge-danger badge-pill">질문</span>';
 			}
