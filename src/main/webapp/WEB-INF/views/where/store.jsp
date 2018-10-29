@@ -5,33 +5,24 @@
 <!-- partial -->
 <div class="card">
   <div class="card-body">
-    <h4 class="card-title">예약 정보</h4>
+    <h4 class="card-title">업체 정보</h4>
     <div class="row">
       <div class="col-12">
         <table id="order-listing" class="table">
           <thead>
             <tr>
-              <th>구분번호</th>
-              <th>회원이름(회원번호)</th>
+              <th>상가 업소번호</th>
               <th>상호명(지점명)</th>
-              <th>신청일</th>
-              <th>예약일</th>
+              <th>상권 업종 소분류명</th>
+              <th>주소</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>김길동(1)</td>
-              <td>코스모(가산점)</td>
-              <td>2018/10/10</td>
-              <td>2018/10/28</td>
-            </tr>
-                        <tr>
-              <td>2</td>
-              <td>박길동(2)</td>
-              <td>코스모(가산점)</td>
-              <td>2018/10/10</td>
-              <td>2018/10/28</td>
+              <td>서울렙타일(충정로점)</td>
+              <td>분양/용품/카페</td>
+              <td>서울특별시 중구 서소문로 8 2층</td>
             </tr>
           </tbody>
         </table>

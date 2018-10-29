@@ -2,6 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<style>
+</style>
 <!-- partial -->
 <div class="row">
 	<div class="col-md-12 grid-margin stretch-card">
@@ -33,69 +35,41 @@
                         <div class="tab-content tab-content-basic">
                         <!-- 전체 통계 -->
                         <div class="tab-pane fade show active" id="statisticsAll" role="tabpanel" aria-labelledby="statistics_all">
-                            <div class="col-md-12 grid-margin">
+                            <div class="col-md-12 grid-margin" style="padding-top:50px;">
 							    <div class="row">
 	       							<div class="col-md-12 grid-margin stretch-card">
-						                <!-- <div class="card">
-						                  <div class="card-body"> -->
-						                    <!-- <h4 class="card-title">회원가입 통계</h4> -->
 						                    <div class="col-md-12">
 							                    <div class="google-chart-container d-flex justify-content-center h-100">
 							                      <div id="member-chart" class="google-charts"></div>
 							                    </div>
 						                    </div>
-						                  <!-- </div>
-						                </div> -->
 						              </div>
 						              <div class="col-md-6 grid-margin<!--  stretch-card -->">
-						                <!-- <div class="card">
-						                  <div class="card-body">
-						                    <h4 class="card-title">전체 게시글 통계</h4> -->
 						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
 						                      <div id="board-chart" class="google-charts"></div>
 						                    </div>
-						                <!--   </div>
-						                </div>-->
 						              </div>
 						               <div class="col-md-6 grid-margin stretch-card">
-								        <!--  <div class="card">
-								           <div class="card-body">
-								             <h4 class="card-title">전체 동물 종류별 통계</h4> -->
 								             <div class="google-chart-container">
 								               <div id="animal-chart" class="google-charts"></div>
 								             </div>
-								           <!-- </div>
-								         </div> -->
 								       </div>
-						              <div class="col-md-12 grid-margin stretch-card">
-						                <div class="card">
-						                  <div class="card-body">
-						                    <h4 class="card-title">만나요 통계</h4>
+						              <div class="col-md-6 grid-margin stretch-card">
 						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
 						                      <div id="mating-chart" class="google-charts"></div>
 						                    </div>
-						                  </div>
-						                </div>
 						              </div>
-						              <div class="col-md-12 grid-margin stretch-card">
-						                <div class="card">
-						                  <div class="card-body">
-						                    <h4 class="card-title">유기동물 통계</h4>
+						              <div class="col-md-6 grid-margin stretch-card">
 						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
 						                      <div id="miss-chart" class="google-charts"></div>
 						                    </div>
-						                  </div>
-						                </div>
 						              </div>
 						              <div class="col-md-12 grid-margin stretch-card">
-						                <div class="card">
-						                  <div class="card-body">
-						                    <h4 class="card-title">예약 통계</h4>
-						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						              	<div class="col-md-12">
+						                    <div class="google-chart-container d-flex justify-content-center h-100">
 						                      <div id="reservation-chart" class="google-charts"></div>
 						                    </div>
-						                  </div>
-						                </div>
+						                 </div>
 						              </div>
 							     </div><!-- row -->
 							</div>
@@ -108,16 +82,12 @@
 	                            <div class="col-md-12 grid-margin">
 								    <div class="row">
 										<div class="col-md-12 grid-margin stretch-card">
-							                <div class="card">
-							                  <div class="card-body">
-							                    <h4 class="card-title">강아지 게시글 통계</h4>
-							                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+											<div class="col-md-12">
+							                    <div class="google-chart-container d-flex justify-content-center h-100">
 							                      <div id="dog-board-chart" class="google-charts"></div>
 							                    </div>
-							                  </div>
-							                </div>
+						                    </div>
 							              </div>
-						              
 									</div><!-- row -->
 								</div><!-- col-md-12 -->
                             </div><!-- tab-pane -->

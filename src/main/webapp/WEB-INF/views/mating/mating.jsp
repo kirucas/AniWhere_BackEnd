@@ -11,70 +11,49 @@
         <table id="order-listing" class="table">
           <thead>
             <tr>
-              <th>매칭신청번호</th>
+              <th>프로필등록번호</th>
               <th>동물번호</th>
               <th>지역</th>
-              <th>매칭신청일자</th>
-              <th>프로필카드 보기</th>
+              <th>등록신청일자</th>
+              <th>정보 보기</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>1</td>
-              <td>서울시 관악구</td>
-              <td>2018/10/10</td>
-              <td>
-                <button class="btn btn-outline-primary">보기</button>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>4</td>
-              <td>서울시 금천구</td>
-              <td>2018/10/10</td>
-              <td>
-                <button class="btn btn-outline-primary">보기</button>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>200</td>
-              <td>경기도 부천시 원미구</td>
-              <td>2018/10/10</td>
-              <td>
-                <button class="btn btn-outline-primary">보기</button>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>99</td>
-              <td>강원도 원주시</td>
-              <td>2018/10/10</td>
-              <td>
-                <button class="btn btn-outline-primary">보기</button>
-              </td>
-            </tr>
             <tr>
               <td>5</td>
               <td>10</td>
               <td>제주도</td>
               <td>2018/10/10</td>
               <td>
-                <button class="btn btn-outline-primary">보기</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>1</td>
-              <td>서울시 관악구</td>
-              <td>2018/10/10</td>
-              <td>
-                <button class="btn btn-outline-primary">보기</button>
+              	<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#matingModal">보기
+                        <i class="mdi mdi-play-circle ml-1"></i>
+              	</button>
               </td>
             </tr>
           </tbody>
         </table>
+        
+           <!-- 모달 상세보기 시작 -->
+           <div class="modal fade" id="matingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-2" aria-hidden="true">
+             <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel-2">상세보기</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                 </div>
+                 <div class="modal-body">
+                   <p>모달의 내용</p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-success">수정</button>
+                   <button type="button" class="btn btn-light" data-dismiss="modal">나가기</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <!-- 모달 상세보기 끝 -->
       </div>
     </div>
   </div>

@@ -293,57 +293,58 @@ google.charts.load('current', {
 		
 		
 /////////////////////////////////강아지 통계 시작///////////////////////////////////////////////////
-		//강아지 게시글 통계
-		google.charts.load('current', {
-			  'packages': ['bar']
-			});
-			google.charts.setOnLoadCallback(drawDogBoard);
-
-			function drawDogBoard() {
-			  var data = new google.visualization.arrayToDataTable([
-			    ['강아지 게시글 통계', '갯수'],
-			    ['1월', 440],
-			    ['2월', 440],
-			    ['3월', 440],
-			    ['4월', 440],
-			    ['5월', 440],
-			    ['6월', 440],
-			    ['7월', 310],
-			    ['8월', 500],
-			    ['9월', 410],
-			    ['10월', 30],
-			    ['11월', 440],
-			    ['12월', 440]
-			  ]);
-
-			  var options = {
-			    title: '강아지 게시글 통계',
-			    legend: {
-			      position: 'none'
-			    },
-			    colors: ['#00FF00'],
-
-			    chartArea: {
-			      width: 401
-			    },
-			    hAxis: {
-			      ticks: [-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1]
-			    },
-			    bar: {
-			      gap: 0
-			    },
-
-			    histogram: {
-			      bucketSize: 0.02,
-			      maxNumBuckets: 200,
-			      minValue: -1,
-			      maxValue: 1
-			    }
-			  };
-
-			  var chart = new google.charts.Bar(document.getElementById('dog-board-chart'));
-			  chart.draw(data, options);
-			};
+	//강아지 게시글 통계
+	
+	google.charts.load('current', {
+	  'packages': ['bar']
+	});
+	google.charts.setOnLoadCallback(drawDogBoard);
+	
+	function drawDogBoard() {
+	  var data = new google.visualization.arrayToDataTable([
+	    ['강아지 게시글 통계', '갯수'],
+		['1월', 440],
+		['2월', 440],
+		['3월', 440],
+		['4월', 440],
+		['5월', 440],
+		['6월', 440],
+		['7월', 310],
+		['8월', 500],
+		['9월', 410],
+		['10월', 30],
+		['11월', 440],
+		['12월', 440]
+	  ]);
+	
+	  var options = {
+	    title: '강아지 게시글 통계',
+	    legend: {
+    	position: 'none'
+	},
+	colors: ['#00FF00'],
+	
+	    chartArea: {
+	      width: 401
+	    },
+	    hAxis: {
+	      ticks: [-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1]
+	    },
+	    bar: {
+	      gap: 0
+	    },
+	
+	    histogram: {
+	      bucketSize: 0.02,
+	      maxNumBuckets: 200,
+	      minValue: -1,
+	      maxValue: 1
+	    }
+	  };
+	
+	  var chart = new google.charts.Bar(document.getElementById('dog-board-chart'));
+	  chart.draw(data, options);
+	}
 
 /////////////////////////////////강아지 통계 끝///////////////////////////////////////////////////
 

@@ -16,7 +16,6 @@
               <th>품종</th>
               <th>주소</th>
               <th>보호소</th>
-              <th>상세보기</th>
             </tr>
           </thead>
           <tbody>
@@ -26,9 +25,6 @@
               <td>치와와</td>
               <td>서울시 관악구</td>
               <td>관악구 보호소</td>
-              <td>
-                <button class="btn btn-outline-primary">보기</button>
-              </td>
             </tr>
             <tr>
               <td>2017/10/10</td>
@@ -36,9 +32,6 @@
               <td>치와와</td>
               <td>서울시 관악구</td>
               <td>관악구 보호소</td>
-              <td>
-                <button class="btn btn-outline-primary">보기</button>
-              </td>
             </tr>
             <tr>
               <td>2017/10/10</td>
@@ -46,9 +39,6 @@
               <td>치와와</td>
               <td>서울시 관악구</td>
               <td>관악구 보호소</td>
-              <td>
-                <button class="btn btn-outline-primary">보기</button>
-              </td>
             </tr>
           </tbody>
         </table>
