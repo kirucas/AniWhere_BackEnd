@@ -45,7 +45,7 @@ public class SchedulerService {
 	@Resource(name = "StoreLocService")
 	private StoreLocationServiceImpl serviceStore;
 	
-	@Scheduled(cron = "30 9 * * * *")
+	@Scheduled(cron = "0 0 21 * * *")
 	public void doingScheduled() throws Exception {
 		System.out.println("doingScheduled method start");
 		AnotherThread thread = new AnotherThread();
@@ -268,19 +268,6 @@ public class SchedulerService {
 			for (int i = 0; i < items.size(); i++) {
 				JSONObject item = (JSONObject) items.get(i);
 				Map<String, Object> map = new HashMap<>();
-				
-//				System.out.println("bizesId" + item.get("bizesId"));
-//				System.out.println("bizesNm" + item.get("bizesNm"));
-//				System.out.println("brchNm" + item.get("brchNm"));
-//				System.out.println("indsSclsCd" + item.get("indsSclsCd"));
-//				System.out.println("indsSclsNm" + item.get("indsSclsNm"));
-//				System.out.println("lnoAdr" + item.get("lnoAdr"));
-//				System.out.println("rdnmAdr" + item.get("rdnmAdr"));
-//				System.out.println("lon" + item.get("lon"));
-//				System.out.println("lat" + item.get("lat"));
-//				System.out.println("dongNo" + item.get("dongNo"));
-//				System.out.println("flrNo" + item.get("flrNo"));
-//				System.out.println("hoNo" + item.get("hoNo"));
 				
 				map.put("bizesid", item.get("bizesId") != null ? item.get("bizesId") : "");
 				map.put("bizesnm", item.get("bizesNm") != null ? item.get("bizesNm") : "");
