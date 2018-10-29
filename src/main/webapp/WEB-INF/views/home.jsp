@@ -18,38 +18,27 @@
     </div>
 </div>
 -->
-
+<style>
+	h4{
+	font-family:메이플스토리;
+	}
+</style>
 <div class="row">
     <div class="col-md-7 grid-margin">
         <div class="row">
-            <div class="col-12 col-sm-6 col-md-5 grid-margin stretch-card">
+            <div class="col-12 col-sm-6 col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="mb-0">19,999,999,999명</h2>
+                        <h2>19,999,999명</h2>
                         <p class="text-gray">전체 방문자 수</p>
-                        <canvas id="dashoard-line-chart" height="165"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-7 grid-margin stretch-card">
+            <div class="col-12 col-sm-6 col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <p class="font-weight-medium">Sales Statistics</p>
-                        <div class="d-flex justify-content-between mt-2">
-                            <small class="text-muted">Dashboard</small>
-                            <small class="text-info">73%</small>
-                        </div>
-                        <div class="progress progress-md mt-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p class="mt-4 font-weight-medium">Monthly Sales</p>
-                        <div class="d-flex justify-content-between mt-2">
-                            <small class="text-muted">Charts</small>
-                            <small class="text-primary">30%</small>
-                        </div>
-                        <div class="progress progress-md mt-2">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <h2>19,999개</h2>
+                        <p class="text-gray">전체 게시글 수</p>
                     </div>
                 </div>
             </div>
@@ -104,26 +93,14 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <p class="text-gray">2018 10/11  목요일</p>
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
+                        <p class="text-gray">2018 10/29 입양해주세요</p>
+                        <img src="<c:url value='/resources/images/profilesample.jpg'/>" alt="너굴맨">
+						<h4 style="margin-top:20px">품종:</h4>
+						<h4>발견장소:</h4>
+						<h4>지역:</h4>
+						<h4>기관명:</h4>
+						<h4>기관전화번호:</h4>
+						<h4>공고 종료일:</h4>
                     </div>
                 </div>
             </div>
