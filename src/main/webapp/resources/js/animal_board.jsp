@@ -86,29 +86,6 @@ var clearAllList = function(){
 
 var appendPhoto = function(data){
 	
-	/* var tableString = '';
-	
-	if(data.length == 0)
-		tableString += '<tr><td colspan="6" style="text-align:center">등록 된 글이 없습니다</td></tr>';
-	else {
-		$.each(data, function(colName, value){
-			tableString += '<tr>';
-			
-			tableString += '<td>' + value.no + '</td>';
-			tableString += '<td>' + value.photo_title + '</td>';
-			tableString += '<td>' + value.mem_nickname + '</td>';
-			tableString += '<td>' + value.photo_regidate + '</td>';
-			tableString += '<td>' + value.photo_count + '</td>';
-			tableString += '<td>' + value.photo_hit + '</td>';
-			
-			tableString += '</tr>';
-			
-			console.log("colName : " + colName);
-		});
-	}
-	
-	$("#photo tbody").html(tableString);	 */
-	
 	console.log(data.records);
 	console.log(data.pagingString);
 	
