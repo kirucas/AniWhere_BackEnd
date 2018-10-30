@@ -27,7 +27,7 @@ function drawVisitor() {
     legend: {
       position: 'none'
     },
-    colors: ['#10E3F3'],
+    colors: ['#1ABC9C'],
 
     chartArea: {
       width: 401
