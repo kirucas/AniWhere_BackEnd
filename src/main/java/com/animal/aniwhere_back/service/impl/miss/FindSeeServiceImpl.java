@@ -7,11 +7,11 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.AllCommonService;
 import com.animal.aniwhere_back.service.miss.FindSeeDTO;
 
 @Service("findSeeService")
-public class FindSeeServiceImpl implements AllBoardService {
+public class FindSeeServiceImpl implements AllCommonService {
 
 	@Resource(name = "findSeeDAO")
 	private FindSeeDAO dao;

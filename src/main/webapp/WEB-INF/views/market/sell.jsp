@@ -1,104 +1,68 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="row">
-    <div class="col-lg-12 grid-margin stretch-card">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">팝니다</h4>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>번호</th>
-                <th>동물분류</th>
-                <th>제목</th>
-                <th>글쓴이</th>
-                <th>날짜</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>강아지</td>
-                <td>
-                	강아지 팝니다. <label class="badge badge-success">20</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>강아지</td>
-                <td>
-                	강아지 팝니다. <label class="badge badge-success">15</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>강아지</td>
-                <td>
-                	강아지 팝니다. <label class="badge badge-success">1</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>강아지</td>
-                <td>강아지 팝니다. </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>강아지</td>
-                <td>
-                	강아지 팝니다.  <label class="badge badge-success">99</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- 페이징 -->
-                                 <div class="container" style="text-align:center;">
-                                 <div class="row" style="display:inline-block;">
-                                     <div class="col-md-12 text-center">
-                                         <nav>
-                                             <ul class="pagination rounded-flat pagination-success">
-                                                 <li class="page-item">
-                                                     <a class="page-link" href="#">
-                                                         <i class="mdi mdi-chevron-left"></i>
-                                                     </a>
-                                                 </li>
-                                                 <li class="page-item active">
-                                                     <a class="page-link" href="#">1</a>
-                                                 </li>
-                                                 <li class="page-item">
-                                                     <a class="page-link" href="#">2</a>
-                                                 </li>
-                                                 <li class="page-item">
-                                                     <a class="page-link" href="#">3</a>
-                                                 </li>
-                                                 <li class="page-item">
-                                                     <a class="page-link" href="#">4</a>
-                                                 </li>
-                                                 <li class="page-item">
-                                                     <a class="page-link" href="#">
-                                                         <i class="mdi mdi-chevron-right"></i>
-                                                     </a>
-                                                 </li>
-                                             </ul>
-                                         </nav>
-                                     </div>
-                                 </div>
-                                 </div>
-                                 <!-- 페이징 끝 -->
-         		
-          </div>
-        </div>
-      </div>
-  </div><!-- row -->
+	<div class="col-lg-12 grid-margin stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">팝니다</h4>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>동물분류</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>날짜</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:if test="${not empty list }" var="result">
+							<c:forEach items="${list }" var="item">
+							<tr>
+								<td>${item.no }</td>
+								<td>${item.animal_nam }</td>
+								<td>${item.title }</td>
+								<td>${item.mem_nickname }</td>
+								<td>${item.regidate }</td>
+								<td>${item.count }</td>
+							</tr>
+							</c:forEach>
+						</c:if>
+						<c:if test="${not result }">
+							<tr>
+								<td colspan="6" style="text-align: center;">등록된 글이 없습니다.</td>
+							</tr>
+						</c:if>
+					</tbody>
+				</table>
+				<!-- 페이징 -->
+				<div class="container" style="text-align: center;">
+					<div class="row" style="display: inline-block;">
+						<div class="col-md-12 text-center">
+							<nav>
+							<ul class="pagination rounded-flat pagination-success">
+								<li class="page-item"><a class="page-link" href="#"> <i
+										class="mdi mdi-chevron-left"></i>
+								</a></li>
+								<li class="page-item active"><a class="page-link" href="#">1</a>
+								</li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">4</a></li>
+								<li class="page-item"><a class="page-link" href="#"> <i
+										class="mdi mdi-chevron-right"></i>
+								</a></li>
+							</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<!-- 페이징 끝 -->
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- row -->

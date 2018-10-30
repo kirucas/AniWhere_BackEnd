@@ -7,11 +7,11 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.AllCommonService;
 import com.animal.aniwhere_back.service.ReservationDTO;
 
 @Service("reservationService")
-public class ReservationServiceImpl implements AllBoardService {
+public class ReservationServiceImpl implements AllCommonService {
 
 	@Resource(name = "reservationDAO")
 	private ReservationDAO dao;

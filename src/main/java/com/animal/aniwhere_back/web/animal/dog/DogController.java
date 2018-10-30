@@ -8,11 +8,13 @@ import java.util.Vector;
 import javax.annotation.Resource;
 
 import org.json.simple.JSONArray;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.animal.MovieBoardDTO;
 import com.animal.aniwhere_back.service.animal.PhotoBoardDTO;
 import com.animal.aniwhere_back.service.animal.QuestBoardDTO;
@@ -38,19 +40,33 @@ public class DogController {
 
 	@Resource(name = "questService")
 	private QuestBoardServiceImpl qService;
+	
+	@Value("${PAGESIZE}")
+	private int pageSize;
+	@Value("${BLOCKPAGE}")
+	private int blockPage;
 
 	@RequestMapping("/dog/main.aw")
 	public String dog_main(Model model) throws Exception {
 
 		Map map = new HashMap();
-
+		
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", pageSize);
+		
+		int totalRecordCount = pService.getTotalRecord(map);
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
 		model.addAttribute("list", list);
+		
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, 1, "");
+		
+		model.addAttribute("pagingString", pagingString);
+		model.addAttribute("totalRecordCount", totalRecordCount);
+		model.addAttribute("nowPage", 1);
+		model.addAttribute("pageSize", pageSize);
 
 		return "board/animal/dogMain.tiles";
 	}////////// dog_main
@@ -71,7 +87,7 @@ public class DogController {
 
 		for (PhotoBoardDTO dto : list) {
 			Map record = new HashMap();
-			record.put("photo_no", dto.getPhoto_no());
+			record.put("no", dto.getNo());
 			record.put("photo_title", dto.getPhoto_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("photo_regidate", dto.getPhoto_regidate().toString());
@@ -93,7 +109,7 @@ public class DogController {
 
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", mService.getTotalRecord(map));
 
 		List<MovieBoardDTO> list = mService.selectList(map);
 
@@ -101,7 +117,7 @@ public class DogController {
 
 		for (MovieBoardDTO dto : list) {
 			Map record = new HashMap();
-			record.put("movie_no", dto.getMovie_no());
+			record.put("no", dto.getNo());
 			record.put("movie_title", dto.getMovie_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("movie_regidate", dto.getMovie_regidate().toString());
@@ -123,7 +139,7 @@ public class DogController {
 
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", tService.getTotalRecord(map));
 
 		List<TipBoardDTO> list = tService.selectList(map);
 
@@ -132,7 +148,7 @@ public class DogController {
 		for (TipBoardDTO dto : list) {
 			Map record = new HashMap();
 
-			record.put("tip_no", dto.getTip_no());
+			record.put("no", dto.getNo());
 			record.put("tip_title", dto.getTip_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("tip_regidate", dto.getTip_regidate().toString());
@@ -154,7 +170,7 @@ public class DogController {
 		
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", qService.getTotalRecord(map));
 		
 		List<QuestBoardDTO> list = qService.selectList(map);
 		
@@ -163,7 +179,7 @@ public class DogController {
 		for(QuestBoardDTO dto : list) {
 			Map record = new HashMap();
 			
-			record.put("quest_no", dto.getQuest_no());
+			record.put("no", dto.getNo());
 			record.put("quest_title", dto.getQuest_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("quest_regidate", dto.getQuest_regidate().toString());

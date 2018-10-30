@@ -1,6 +1,8 @@
 package com.animal.aniwhere_back.web.freeboard;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -20,7 +22,12 @@ public class FreeboardController {
 	@RequestMapping("/freeboard.aw")
 	public String freeboard(Model model) throws Exception {
 
-		List<FreeBoardDTO> list = service.selectList(null);
+		Map map = new HashMap();
+		
+		map.put("start", 1);
+		map.put("end", service.getTotalRecord(map));
+		
+		List<FreeBoardDTO> list = service.selectList(map);
 
 		model.addAttribute("list", list);
 

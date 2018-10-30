@@ -7,11 +7,11 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.AllCommonService;
 import com.animal.aniwhere_back.service.miss.LostAnimalDTO;
 
 @Service("lostAniService")
-public class LostAnimalServiceImpl implements AllBoardService {
+public class LostAnimalServiceImpl implements AllCommonService {
 
 	@Resource(name="lostAnimalDAO")
 	private LostAnimalDAO dao;
