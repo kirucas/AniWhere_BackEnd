@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <style>
+	@import '<c:url value="/resources/css/table_css.css" />';
 	h3{
 		font-family:메이플스토리;
 		padding-top:10px;
@@ -14,7 +14,6 @@
 	p{
 		font-family:메이플스토리;
 	}
-	
 </style>
 <!-- partial -->
 <div class="card">
@@ -58,7 +57,7 @@
                    </button>
                  </div>
                  <div class="modal-body">
-                   <img src="<c:url value='/resources/images/profilesample.jpg'/>" alt="너굴맨">
+                   <img src="<c:url value='/resources/images/profilesample.jpg'/>" alt="너굴맨" style="width:100%;">
 					<h3>너굴맨의 프로필</h3>
 					<p>내용</p>
 					<h5>만나요 히스토리</h5>
