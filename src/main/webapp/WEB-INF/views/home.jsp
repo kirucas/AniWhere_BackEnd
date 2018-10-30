@@ -83,13 +83,17 @@
                 <div class="card">
                     <div class="card-body">
                         <p class="text-gray">2018 10/29 입양해주세요</p>
-                        <img src="<c:url value='/resources/images/profilesample.jpg'/>" alt="너굴맨">
-						<h4 style="margin-top:20px">품종:</h4>
-						<h4>발견장소:</h4>
-						<h4>지역:</h4>
-						<h4>기관명:</h4>
-						<h4>기관전화번호:</h4>
-						<h4>공고 종료일:</h4>
+                        <div class="col-md-12">
+                        	<img src="<c:url value='/resources/images/profilesample.jpg'/>" alt="너굴맨" style="width:100%">
+            	                <h4 style="margin-top:20px">품종:</h4>
+								<h4>발견장소:</h4>
+								<h4>지역:</h4>
+								<h4>기관명:</h4>
+								<h4>기관전화번호:</h4>
+								<h4>공고 종료일:</h4>
+                        </div>
+                        
+
                     </div>
                 </div>
             </div>
