@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" 
+	contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <style>
 </style>
 <!-- partial -->
@@ -44,24 +46,32 @@
 							                    </div>
 						                    </div>
 						              </div>
-						              <div class="col-md-6 grid-margin<!--  stretch-card -->">
-						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						              <div class="col-md-6 grid-margin stretch-card">
+						              	<div class="col-md-12">
+						                    <div class="google-chart-container d-flex justify-content-center h-100">
 						                      <div id="board-chart" class="google-charts"></div>
+						                    </div>
 						                    </div>
 						              </div>
 						               <div class="col-md-6 grid-margin stretch-card">
-								             <div class="google-chart-container">
+						               	<div class="col-md-12">
+								             <div class="google-chart-container d-flex justify-content-center h-100">
 								               <div id="animal-chart" class="google-charts"></div>
+								             </div>
 								             </div>
 								       </div>
 						              <div class="col-md-6 grid-margin stretch-card">
-						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						              	<div class="col-md-12">
+						                    <div class="google-chart-container d-flex justify-content-center h-100">
 						                      <div id="mating-chart" class="google-charts"></div>
+						                    </div>
 						                    </div>
 						              </div>
 						              <div class="col-md-6 grid-margin stretch-card">
-						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						              	<div class="col-md-12">
+						                    <div class="google-chart-container d-flex justify-content-center h-100">
 						                      <div id="miss-chart" class="google-charts"></div>
+						                    </div>
 						                    </div>
 						              </div>
 						              <div class="col-md-12 grid-margin stretch-card">
