@@ -22,13 +22,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        	<td colspan="7" style="text-align: center;">구분선</td>
-                        </tr>
                         <c:if test="${not empty list }" var="freeCheck">
                         	<c:forEach items="#{list}" var="item">
 	                        	<tr>
-	                        		<td>${item.free_no}</td>
+	                        		<td>${item.no}</td>
 	                        		<td>${item.free_category}</td>
 	                        		<td>${item.free_title}</td>
 	                        		<td>${item.mem_nickname}</td>

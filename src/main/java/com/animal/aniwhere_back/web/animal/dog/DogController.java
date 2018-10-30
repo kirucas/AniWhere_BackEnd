@@ -8,11 +8,15 @@ import java.util.Vector;
 import javax.annotation.Resource;
 
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.animal.MovieBoardDTO;
 import com.animal.aniwhere_back.service.animal.PhotoBoardDTO;
 import com.animal.aniwhere_back.service.animal.QuestBoardDTO;
@@ -39,6 +43,11 @@ public class DogController {
 	@Resource(name = "questService")
 	private QuestBoardServiceImpl qService;
 
+	@Value("${PAGESIZE}")
+	private int pageSize;
+	@Value("${BLOCKPAGE}")
+	private int blockPage;
+
 	@RequestMapping("/dog/main.aw")
 	public String dog_main(Model model) throws Exception {
 
@@ -46,24 +55,34 @@ public class DogController {
 
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", pageSize);
+
+		int totalRecordCount = pService.getTotalRecord(map);
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
 		model.addAttribute("list", list);
+
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, 1);
+
+		model.addAttribute("pagingString", pagingString);
 
 		return "board/animal/dogMain.tiles";
 	}////////// dog_main
 
 	@ResponseBody
 	@RequestMapping(value = "/dog/photo_list.awa", produces = "text/plain; charset=UTF-8")
-	public String photo_list() throws Exception {
-
-		Map map = new HashMap();
+	public String photo_list(@RequestParam Map map) throws Exception {
 
 		map.put("ani_category", ANI_CATEGORY);
-		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+
+		int nowPage = Integer.parseInt(map.get("nowPage").toString());
+
+		int start = (nowPage - 1) * pageSize + 1;
+		int end = nowPage * pageSize;
+
+		map.put("start", start);
+		map.put("end", end);
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
@@ -71,7 +90,7 @@ public class DogController {
 
 		for (PhotoBoardDTO dto : list) {
 			Map record = new HashMap();
-			record.put("photo_no", dto.getPhoto_no());
+			record.put("no", dto.getNo());
 			record.put("photo_title", dto.getPhoto_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("photo_regidate", dto.getPhoto_regidate().toString());
@@ -81,7 +100,16 @@ public class DogController {
 			collections.add(record);
 		}
 
-		return JSONArray.toJSONString(collections);
+		int totalRecordCount = pService.getTotalRecord(map);
+
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
+
+		JSONObject json = new JSONObject();
+
+		json.put("records", collections);
+		json.put("pagingString", pagingString);
+
+		return json.toJSONString();
 
 	}////////// photo_list
 
@@ -93,7 +121,7 @@ public class DogController {
 
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", mService.getTotalRecord(map));
 
 		List<MovieBoardDTO> list = mService.selectList(map);
 
@@ -101,7 +129,7 @@ public class DogController {
 
 		for (MovieBoardDTO dto : list) {
 			Map record = new HashMap();
-			record.put("movie_no", dto.getMovie_no());
+			record.put("no", dto.getNo());
 			record.put("movie_title", dto.getMovie_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("movie_regidate", dto.getMovie_regidate().toString());
@@ -123,7 +151,7 @@ public class DogController {
 
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		map.put("end", tService.getTotalRecord(map));
 
 		List<TipBoardDTO> list = tService.selectList(map);
 
@@ -132,7 +160,7 @@ public class DogController {
 		for (TipBoardDTO dto : list) {
 			Map record = new HashMap();
 
-			record.put("tip_no", dto.getTip_no());
+			record.put("no", dto.getNo());
 			record.put("tip_title", dto.getTip_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("tip_regidate", dto.getTip_regidate().toString());
@@ -149,33 +177,33 @@ public class DogController {
 	@ResponseBody
 	@RequestMapping(value = "/dog/quest_list.awa", produces = "text/plain; charset=UTF-8")
 	public String quest_list() throws Exception {
-		
+
 		Map map = new HashMap();
-		
+
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
-		
+		map.put("end", qService.getTotalRecord(map));
+
 		List<QuestBoardDTO> list = qService.selectList(map);
-		
+
 		List<Map> collections = new Vector<>();
-		
-		for(QuestBoardDTO dto : list) {
+
+		for (QuestBoardDTO dto : list) {
 			Map record = new HashMap();
-			
-			record.put("quest_no", dto.getQuest_no());
+
+			record.put("no", dto.getNo());
 			record.put("quest_title", dto.getQuest_title());
 			record.put("mem_nickname", dto.getMem_nickname());
 			record.put("quest_regidate", dto.getQuest_regidate().toString());
 			record.put("quest_count", dto.getQuest_count());
 			record.put("quest_hit", dto.getQuest_hit());
 			record.put("quest_checking", dto.getChecking());
-			
+
 			collections.add(record);
 		}
-		
+
 		return JSONArray.toJSONString(collections);
-		
+
 	}////////// quest_list
 
 }//////////////////// DogController class

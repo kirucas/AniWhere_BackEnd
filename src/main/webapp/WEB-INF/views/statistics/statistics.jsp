@@ -3,7 +3,6 @@
     pageEncoding="UTF-8"
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <style>
 	div{
 		font-family:메이플스토리;

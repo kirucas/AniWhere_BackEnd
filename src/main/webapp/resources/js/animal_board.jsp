@@ -11,6 +11,7 @@ $(function(){
 		$.ajax({
 			url : '<c:url value="/' + board_name + '/photo_list.awa" />',
 			type : 'post',
+			data : {nowPage:1},
 			dataType : 'json',
 			success : function(data){
 				console.log("넘어온 데이터 확인");
@@ -84,19 +85,20 @@ var clearAllList = function(){
 };
 
 var appendPhoto = function(data){
-	console.log("appendPhoto check");
-	console.log(data);
-	console.log(JSON.stringify(data));
+	
+	console.log(data.records);
+	console.log(data.pagingString);
 	
 	var tableString = '';
 	
-	if(data.length == 0)
+	if(data.records.length == 0){
 		tableString += '<tr><td colspan="6" style="text-align:center">등록 된 글이 없습니다</td></tr>';
+	}
 	else {
-		$.each(data, function(colName, value){
+		$.each(data.records, function(colName, value){
 			tableString += '<tr>';
 			
-			tableString += '<td>' + value.photo_no + '</td>';
+			tableString += '<td>' + value.no + '</td>';
 			tableString += '<td>' + value.photo_title + '</td>';
 			tableString += '<td>' + value.mem_nickname + '</td>';
 			tableString += '<td>' + value.photo_regidate + '</td>';
@@ -104,10 +106,14 @@ var appendPhoto = function(data){
 			tableString += '<td>' + value.photo_hit + '</td>';
 			
 			tableString += '</tr>';
+			
+			console.log("colName : " + colName);
 		});
 	}
 	
 	$("#photo tbody").html(tableString);
+	$("#photo .pagingPhoto").html(data.pagingString);
+	
 };
 
 var appendMovie = function(data){
@@ -122,7 +128,7 @@ var appendMovie = function(data){
 		$.each(data, function(colName, value){
 			tableString += '<tr>';
 			
-			tableString += '<td>' + value.movie_no + '</td>';
+			tableString += '<td>' + value.no + '</td>';
 			tableString += '<td>' + value.movie_title + '</td>';
 			tableString += '<td>' + value.mem_nickname + '</td>';
 			tableString += '<td>' + value.movie_regidate + '</td>';
@@ -148,7 +154,7 @@ var appendTip = function(data){
 		$.each(data, function(colNme, value){
 			tableString += '<tr>';
 			
-			tableString += '<td>' + value.tip_no + '</td>';
+			tableString += '<td>' + value.no + '</td>';
 			tableString += '<td>' + value.tip_title + '</td>';
 			tableString += '<td>' + value.mem_nickname + '</td>';
 			tableString += '<td>' + value.tip_regidate + '</td>';
@@ -174,7 +180,7 @@ var appendQuest = function(data){
 		$.each(data, function(colName, value){
 			tableString += '<tr>';
 			
-			tableString += '<td>' + value.quest_no + '</td>';
+			tableString += '<td>' + value.no + '</td>';
 			if(value.quest_checking == '0'){
 				tableString += '<td><span class="badge badge-danger badge-pill">질문</span>';
 			}
