@@ -29,7 +29,7 @@
             <div class="col-12 col-sm-6 col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2>19명</h2>
+                        <h2>19</h2>
                         <p class="text-gray">오늘의 방문자 수</p>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
             <div class="col-12 col-sm-6 col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2>10개</h2>
+                        <h2>10</h2>
                         <p class="text-gray">오늘의 게시글 수</p>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     <div class="d-flex flex-column ml-2">
                         <span class="d-flex flex-column">
                             <small class="mb-0">등록된 유기동물</small>
-                            <span class="font-weight-bold">74마리</span>
+                            <span class="font-weight-bold">74</span>
                         </span>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                     <div class="d-flex flex-column ml-2">
                         <span class="d-flex flex-column">
                             <small class="mb-0">전체 게시글 등록수</small>
-                            <span class="font-weight-bold">25개</span>
+                            <span class="font-weight-bold">25</span>
                         </span>
                     </div>
                 </div>
