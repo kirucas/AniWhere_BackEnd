@@ -39,7 +39,7 @@
                                         <c:if test="${not empty list}" var="photoCheck">
 	                                        <c:forEach items="${list }" var="item">
 	                                        	<tr>
-	                                        		<td>${itemphoto_no}</td>
+	                                        		<td>${item.no}</td>
 	                                        		<td>${item.photo_title }</td>
 	                                        		<td>${item.mem_nickname }</td>
 	                                        		<td>${item.photo_regidate }</td>
@@ -50,14 +50,14 @@
                                         </c:if>
                                         <c:if test="${not photoCheck}">
                                         	<tr>
-                                        		<td colspan="6" style="text-align: center;">현재 등록된 글이 없습니다.</td>
+                                        		<td colspan="6" style="text-align: center;">등록 된 글이 없습니다</td>
                                         	</tr>
                                         </c:if>
                                     </tbody>
                                 </table>
                                 <!-- 페이징 -->
                                 <br />
-                                <div class="container" style="text-align:center;">
+                                <!-- <div class="container" style="text-align:center;">
                                     <div class="row" style="display:inline-block;">
                                         <div class="col-md-12 text-center">
                                             <nav>
@@ -88,6 +88,9 @@
                                             </nav>
                                         </div>
                                     </div>
+                                </div> -->
+                                <div class="paging">
+                                	${pagingString }
                                 </div>
                                 <!-- 페이징 끝 -->
 

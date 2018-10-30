@@ -8,10 +8,12 @@ import java.util.Vector;
 import javax.annotation.Resource;
 
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.animal.aniwhere_back.service.PagingUtil;
@@ -61,7 +63,7 @@ public class DogController {
 
 		model.addAttribute("list", list);
 		
-		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, 1, "");
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, 1);
 		
 		model.addAttribute("pagingString", pagingString);
 		model.addAttribute("totalRecordCount", totalRecordCount);
@@ -73,13 +75,18 @@ public class DogController {
 
 	@ResponseBody
 	@RequestMapping(value = "/dog/photo_list.awa", produces = "text/plain; charset=UTF-8")
-	public String photo_list() throws Exception {
+	public String photo_list(@RequestParam Map map) throws Exception {
 
-		Map map = new HashMap();
 
 		map.put("ani_category", ANI_CATEGORY);
-		map.put("start", 1);
-		map.put("end", pService.getTotalRecord(map));
+		
+		int nowPage = Integer.parseInt(map.get("nowPage").toString());
+		
+		int start = (nowPage - 1) * pageSize + 1;
+		int end = nowPage * pageSize;
+		
+		map.put("start", start);
+		map.put("end", end);
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
@@ -96,8 +103,17 @@ public class DogController {
 
 			collections.add(record);
 		}
-
-		return JSONArray.toJSONString(collections);
+		
+		int totalRecordCount = pService.getTotalRecord(map);
+		
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("records", collections);
+		json.put("pagingString", pagingString);
+		
+		return json.toJSONString();
 
 	}////////// photo_list
 

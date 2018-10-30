@@ -11,6 +11,7 @@ $(function(){
 		$.ajax({
 			url : '<c:url value="/' + board_name + '/photo_list.awa" />',
 			type : 'post',
+			data : {nowPage:1},
 			dataType : 'json',
 			success : function(data){
 				console.log("넘어온 데이터 확인");
@@ -84,11 +85,8 @@ var clearAllList = function(){
 };
 
 var appendPhoto = function(data){
-	console.log("appendPhoto check");
-	console.log(data);
-	console.log(JSON.stringify(data));
 	
-	var tableString = '';
+	/* var tableString = '';
 	
 	if(data.length == 0)
 		tableString += '<tr><td colspan="6" style="text-align:center">등록 된 글이 없습니다</td></tr>';
@@ -104,10 +102,41 @@ var appendPhoto = function(data){
 			tableString += '<td>' + value.photo_hit + '</td>';
 			
 			tableString += '</tr>';
+			
+			console.log("colName : " + colName);
+		});
+	}
+	
+	$("#photo tbody").html(tableString);	 */
+	
+	console.log(data.records);
+	console.log(data.pagingString);
+	
+	var tableString = '';
+	
+	if(data.records.length == 0){
+		tableString += '<tr><td colspan="6" style="text-align:center">등록 된 글이 없습니다</td></tr>';
+	}
+	else {
+		$.each(data.records, function(colName, value){
+			tableString += '<tr>';
+			
+			tableString += '<td>' + value.no + '</td>';
+			tableString += '<td>' + value.photo_title + '</td>';
+			tableString += '<td>' + value.mem_nickname + '</td>';
+			tableString += '<td>' + value.photo_regidate + '</td>';
+			tableString += '<td>' + value.photo_count + '</td>';
+			tableString += '<td>' + value.photo_hit + '</td>';
+			
+			tableString += '</tr>';
+			
+			console.log("colName : " + colName);
 		});
 	}
 	
 	$("#photo tbody").html(tableString);
+	$("#photo .paging").html(data.pagingString);
+	
 };
 
 var appendMovie = function(data){
