@@ -29,16 +29,16 @@
             <div class="col-12 col-sm-6 col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2>19,999,999명</h2>
-                        <p class="text-gray">전체 방문자 수</p>
+                        <h2>19명</h2>
+                        <p class="text-gray">오늘의 방문자 수</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2>19,999개</h2>
-                        <p class="text-gray">전체 게시글 수</p>
+                        <h2>10개</h2>
+                        <p class="text-gray">오늘의 게시글 수</p>
                     </div>
                 </div>
             </div>
@@ -47,25 +47,14 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Visitors Statistics</h4>
-                        <canvas id="dashboard-bar-chart" height="100"></canvas>
-                        <div class="row dashboard-bar-chart-legend mt-5 mb-3">
-                            <div class="col">
-                                <h2>13</h2>
-                                <small class="text-muted">SNOOZED</small>
-                                <div class="bg"></div>
-                            </div>
-                            <div class="col">
-                                <h2>45</h2>
-                                <small class="text-muted">COMPLETED</small>
-                                <div class="bg"></div>
-                            </div>
-                            <div class="col">
-                                <h2>24</h2>
-                                <small class="text-muted">OVERDUE</small>
-                                <div class="bg"></div>
-                            </div>
-                        </div>
+                        <h4 class="card-title">방문자 통계</h4>
+                        <div class="col-md-12 grid-margin stretch-card">
+			                    <div class="col-md-12">
+				                    <div class="google-chart-container d-flex justify-content-center h-100">
+				                      <div id="visitor-chart" class="google-charts"></div>
+				                    </div>
+			                    </div>
+			              </div>
                     </div>
                 </div>
             </div>
@@ -108,6 +97,21 @@
     </div>
 </div>
 <div class="row">
+	<div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <i class="mdi mdi-shield-outline icon-lg"></i>
+                    <div class="d-flex flex-column ml-2">
+                        <span class="d-flex flex-column">
+                            <small class="mb-0">등록된 유기동물</small>
+                            <span class="font-weight-bold">74마리</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -138,21 +142,7 @@
             </div>
         </div>
     </div>
-    <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex">
-                    <i class="mdi mdi-laptop icon-lg"></i>
-                    <div class="d-flex flex-column ml-2">
-                        <span class="d-flex flex-column">
-                            <small class="mb-0">오늘의 게시글 등록수</small>
-                            <span class="font-weight-bold">74</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -160,7 +150,7 @@
                     <i class="mdi mdi-earth icon-lg"></i>
                     <div class="d-flex flex-column ml-2">
                         <span class="d-flex flex-column">
-                            <small class="mb-0">오늘의 방문자</small>
+                            <small class="mb-0">전체 방문자</small>
                             <span class="font-weight-bold">440</span>
                         </span>
                     </div>

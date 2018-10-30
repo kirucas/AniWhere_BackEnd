@@ -1,3 +1,57 @@
+//////////////////////////////메인 방문자수 통계/////////////////////////////////////////
+google.charts.load('current', {
+  'packages': ['bar']
+});
+google.charts.setOnLoadCallback(drawVisitor);
+
+function drawVisitor() {
+  var data = new google.visualization.arrayToDataTable([
+    ['방문자 통계', '명'],
+    ['1월', 44],
+    ['2월', 44],
+    ['3월', 44],
+    ['4월', 44],
+    ['5월', 44],
+    ['6월', 44],
+    ['7월', 31],
+    ['8월', 50],
+    ['9월', 41],
+    ['10월', 5],
+    ['11월', 44],
+    ['12월', 44],
+    
+  ]);
+
+  var options = {
+    title: '방문자 통계',
+    legend: {
+      position: 'none'
+    },
+    colors: ['#10E3F3'],
+
+    chartArea: {
+      width: 401
+    },
+    hAxis: {
+      ticks: [-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1]
+    },
+    bar: {
+      gap: 0
+    },
+
+    histogram: {
+      bucketSize: 0.02,
+      maxNumBuckets: 200,
+      minValue: -1,
+      maxValue: 1
+    }
+  };
+
+  var chart = new google.charts.Bar(document.getElementById('visitor-chart'));
+  chart.draw(data, options);
+};
+
+//////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////// 회원 가입 통계/////////////////////////////////////////
 
