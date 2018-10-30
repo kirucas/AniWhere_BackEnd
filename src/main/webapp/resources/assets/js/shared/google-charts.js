@@ -49,6 +49,10 @@ function drawVisitor() {
 
   var chart = new google.charts.Bar(document.getElementById('visitor-chart'));
   chart.draw(data, options);
+  
+  //반응형 적용
+  window.addEventListener('resize', function() { chart.draw(data, options); }, false);
+
 };
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -105,6 +109,8 @@ function drawMember() {
 
   var chart = new google.charts.Bar(document.getElementById('member-chart'));
   chart.draw(data, options);
+  //반응형 적용
+  window.addEventListener('resize', function() { chart.draw(data, options); }, false);
 };
 
 
@@ -140,6 +146,11 @@ function drawAnimal() {
 
   var Donutchart = new google.visualization.PieChart(document.getElementById('animal-chart'));
   Donutchart.draw(data, options);
+  //반응형 적용
+  //window.addEventListener('resize', function() { chart.draw(data, options); }, false);
+  $(window).resize(function(){ 
+	  drawAnimal(); 
+	     }); 
 }
 
 //////////////////////////////// 동물 별 통계 끝 ////////////////////////////////////////////////
@@ -190,6 +201,8 @@ google.charts.load('current', {
 
 	  var chart = new google.charts.Bar(document.getElementById('board-chart'));
 	  chart.draw(data, options);
+	  //반응형 적용
+	  window.addEventListener('resize', function() { chart.draw(data, options); }, false);
 	};
 
 
@@ -235,6 +248,8 @@ google.charts.load('current', {
 		    var chart = new google.visualization.LineChart(document.getElementById('mating-chart'));
 
 		    chart.draw(data, options);
+		    //반응형 적용
+		    window.addEventListener('resize', function() { chart.draw(data, options); }, false);
 		  }
 
 })(jQuery);
@@ -283,6 +298,8 @@ google.charts.load('current', {
 		    var chart = new google.visualization.LineChart(document.getElementById('miss-chart'));
 
 		    chart.draw(data, options);
+		    //반응형 적용
+		    window.addEventListener('resize', function() { chart.draw(data, options); }, false);
 		  }
 
 })(jQuery);
@@ -341,6 +358,8 @@ google.charts.load('current', {
 
 		  var chart = new google.charts.Bar(document.getElementById('reservation-chart'));
 		  chart.draw(data, options);
+		  //반응형 적용
+		  window.addEventListener('resize', function() { chart.draw(data, options); }, false);
 		};
 /////////////////////////////////예약 통계 끝 //////////////////////////////////////////////////////	
 
@@ -398,6 +417,8 @@ google.charts.load('current', {
 	
 	  var chart = new google.charts.Bar(document.getElementById('dog-board-chart'));
 	  chart.draw(data, options);
+	  //반응형 적용
+	  window.addEventListener('resize', function() { chart.draw(data, options); }, false);
 	}
 
 /////////////////////////////////강아지 통계 끝///////////////////////////////////////////////////

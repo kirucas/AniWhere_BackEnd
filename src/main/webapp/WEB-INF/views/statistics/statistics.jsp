@@ -46,24 +46,32 @@
 							                    </div>
 						                    </div>
 						              </div>
-						              <div class="col-md-6 grid-margin<!--  stretch-card -->">
-						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						              <div class="col-md-6 grid-margin stretch-card">
+						              	<div class="col-md-12">
+						                    <div class="google-chart-container d-flex justify-content-center h-100">
 						                      <div id="board-chart" class="google-charts"></div>
+						                    </div>
 						                    </div>
 						              </div>
 						               <div class="col-md-6 grid-margin stretch-card">
-								             <div class="google-chart-container">
+						               	<div class="col-md-12">
+								             <div class="google-chart-container d-flex justify-content-center h-100">
 								               <div id="animal-chart" class="google-charts"></div>
+								             </div>
 								             </div>
 								       </div>
 						              <div class="col-md-6 grid-margin stretch-card">
-						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						              	<div class="col-md-12">
+						                    <div class="google-chart-container d-flex justify-content-center h-100">
 						                      <div id="mating-chart" class="google-charts"></div>
+						                    </div>
 						                    </div>
 						              </div>
 						              <div class="col-md-6 grid-margin stretch-card">
-						                    <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+						              	<div class="col-md-12">
+						                    <div class="google-chart-container d-flex justify-content-center h-100">
 						                      <div id="miss-chart" class="google-charts"></div>
+						                    </div>
 						                    </div>
 						              </div>
 						              <div class="col-md-12 grid-margin stretch-card">
