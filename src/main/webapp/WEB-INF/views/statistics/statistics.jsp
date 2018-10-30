@@ -4,8 +4,6 @@
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<style>
-</style>
 <!-- partial -->
 <div class="row">
 	<div class="col-md-12 grid-margin stretch-card">
@@ -37,7 +35,7 @@
                         <div class="tab-content tab-content-basic">
                         <!-- 전체 통계 -->
                         <div class="tab-pane fade show active" id="statisticsAll" role="tabpanel" aria-labelledby="statistics_all">
-                            <div class="col-md-12 grid-margin" style="padding-top:50px;">
+                            <div class="col-lg-12 grid-margin" style="padding-top:50px;">
 							    <div class="row">
 	       							<div class="col-md-12 grid-margin stretch-card">
 						                    <div class="col-md-12">
