@@ -30,7 +30,8 @@ public class QuestBoardDAO implements AllBoardService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public QuestBoardDTO selectOne(Map map) {
-		template.update("addCountQuest", map);
+		if(map.get("view") != null)
+			template.update("addCountQuest", map);
 		return template.selectOne("questSelectOne", map);
 	}////////// selectOne
 
