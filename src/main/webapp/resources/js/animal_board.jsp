@@ -112,7 +112,7 @@ var appendPhoto = function(data){
 	}
 	
 	$("#photo tbody").html(tableString);
-	$("#photo .paging").html(data.pagingString);
+	$("#photo .pagingPhoto").html(data.pagingString);
 	
 };
 

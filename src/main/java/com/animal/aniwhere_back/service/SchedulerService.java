@@ -45,6 +45,7 @@ public class SchedulerService {
 	private StoreLocationServiceImpl serviceStore;
 	
 	@Scheduled(cron = "0 0 21 * * *")
+//	@Scheduled(cron = "20 6 * * * *")
 	public void doingScheduled() throws Exception {
 		AnotherThread thread = new AnotherThread();
 		thread.start();
@@ -222,7 +223,7 @@ public class SchedulerService {
 	        urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + SERVICE_KEY); /*Service Key*/
 	        urlBuilder.append("&" + URLEncoder.encode("divId","UTF-8") + "=" + URLEncoder.encode("indsSclsCd", "UTF-8")); /* 구분 ID : 소분류 */
 	        urlBuilder.append("&" + URLEncoder.encode("key","UTF-8") + "=" + URLEncoder.encode(store_code, "UTF-8")); /* 업종 코드 값(소분류 코드) */
-	        urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("60", "UTF-8")); /* 페이지당 건수 */
+	        urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("50", "UTF-8")); /* 페이지당 건수 */
 	        urlBuilder.append("&" + URLEncoder.encode("type", "UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /* 요청 타입(JSON) */
 	        
 	        URL url = new URL(urlBuilder.toString());
