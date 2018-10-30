@@ -13,35 +13,26 @@
         <table id="order-listing" class="table">
           <thead>
             <tr>
-              <th>유기날짜</th>
-              <th>축종</th>
+              <th>공고시작</th>
+              <th>공고종료</th>
               <th>품종</th>
               <th>주소</th>
               <th>보호소</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>2017/10/10</td>
-              <td>개</td>
-              <td>치와와</td>
-              <td>서울시 관악구</td>
-              <td>관악구 보호소</td>
-            </tr>
-            <tr>
-              <td>2017/10/10</td>
-              <td>개</td>
-              <td>치와와</td>
-              <td>서울시 관악구</td>
-              <td>관악구 보호소</td>
-            </tr>
-            <tr>
-              <td>2017/10/10</td>
-              <td>개</td>
-              <td>치와와</td>
-              <td>서울시 관악구</td>
-              <td>관악구 보호소</td>
-            </tr>
+          	<c:forEach items="${shelter_list }" var="shelterList">
+          		<tr>
+          			<td>${shelterList.start_notice }</td>
+          			<td>${shelterList.end_notice}</td>
+          			<td>${shelterList.kind}</td>
+          			<td>${shelterList.addr}</td>
+          			<td>${shelterList.careNm}</td>
+          		</tr>
+          	</c:forEach>
+          
+          
+           
           </tbody>
         </table>
       </div>

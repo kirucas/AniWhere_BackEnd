@@ -24,30 +24,34 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>1</td>
-              <td>연지</td>
-              <td>4세</td>
-              <td>고슴도치</td>
-              <td>화이트초코</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>2</td>
-              <td>곤지</td>
-              <td>2세</td>
-              <td>고슴도치</td>
-              <td>화이트초코</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>3</td>
-              <td>와와</td>
-              <td>3세</td>
-              <td>강아지</td>
-              <td>치와와</td>
-            </tr>
+            <c:forEach items="${animal_list }" var="animalInfo">
+          		<tr>
+          			<td>${animalInfo.ani_no }</td>
+          			<td>${animalInfo.mem_no }</td>
+          			<td>${animalInfo.ani_name }</td>
+          			<td>${animalInfo.ani_age }</td>
+          			<td>
+          				<c:choose>
+          					<c:when test="${animalInfo.ani_species eq '1'}">
+          						강아지
+          					</c:when>
+          					<c:when test="${animalInfo.ani_species eq '2'}">
+          						고양이
+          					</c:when>
+          					<c:when test="${animalInfo.ani_species eq '3'}">
+          						파충류&양서류
+          					</c:when>
+          					<c:when test="${animalInfo.ani_species eq '4'}">
+          						조류
+          					</c:when>
+          					<c:when test="${animalInfo.ani_species eq '5'}">
+          						기타
+          					</c:when>
+          				</c:choose>
+          			</td>
+          			<td>${animalInfo.ani_kind }</td>
+          		</tr>
+          	</c:forEach>
           </tbody>
         </table>
       </div>
