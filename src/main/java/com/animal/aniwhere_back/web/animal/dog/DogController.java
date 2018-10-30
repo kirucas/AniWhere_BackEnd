@@ -42,7 +42,7 @@ public class DogController {
 
 	@Resource(name = "questService")
 	private QuestBoardServiceImpl qService;
-	
+
 	@Value("${PAGESIZE}")
 	private int pageSize;
 	@Value("${BLOCKPAGE}")
@@ -52,23 +52,20 @@ public class DogController {
 	public String dog_main(Model model) throws Exception {
 
 		Map map = new HashMap();
-		
+
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
 		map.put("end", pageSize);
-		
+
 		int totalRecordCount = pService.getTotalRecord(map);
 
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
 		model.addAttribute("list", list);
-		
+
 		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, 1);
-		
+
 		model.addAttribute("pagingString", pagingString);
-		model.addAttribute("totalRecordCount", totalRecordCount);
-		model.addAttribute("nowPage", 1);
-		model.addAttribute("pageSize", pageSize);
 
 		return "board/animal/dogMain.tiles";
 	}////////// dog_main
@@ -77,14 +74,13 @@ public class DogController {
 	@RequestMapping(value = "/dog/photo_list.awa", produces = "text/plain; charset=UTF-8")
 	public String photo_list(@RequestParam Map map) throws Exception {
 
-
 		map.put("ani_category", ANI_CATEGORY);
-		
+
 		int nowPage = Integer.parseInt(map.get("nowPage").toString());
-		
+
 		int start = (nowPage - 1) * pageSize + 1;
 		int end = nowPage * pageSize;
-		
+
 		map.put("start", start);
 		map.put("end", end);
 
@@ -103,16 +99,16 @@ public class DogController {
 
 			collections.add(record);
 		}
-		
+
 		int totalRecordCount = pService.getTotalRecord(map);
-		
+
 		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
-		
+
 		JSONObject json = new JSONObject();
-		
+
 		json.put("records", collections);
 		json.put("pagingString", pagingString);
-		
+
 		return json.toJSONString();
 
 	}////////// photo_list
@@ -181,20 +177,20 @@ public class DogController {
 	@ResponseBody
 	@RequestMapping(value = "/dog/quest_list.awa", produces = "text/plain; charset=UTF-8")
 	public String quest_list() throws Exception {
-		
+
 		Map map = new HashMap();
-		
+
 		map.put("ani_category", ANI_CATEGORY);
 		map.put("start", 1);
 		map.put("end", qService.getTotalRecord(map));
-		
+
 		List<QuestBoardDTO> list = qService.selectList(map);
-		
+
 		List<Map> collections = new Vector<>();
-		
-		for(QuestBoardDTO dto : list) {
+
+		for (QuestBoardDTO dto : list) {
 			Map record = new HashMap();
-			
+
 			record.put("no", dto.getNo());
 			record.put("quest_title", dto.getQuest_title());
 			record.put("mem_nickname", dto.getMem_nickname());
@@ -202,12 +198,12 @@ public class DogController {
 			record.put("quest_count", dto.getQuest_count());
 			record.put("quest_hit", dto.getQuest_hit());
 			record.put("quest_checking", dto.getChecking());
-			
+
 			collections.add(record);
 		}
-		
+
 		return JSONArray.toJSONString(collections);
-		
+
 	}////////// quest_list
 
 }//////////////////// DogController class
