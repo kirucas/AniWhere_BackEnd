@@ -13,16 +13,16 @@
                     <div class="col-md-12 pl-md-11">
                         <ul class="nav nav-tabs tab-basic" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="phototab" title="dog" data-toggle="tab" href="#photo" role="tab" aria-controls="dogPhoto" aria-selected="true">사진</a>
+                                <a class="nav-link active" id="phototab" title="dog" data-toggle="tab" href="#photo" role="tab">사진</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="movietab" title="dog" data-toggle="tab" href="#movie" role="tab" aria-controls="dogMovie" aria-selected="false">동영상</a>
+                                <a class="nav-link" id="movietab" title="dog" data-toggle="tab" href="#movie" role="tab">동영상</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="tiptab" title="dog" data-toggle="tab" href="#tip" role="tab" aria-controls="dogTip" aria-selected="false">팁</a>
+                                <a class="nav-link" id="tiptab" title="dog" data-toggle="tab" href="#tip" role="tab">팁</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="qnatab" title="dog" data-toggle="tab" href="#qna" role="tab" aria-controls="dogQna" aria-selected="false">Q&A</a>
+                                <a class="nav-link" id="qnatab" title="dog" data-toggle="tab" href="#qna" role="tab">Q&A</a>
                             </li>
                         </ul>
                         <div class="tab-content tab-content-basic">
@@ -60,7 +60,7 @@
                                 </table>
                                 <!-- 페이징 -->
                                 <br />
-                                <div class="pagingPhoto">
+                                <div id="pagingPhoto" title="dog">
                                     ${pagingString }
                                 </div>
                                 <!-- 페이징 끝 -->
@@ -81,8 +81,7 @@
                                     <tbody></tbody>
                                 </table>
                                 <br />
-                                <div class="pagingMovie">
-                                </div>
+                                <div id="pagingMovie" title="dog"></div>
                             </div>
                             <div class="tab-pane fade" id="tip" role="tabpanel">
                                 <table class="table">
@@ -99,8 +98,7 @@
                                     <tbody></tbody>
                                 </table>
                                 <br />
-                                <div class="pagingTip">
-                                </div>
+                                <div id="pagingTip" title="dog"></div>
                             </div>
                             <div class="tab-pane fade" id="qna" role="tabpanel">
                                 <table class="table">
@@ -117,8 +115,7 @@
                                     <tbody></tbody>
                                 </table>
                                 <br />
-                                <div class="pagingQna">
-                                </div>
+                                <div id="pagingQna" title="dog"></div>
                             </div>
                         </div>
                     </div>

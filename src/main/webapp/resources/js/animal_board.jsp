@@ -5,17 +5,30 @@
 <script>
 $(function(){
 	$("#phototab").click(function(){
-		console.log("photo click : " + $(this).attr('title'));
 		var board_name = $(this).attr('title');
-		console.log('<c:url value="/' + board_name + '/photo_list.awa" />');
 		$.ajax({
 			url : '<c:url value="/' + board_name + '/photo_list.awa" />',
 			type : 'post',
-			data : {nowPage:1},
+			data : {nowPage : 1},
 			dataType : 'json',
 			success : function(data){
-				console.log("넘어온 데이터 확인");
-				console.log(data);
+				clearAllList();
+				appendPhoto(data);
+			},
+			error : function(request, status, error){
+				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
+			}
+		});
+	});
+	
+	$(document).on("click", "#pagingPhoto .page-link", function(){
+		var board_name = $("#pagingPhoto").attr('title');
+		$.ajax({
+			url : '<c:url value="/' + board_name + '/photo_list.awa" />',
+			type : 'post',
+			data : {nowPage : $(this).attr('title')},
+			dataType : 'json',
+			success : function(data){
 				clearAllList();
 				appendPhoto(data);
 			},
@@ -30,9 +43,26 @@ $(function(){
 		$.ajax({
 			url : '<c:url value="/' + board_name + '/movie_list.awa" />',
 			type : 'post',
+			data : {nowPage : 1},
 			dataType : 'json',
 			success : function(data){
-				console.log('movie click success');
+				clearAllList();
+				appendMovie(data);
+			},
+			error : function(request, status, error){
+				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
+			}
+		});
+	});
+
+	$(document).on("click", "#pagingMovie .page-link", function(){
+		var board_name = $("#pagingMovie").attr('title');
+		$.ajax({
+			url : '<c:url value="/' + board_name + '/movie_list.awa" />',
+			type : 'post',
+			data : {nowPage : $(this).attr("title")},
+			dataType : 'json',
+			success : function(data){
 				clearAllList();
 				appendMovie(data);
 			},
@@ -47,9 +77,26 @@ $(function(){
 		$.ajax({
 			url : '<c:url value="/' + board_name + '/tip_list.awa" />',
 			type :'post',
+			data : {nowPage : 1},
 			dataType : 'json',
 			success : function(data){
-				console.log('tip click success');
+				clearAllList();
+				appendTip(data);
+			},
+			error : function(request, status, error){
+				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
+			}
+		});
+	});
+	
+	$(document).on('click', '#pagingTip .page-link', function(){
+		var board_name = $("#pagingTip").attr('title');
+		$.ajax({
+			url : '<c:url value="/' + board_name + '/tip_list.awa" />',
+			type :'post',
+			data : {nowPage : $(this).attr('title')},
+			dataType : 'json',
+			success : function(data){
 				clearAllList();
 				appendTip(data);
 			},
@@ -64,9 +111,9 @@ $(function(){
 		$.ajax({
 			url : '<c:url value="/' + board_name + '/quest_list.awa" />',
 			type : 'post',
+			data : {nowPage : 1},
 			dataType : 'json',
 			success : function(data){
-				console.log('quest click success');
 				clearAllList();
 				appendQuest(data);
 			},
@@ -75,24 +122,42 @@ $(function(){
 			}
 		});
 	})
+	
+	$(document).on('click', '#pagingQna .page-link', function(){
+		var board_name = $("#pagingQna").attr('title');
+		$.ajax({
+			url : '<c:url value="/' + board_name + '/quest_list.awa" />',
+			type : 'post',
+			data : {nowPage : $(this).attr('title')},
+			dataType : 'json',
+			success : function(data){
+				clearAllList();
+				appendQuest(data);
+			},
+			error : function(request, status, error){
+				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
+			}
+		});
+	});
 });
 
 var clearAllList = function(){
 	$("#photo tbody").html('');
+	$("#photo #pagingPhoto").html('');
 	$("#movie tbody").html('');
+	$("#movie #pagingMovie").html('');
 	$("#tip tbody").html('');
-	$("#QnA").html('');
+	$("#tip #pagingTip").html('');
+	$("#qna tbody").html('');
+	$("#qna #pagingQna").html('');
 };
 
 var appendPhoto = function(data){
 	
-	console.log(data.records);
-	console.log(data.pagingString);
-	
 	var tableString = '';
 	
 	if(data.records.length == 0){
-		tableString += '<tr><td colspan="6" style="text-align:center">등록 된 글이 없습니다</td></tr>';
+		tableString += '<tr><td colspan="6" style="text-align:center;">등록 된 글이 없습니다</td></tr>';
 	}
 	else {
 		$.each(data.records, function(colName, value){
@@ -107,25 +172,26 @@ var appendPhoto = function(data){
 			
 			tableString += '</tr>';
 			
-			console.log("colName : " + colName);
 		});
 	}
 	
 	$("#photo tbody").html(tableString);
-	$("#photo .pagingPhoto").html(data.pagingString);
+	$("#photo #pagingPhoto").html(data.pagingString);
 	
 };
 
 var appendMovie = function(data){
-	console.log("appendMovie check");
+	
+	console.log(data.records);
+	console.log(data.pagingString);
 	
 	var tableString = '';
 	
-	if(data.length == 0){
-		tableString += '<tr><td colspan="6" style="text-align:center">등록 된 글이 없습니다</td></tr>';
+	if(data.records.length == 0){
+		tableString += '<tr><td colspan="6" style="text-align:center;">등록 된 글이 없습니다</td></tr>';
 	}
 	else {
-		$.each(data, function(colName, value){
+		$.each(data.records, function(colName, value){
 			tableString += '<tr>';
 			
 			tableString += '<td>' + value.no + '</td>';
@@ -139,19 +205,23 @@ var appendMovie = function(data){
 		});
 	}
 	
+	console.log(tableString);
+	console.log(data.pagingString);
+	
 	$("#movie tbody").html(tableString);
+	$("#movie #pagingMovie").html(data.pagingString);
+	
 };
 
 var appendTip = function(data){
-	console.log("appendTip check");
-	
+
 	var tableString = '';
 	
-	if(data.length == 0){
-		tableString += '<tr><td colspan="6" style="text-align:center">등록 된 글이 없습니다</td></tr>';
+	if(data.records.length == 0){
+		tableString += '<tr><td colspan="6" style="text-align:center;">등록 된 글이 없습니다</td></tr>';
 	}
 	else {
-		$.each(data, function(colNme, value){
+		$.each(data.records, function(colNme, value){
 			tableString += '<tr>';
 			
 			tableString += '<td>' + value.no + '</td>';
@@ -166,6 +236,8 @@ var appendTip = function(data){
 	}
 	
 	$("#tip tbody").html(tableString);
+	$("#tip #pagingTip").html(data.pagingString);
+	
 };
 
 var appendQuest = function(data){
@@ -173,11 +245,11 @@ var appendQuest = function(data){
 	
 	var tableString = '';
 	
-	if(data.length == 0){
-		tableString += '<tr><td colspan="6" style="text-align:center">등록 된 글이 없습니다</td></tr>';
+	if(data.records.length == 0){
+		tableString += '<tr><td colspan="6" style="text-align:center;">등록 된 글이 없습니다</td></tr>';
 	}
 	else {
-		$.each(data, function(colName, value){
+		$.each(data.records, function(colName, value){
 			tableString += '<tr>';
 			
 			tableString += '<td>' + value.no + '</td>';
@@ -198,5 +270,7 @@ var appendQuest = function(data){
 	}
 	
 	$("#qna tbody").html(tableString);
+	$("#qna #pagingQna").html(data.pagingString);
+	
 };
 </script>

@@ -1,4 +1,4 @@
-package com.animal.aniwhere_back.web.animal.bird;
+package com.animal.aniwhere_back.web.animal;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,9 +27,9 @@ import com.animal.aniwhere_back.service.impl.animal.QuestBoardServiceImpl;
 import com.animal.aniwhere_back.service.impl.animal.TipBoardServiceImpl;
 
 @Controller
-public class BirdController {
+public class DogController {
 
-	public static final String ANI_CATEGORY = "4";
+	public static final String ANI_CATEGORY = "1";
 
 	@Resource(name = "photoService")
 	private PhotoBoardServiceImpl pService;
@@ -48,8 +48,8 @@ public class BirdController {
 	@Value("${BLOCKPAGE}")
 	private int blockPage;
 
-	@RequestMapping("/bird/main.aw")
-	public String bird_main(Model model) throws Exception {
+	@RequestMapping("/dog/main.aw")
+	public String dog_main(Model model) throws Exception {
 
 		Map map = new HashMap();
 
@@ -57,21 +57,21 @@ public class BirdController {
 		map.put("start", 1);
 		map.put("end", pageSize);
 
+		int totalRecordCount = pService.getTotalRecord(map);
+
 		List<PhotoBoardDTO> list = pService.selectList(map);
 
 		model.addAttribute("list", list);
-
-		int totalRecordCount = pService.getTotalRecord(map);
 
 		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, 1);
 
 		model.addAttribute("pagingString", pagingString);
 
-		return "board/animal/birdMain.tiles";
-	}////////// bird_main
+		return "board/animal/dogMain.tiles";
+	}////////// dog_main
 
 	@ResponseBody
-	@RequestMapping(value = "/bird/photo_list.awa", produces = "text/plain; charset=UTF-8")
+	@RequestMapping(value = "/dog/photo_list.awa", produces = "text/plain; charset=UTF-8")
 	public String photo_list(@RequestParam Map map) throws Exception {
 
 		map.put("ani_category", ANI_CATEGORY);
@@ -99,13 +99,13 @@ public class BirdController {
 
 			collections.add(record);
 		}
-		
+
 		int totalRecordCount = pService.getTotalRecord(map);
-		
+
 		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
-		
+
 		JSONObject json = new JSONObject();
-		
+
 		json.put("records", collections);
 		json.put("pagingString", pagingString);
 
@@ -114,16 +114,18 @@ public class BirdController {
 	}////////// photo_list
 
 	@ResponseBody
-	@RequestMapping(value = "/bird/movie_list.awa", produces = "text/plain; charset=UTF-8")
-	public String movie_list() throws Exception {
-
-		System.out.println("movie list start");
-
-		Map map = new HashMap();
+	@RequestMapping(value = "/dog/movie_list.awa", produces = "text/plain; charset=UTF-8")
+	public String movie_list(@RequestParam Map map) throws Exception {
 
 		map.put("ani_category", ANI_CATEGORY);
-		map.put("start", 1);
-		map.put("end", mService.getTotalRecord(map));
+
+		int nowPage = Integer.parseInt(map.get("nowPage").toString());
+
+		int start = (nowPage - 1) * pageSize + 1;
+		int end = nowPage * pageSize;
+
+		map.put("start", start);
+		map.put("end", end);
 
 		List<MovieBoardDTO> list = mService.selectList(map);
 
@@ -140,25 +142,33 @@ public class BirdController {
 
 			collections.add(record);
 		}
-		System.out.println(collections);
-		System.out.println(JSONArray.toJSONString(collections));
-		System.out.println("movie list end");
 
-		return JSONArray.toJSONString(collections);
+		int totalRecordCount = mService.getTotalRecord(map);
+
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
+
+		JSONObject json = new JSONObject();
+
+		json.put("records", collections);
+		json.put("pagingString", pagingString);
+
+		return json.toJSONString();
 
 	}////////// movie_list
 
 	@ResponseBody
-	@RequestMapping(value = "/bird/tip_list.awa", produces = "text/plain; charset=UTF-8")
-	public String tip_list() throws Exception {
-
-		System.out.println("tip list start");
-
-		Map map = new HashMap();
+	@RequestMapping(value = "/dog/tip_list.awa", produces = "text/plain; charset=UTF-8")
+	public String tip_list(@RequestParam Map map) throws Exception {
 
 		map.put("ani_category", ANI_CATEGORY);
-		map.put("start", 1);
-		map.put("end", tService.getTotalRecord(map));
+
+		int nowPage = Integer.parseInt(map.get("nowPage").toString());
+
+		int start = (nowPage - 1) * pageSize + 1;
+		int end = nowPage * pageSize;
+
+		map.put("start", start);
+		map.put("end", end);
 
 		List<TipBoardDTO> list = tService.selectList(map);
 
@@ -177,23 +187,32 @@ public class BirdController {
 			collections.add(record);
 		}
 
-		System.out.println("tip list end");
+		int totalRecordCount = tService.getTotalRecord(map);
 
-		return JSONArray.toJSONString(collections);
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
+
+		JSONObject json = new JSONObject();
+
+		json.put("records", collections);
+		json.put("pagingString", pagingString);
+
+		return json.toJSONString();
 
 	}////////// tip_list
 
 	@ResponseBody
-	@RequestMapping(value = "/bird/quest_list.awa", produces = "text/plain; charset=UTF-8")
-	public String quest_list() throws Exception {
-
-		System.out.println("quest list start");
-
-		Map map = new HashMap();
+	@RequestMapping(value = "/dog/quest_list.awa", produces = "text/plain; charset=UTF-8")
+	public String quest_list(@RequestParam Map map) throws Exception {
 
 		map.put("ani_category", ANI_CATEGORY);
-		map.put("start", 1);
-		map.put("end", qService.getTotalRecord(map));
+
+		int nowPage = Integer.parseInt(map.get("nowPage").toString());
+
+		int start = (nowPage - 1) * pageSize + 1;
+		int end = nowPage * pageSize;
+
+		map.put("start", start);
+		map.put("end", end);
 
 		List<QuestBoardDTO> list = qService.selectList(map);
 
@@ -212,11 +231,18 @@ public class BirdController {
 
 			collections.add(record);
 		}
+		
+		int totalRecordCount = qService.getTotalRecord(map);
+		
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("records", collections);
+		json.put("pagingString", pagingString);
 
-		System.out.println("quest list end");
-
-		return JSONArray.toJSONString(collections);
+		return json.toJSONString();
 
 	}////////// quest_list
 
-}//////////////////// BirdController class
+}//////////////////// DogController class
