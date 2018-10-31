@@ -1,4 +1,4 @@
-package com.animal.aniwhere_back.web.miss.see;
+package com.animal.aniwhere_back.web.miss;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

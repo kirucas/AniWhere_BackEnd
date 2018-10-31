@@ -1,4 +1,4 @@
-package com.animal.aniwhere_back.web.miss.shelter;
+package com.animal.aniwhere_back.web.miss;
 
 import java.util.HashMap;
 import java.util.List;
