@@ -47,7 +47,7 @@ public class MemberController {
 	}
 	
 	public String ani_favor(String num) {
-		StringBuffer buffer = new StringBuffer();;
+		StringBuffer buffer = new StringBuffer();
 		if(num.equals("0")) 
 			buffer.append("없음");
 		if(num.contains("1")) 
