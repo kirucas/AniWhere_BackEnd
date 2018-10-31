@@ -1,8 +1,7 @@
-package com.animal.aniwhere_back.web.market;
+package com.animal.aniwhere_back.web.animal;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 import javax.annotation.Resource;
 
@@ -13,27 +12,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.animal.aniwhere_back.service.PagingUtil;
-import com.animal.aniwhere_back.service.impl.market.BuySellServiceImpl;
-import com.animal.aniwhere_back.service.market.BuySellDTO;
+import com.animal.aniwhere_back.service.animal.FreeBoardDTO;
+import com.animal.aniwhere_back.service.impl.animal.FreeBoardServiceImpl;
 
 @Controller
-public class SellController {
+public class FreeboardController {
 
-	private static final String TABLE_NAME = "sell";
-
-	@Resource(name = "buySellService")
-	private BuySellServiceImpl service;
+	@Resource(name = "freeService")
+	private FreeBoardServiceImpl service;
 
 	@Value("${PAGESIZE}")
 	private int pageSize;
 	@Value("${BLOCKPAGE}")
 	private int blockPage;
 
-	@RequestMapping("/market/sell.aw")
-	public String sell(@RequestParam Map map, @RequestParam(required = false, defaultValue = "1") int nowPage,
+	@RequestMapping("/freeboard.aw")
+	public String freeboard(@RequestParam Map map, @RequestParam(required = false, defaultValue = "1") int nowPage,
 			Model model) throws Exception {
-
-		map.put("table_name", TABLE_NAME);
 
 		int start = (nowPage - 1) * pageSize + 1;
 		int end = nowPage * pageSize;
@@ -41,16 +36,15 @@ public class SellController {
 		map.put("start", start);
 		map.put("end", end);
 
-		List<BuySellDTO> list = service.selectList(map);
+		List<FreeBoardDTO> list = service.selectList(map);
 
 		int totalRecordCount = service.getTotalRecord(map);
 		
-		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage, "/sell.aw?");
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage, "freeboard.aw?");
 		
 		model.addAttribute("list", list);
 		model.addAttribute("pagingString", pagingString);
 
-		return "market/sell.tiles";
-	}//////////
-
-}//////////////////// SellController class
+		return "board/animal/freeboard.tiles";
+	}
+}

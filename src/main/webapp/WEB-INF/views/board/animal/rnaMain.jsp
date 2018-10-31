@@ -13,20 +13,20 @@
                     <div class="col-md-12 pl-md-11">
                         <ul class="nav nav-tabs tab-basic" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="phototab" title="rna" data-toggle="tab" href="#photo" role="tab" aria-controls="rnaPhoto" aria-selected="true">사진</a>
+                                <a class="nav-link active" id="phototab" title="rna" data-toggle="tab" href="#photo" role="tab">사진</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="movietab" title="rna" data-toggle="tab" href="#movie" role="tab" aria-controls="rnaMovie" aria-selected="false">동영상</a>
+                                <a class="nav-link" id="movietab" title="rna" data-toggle="tab" href="#movie" role="tab">동영상</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="tiptab" title="rna" data-toggle="tab" href="#tip" role="tab" aria-controls="rnaTip" aria-selected="false">팁</a>
+                                <a class="nav-link" id="tiptab" title="rna" data-toggle="tab" href="#tip" role="tab">팁</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="qnatab" title="rna" data-toggle="tab" href="#qna" role="tab" aria-controls="rnaQna" aria-selected="false">Q&A</a>
+                                <a class="nav-link" id="qnatab" title="rna" data-toggle="tab" href="#qna" role="tab">Q&A</a>
                             </li>
                         </ul>
                         <div class="tab-content tab-content-basic">
-                            <div class="tab-pane fade show active" id="photo" role="tabpanel" aria-labelledby="rna_photo">
+                            <div class="tab-pane fade show active" id="photo" role="tabpanel">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -53,20 +53,20 @@
                                         </c:if>
                                         <c:if test="${not photoCheck}">
                                             <tr>
-                                                <td colspan="6" style="text-align: center;">현재 등록된 글이 없습니다.</td>
+                                                <td colspan="6" style="text-align: center;">등록 된 글이 없습니다</td>
                                             </tr>
                                         </c:if>
                                     </tbody>
                                 </table>
                                 <!-- 페이징 -->
                                 <br />
-                                <div class="pagingPhoto">
+                                <div id="pagingPhoto" title="rna">
                                     ${pagingString}
                                 </div>
                                 <!-- 페이징 끝 -->
 
                             </div>
-                            <div class="tab-pane fade" id="movie" role="tabpanel" aria-labelledby="rna_movie">
+                            <div class="tab-pane fade" id="movie" role="tabpanel">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -81,9 +81,9 @@
                                     <tbody></tbody>
                                 </table>
                                 <br />
-                                <div class="pagingMovie"></div>
+                                <div id="pagingMovie" title="rna"></div>
                             </div>
-                            <div class="tab-pane fade" id="tip" role="tabpanel" aria-labelledby="rna_tip">
+                            <div class="tab-pane fade" id="tip" role="tabpanel">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -98,9 +98,9 @@
                                     <tbody></tbody>
                                 </table>
                                 <br />
-                                <div class="pagingTip"></div>
+                                <div id="pagingTip" title="rna"></div>
                             </div>
-                            <div class="tab-pane fade" id="qna" role="tabpanel" aria-labelledby="rna_qna">
+                            <div class="tab-pane fade" id="qna" role="tabpanel">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -115,7 +115,7 @@
                                     <tbody></tbody>
                                 </table>
                                 <br />
-                                <div class="pagingQna"></div>
+                                <div id="pagingQna" title="rna"></div>
                             </div>
                         </div>
                     </div>

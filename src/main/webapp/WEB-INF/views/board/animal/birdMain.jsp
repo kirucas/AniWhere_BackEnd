@@ -53,14 +53,14 @@
                                         </c:if>
                                         <c:if test="${not photoCheck}">
                                             <tr>
-                                                <td colspan="6" style="text-align: center;">현재 등록된 글이 없습니다.</td>
+                                                <td colspan="6" style="text-align: center;">등록된 글이 없습니다</td>
                                             </tr>
                                         </c:if>
                                     </tbody>
                                 </table>
                                 <!-- 페이징 -->
                                 <br />
-                                <div class="pagingPhoto">
+                                <div id="pagingPhoto" title="bird">
                                     ${pagingString}
                                 </div>
                                 <!-- 페이징 끝 -->
@@ -81,7 +81,7 @@
                                     <tbody></tbody>
                                 </table>
                                 <br />
-                                <div class="pagingMovie"></div>
+                                <div id="pagingMovie" title="bird"></div>
                             </div>
                             <div class="tab-pane fade" id="tip" role="tabpanel">
                                 <table class="table">
@@ -98,7 +98,7 @@
                                     <tbody></tbody>
                                 </table>
                                 <br />
-                                <div class="pagingTip"></div>
+                                <div id="pagingTip" title="bird"></div>
                             </div>
                             <div class="tab-pane fade" id="qna" role="tabpanel">
                                 <table class="table">
@@ -115,7 +115,7 @@
                                     <tbody></tbody>
                                 </table>
                                 <br />
-                                <div class="pagingQna"></div>
+                                <div id="pagingQna" title="bird"></div>
                             </div>
                         </div>
                     </div>

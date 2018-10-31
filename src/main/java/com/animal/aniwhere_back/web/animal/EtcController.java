@@ -1,4 +1,4 @@
-package com.animal.aniwhere_back.web.animal.etc;
+package com.animal.aniwhere_back.web.animal;
 
 import java.util.HashMap;
 import java.util.List;
@@ -115,15 +115,17 @@ public class EtcController {
 
 	@ResponseBody
 	@RequestMapping(value = "/etc/movie_list.awa", produces = "text/plain; charset=UTF-8")
-	public String movie_list() throws Exception {
-
-		System.out.println("movie list start");
-
-		Map map = new HashMap();
+	public String movie_list(@RequestParam Map map) throws Exception {
 
 		map.put("ani_category", ANI_CATEGORY);
-		map.put("start", 1);
-		map.put("end", mService.getTotalRecord(map));
+
+		int nowPage = Integer.parseInt(map.get("nowPage").toString());
+
+		int start = (nowPage - 1) * pageSize + 1;
+		int end = nowPage * pageSize;
+
+		map.put("start", start);
+		map.put("end", end);
 
 		List<MovieBoardDTO> list = mService.selectList(map);
 
@@ -140,25 +142,33 @@ public class EtcController {
 
 			collections.add(record);
 		}
-		System.out.println(collections);
-		System.out.println(JSONArray.toJSONString(collections));
-		System.out.println("movie list end");
 
-		return JSONArray.toJSONString(collections);
+		int totalRecordCount = mService.getTotalRecord(map);
+
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
+
+		JSONObject json = new JSONObject();
+
+		json.put("records", collections);
+		json.put("pagingString", pagingString);
+
+		return json.toJSONString();
 
 	}////////// movie_list
 
 	@ResponseBody
 	@RequestMapping(value = "/etc/tip_list.awa", produces = "text/plain; charset=UTF-8")
-	public String tip_list() throws Exception {
-
-		System.out.println("tip list start");
-
-		Map map = new HashMap();
+	public String tip_list(@RequestParam Map map) throws Exception {
 
 		map.put("ani_category", ANI_CATEGORY);
-		map.put("start", 1);
-		map.put("end", tService.getTotalRecord(map));
+
+		int nowPage = Integer.parseInt(map.get("nowPage").toString());
+
+		int start = (nowPage - 1) * pageSize + 1;
+		int end = nowPage * pageSize;
+
+		map.put("start", start);
+		map.put("end", end);
 
 		List<TipBoardDTO> list = tService.selectList(map);
 
@@ -177,23 +187,32 @@ public class EtcController {
 			collections.add(record);
 		}
 
-		System.out.println("tip list end");
+		int totalRecordCount = tService.getTotalRecord(map);
 
-		return JSONArray.toJSONString(collections);
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
+
+		JSONObject json = new JSONObject();
+
+		json.put("records", collections);
+		json.put("pagingString", pagingString);
+
+		return json.toJSONString();
 
 	}////////// tip_list
 
 	@ResponseBody
 	@RequestMapping(value = "/etc/quest_list.awa", produces = "text/plain; charset=UTF-8")
-	public String quest_list() throws Exception {
-
-		System.out.println("quest list start");
-
-		Map map = new HashMap();
+	public String quest_list(@RequestParam Map map) throws Exception {
 
 		map.put("ani_category", ANI_CATEGORY);
-		map.put("start", 1);
-		map.put("end", qService.getTotalRecord(map));
+
+		int nowPage = Integer.parseInt(map.get("nowPage").toString());
+
+		int start = (nowPage - 1) * pageSize + 1;
+		int end = nowPage * pageSize;
+
+		map.put("start", start);
+		map.put("end", end);
 
 		List<QuestBoardDTO> list = qService.selectList(map);
 
@@ -212,10 +231,17 @@ public class EtcController {
 
 			collections.add(record);
 		}
+		
+		int totalRecordCount = qService.getTotalRecord(map);
+		
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage);
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("records", collections);
+		json.put("pagingString", pagingString);
 
-		System.out.println("quest list end");
-
-		return JSONArray.toJSONString(collections);
+		return json.toJSONString();
 
 	}////////// quest_list
 

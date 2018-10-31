@@ -2,8 +2,15 @@
 
 public class PagingUtil {
 
-	public static String pagingBootStrapStyle(int totalRecordCount, int pageSize, int blockPage, int nowPage,
-			String page) {
+	public static String pagingBootStrapStyle(int totalRecordCount, int pageSize, int blockPage, int nowPage, String page) {
+		
+		/*
+		*
+		*
+		* 일반 요청 처리 시 사용
+		*
+		*
+		*/
 
 		String pagingStr = "<nav><ul class='pagination rounded-flat pagination-success d-flex justify-content-center'>";
 
@@ -56,6 +63,14 @@ public class PagingUtil {
 	}
 	
 	public static String pagingBootStrapStyle(int totalRecordCount, int pageSize, int blockPage, int nowPage) {
+		
+		/*
+		*
+		*
+		* aJax/JSON 요청 처리 시 사용
+		*
+		*
+		*/
 
 		String pagingStr = "<nav><ul class='pagination rounded-flat pagination-success d-flex justify-content-center'>";
 
