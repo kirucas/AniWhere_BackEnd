@@ -41,7 +41,7 @@ public class SchedulerService {
 	@Resource(name = "lostAniService")
 	private LostAnimalServiceImpl serviceLost;
 	
-	@Resource(name = "StoreLocService")
+	@Resource(name = "storeLocService")
 	private StoreLocationServiceImpl serviceStore;
 	
 	@Scheduled(cron = "0 0 21 * * *")

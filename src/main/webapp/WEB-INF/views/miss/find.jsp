@@ -21,11 +21,12 @@
 					</thead>
 					<tbody>
 						<c:if test="${not empty list }" var="result">
-							<c:forEach items="${list}" item="item">
+							<c:forEach items="${list}" var="item">
 								<tr>
 									<td>${item.no}</td>
 									<td>
 										<span class="badge badge-info badge-pill">${item.animal_name }</span>
+										<span class="badge badge-success badge-pill">${item.addr }</span>
 										${item.title}
 									</td>
 									<td>${item.mem_nickname}</td>

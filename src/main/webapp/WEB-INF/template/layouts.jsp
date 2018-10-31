@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.base.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.addons.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/ti-icons/css/themify-icons.css' />">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -77,6 +78,8 @@
     <%-- <script src="<c:url value='/resources/js/weather_js.js' />"></script> --%><!-- weather api error로 인해서 현재 제거 -->
     <script src="<c:url value='/resources/js/integration_js.js' />"></script>
     <jsp:include page="/resources/js/animal_board.jsp" />
+    <jsp:include page="/resources/js/shelter_js.jsp" />
+    <jsp:include page="/resources/js/store_location.jsp" />
     <!-- End custom js for this page-->
 </body>
 
