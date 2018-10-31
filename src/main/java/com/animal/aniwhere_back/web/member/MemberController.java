@@ -61,7 +61,7 @@ public class MemberController {
 		if(num.contains("5"))
 			buffer.append("조류 ");
 		if(num.contains("6"))
-			buffer.append("기타포유류 ");
+			buffer.append("기타포유류");
 		
 		return buffer.toString();
 	}
