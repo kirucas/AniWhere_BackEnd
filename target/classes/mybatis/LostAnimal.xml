@@ -10,7 +10,7 @@
 		SELECT COUNT(*)
 		FROM lost_animal
 		<if test="today != null">
-			WHERE end_notice = sysdate
+			WHERE end_notice = TO_CHAR(sysdate)
 		</if>
 	</select>
 	
@@ -22,7 +22,7 @@
 				SELECT *
 				FROM lost_animal
 				<if test="today != null">
-					WHERE end_notice = sysdate
+					WHERE end_notice = TO_CHAR(sysdate)
 				</if>
 				ORDER BY end_notice, no
 				) T

@@ -121,12 +121,12 @@
                     <div class="card-body">
                         <p class="text-gray">${today} 입양해주세요</p>
                         <div class="col-md-12">
-                            <img src="${lost_data }" style="width: 100%; margin-bottom: 20px;" />
-                            <h4>품종 : </h4>
-                            <h4>기관명 : </h4>
-                            <h4>기관 주소 : </h4>
-                            <h4>기관 전화번호 : </h4>
-                            <h4>공고 종료일 : </h4>
+                            <img src="${lost_data.img_src }" style="width: 100%; margin-bottom: 20px;" />
+                            <h4>품종 : ${lost_data.kind }</h4>
+                            <h4>기관명 : ${lost_data.carenm }</h4>
+                            <h4>기관 주소 : ${lost_data.addr}</h4>
+                            <h4>기관 전화번호 : ${lost_data.caretel}</h4>
+                            <h4>공고 종료일 : ${lost_data.end_notice}</h4>
                         </div>
                     </div>
                 </div>

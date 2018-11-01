@@ -60,13 +60,15 @@ public class HomeController {
 		map.put("today", today);
 		
 		int end = lostService.getTotalRecord(map);
+		System.out.println("end : " + end);
+		
 		map.put("start", 1);
 		map.put("end", end);
 		List<LostAnimalDTO> list = lostService.selectList(map);
 		
 		Random random = new Random();
 		
-		model.addAttribute("lost_data", list.get(random.nextInt(end) + 1));
+		model.addAttribute("lost_data", list.get(random.nextInt(end)));
 		model.addAttribute("today", today);
 		return "home.tiles";
 		
