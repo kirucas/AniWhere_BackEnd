@@ -94,6 +94,9 @@
 	          </div>
           </div>
           <!-- 페이징 끝 -->
+          <a href="<c:url value='/notice/write.aw'/>">
+          <button class="btn btn-primary">등록하기</button>
+          </a>
           </div>
         </div>
       </div>
