@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.base.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.addons.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/ti-icons/css/themify-icons.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/summernote/dist/summernote-bs4.css' />">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -77,9 +78,12 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a4fb652ba7630c5395293fd0480943a"></script>
     <script src="<c:url value='/resources/js/integration_js.js' />"></script>
     <script src="<c:url value='/resources/assets/js/shared/tooltips.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/shared/modal-demo.js' />"></script>
+    <script src="<c:url value='/resources/assets/vendors/summernote/dist/summernote-bs4.min.js' />"></script>
     <jsp:include page="/resources/js/animal_board.jsp" />
     <jsp:include page="/resources/js/shelter_js.jsp" />
     <jsp:include page="/resources/js/store_location.jsp" />
+    <jsp:include page="/resources/js/notice_js.jsp" />
     <!-- End custom js for this page-->
 </body>
 

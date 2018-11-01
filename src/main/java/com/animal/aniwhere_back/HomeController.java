@@ -60,7 +60,6 @@ public class HomeController {
 		map.put("today", today);
 		
 		int end = lostService.getTotalRecord(map);
-		System.out.println("end : " + end);
 		
 		map.put("start", 1);
 		map.put("end", end);

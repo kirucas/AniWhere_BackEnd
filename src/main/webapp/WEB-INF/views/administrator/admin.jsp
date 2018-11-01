@@ -22,22 +22,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                        	<img src="<c:url value='/resources/images/profile_404.jpg' />" />
-                        </td>
-                        <td>Jacob</td>
-                        <td>
-                            <label class="badge badge-danger">게시판</label>
-                        </td>
-                        <td>
-                        	<button class="btn btn-dark btn-fw">
-                        		<i class="fa fa-edit"></i>
-                        		edit
-                        	</button>
-                        </td>
-                    </tr>
                     <c:forEach items="${admin_list }" var="adInfo">
                     	<tr>
                     		<td>${adInfo.am_no }</td>
@@ -67,8 +51,11 @@
                     				<c:when test="${adInfo.am_level eq 5 }">
                     					<label class="badge badge-warning">Mating Manager</label>
                     				</c:when>
-                    				<c:otherwise>
+                    				<c:when test="${adInfo.am_level eq 6 }">
                     					<label class="badge badge-secondary">Where Manager</label>
+                    				</c:when>
+                    				<c:otherwise>
+                    					<label class="badge badge-outline-success">layout Manager</label>
                     				</c:otherwise>
                     			</c:choose>
                     			
