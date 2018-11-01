@@ -1,15 +1,18 @@
 package com.animal.aniwhere_back.web.miss;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.impl.miss.LostAnimalServiceImpl;
@@ -48,5 +51,18 @@ public class ShelterController {
 		
 		return "miss/shelter.tiles";
 	}////////// shelter
+	
+	@ResponseBody
+	@RequestMapping(value="/miss/passDateOnNotice.awa", produces = "text/plain; charset=UTF-8")
+	public String passDateOnNotice() throws Exception {
+
+		int affected = service.passDateOnNotice();
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("affected", affected + "행");
+		
+		return json.toJSONString();
+	}
 
 }//////////////////// ShelterController

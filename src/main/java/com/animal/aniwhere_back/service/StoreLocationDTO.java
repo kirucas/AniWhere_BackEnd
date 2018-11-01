@@ -14,6 +14,7 @@ public class StoreLocationDTO {
 	private String dongno;
 	private String flrno;
 	private String hono;
+	
 	public String getBizesid() {
 		return bizesid;
 	}//////////

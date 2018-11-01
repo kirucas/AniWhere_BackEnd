@@ -9,5 +9,21 @@
 			console.log(imageString);
 			$("#animal_image_shelter .modal-body").html(imageString);
 		});
+		
+		$("#passDateOnNotice").click(function(){
+			$.ajax({
+				url : '<c:url value="/miss/passDateOnNotice.awa" />',
+				type : 'post',
+				dataType : 'json',
+				success : function(data){
+					alert(data.affected + "을 삭제했습니다");
+					location.href="<c:url value='/miss/shelter.aw' />";
+				},
+				error : function(request, status, error){
+					console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
+					alert("삭제에 실패했습니다");
+				}
+			});
+		});
 	});
 </script>

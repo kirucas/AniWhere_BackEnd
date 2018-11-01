@@ -1,9 +1,11 @@
 package com.animal.aniwhere_back;
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Random;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -42,21 +44,32 @@ public class HomeController {
 			return "forward:/main.aw";
 		
 		return "forward:/sign_in.aw";
-	}
+	}////////// home
 	
 	@Resource(name="lostAniService")
 	private LostAnimalServiceImpl lostService;
 	
 	@RequestMapping(value="/main.aw")
 	public String main(Model model) {
+		
 		Map map = new HashMap();
 		//종료일 임박한 동물 10마리중 랜덤하게
-		int end = (int) (Math.random() * 10) + 1;
-		map.put("start", end);
+		
+		Date today = new Date(new java.util.Date().getTime());
+		
+		map.put("today", today);
+		
+		int end = lostService.getTotalRecord(map);
+		map.put("start", 1);
 		map.put("end", end);
 		List<LostAnimalDTO> list = lostService.selectList(map);
-		model.addAttribute("lost_one", list);
+		
+		Random random = new Random();
+		
+		model.addAttribute("lost_data", list.get(random.nextInt(end) + 1));
+		model.addAttribute("today", today);
 		return "home.tiles";
-	}
+		
+	}////////// main
 	
-}
+}//////////////////// HomeController class

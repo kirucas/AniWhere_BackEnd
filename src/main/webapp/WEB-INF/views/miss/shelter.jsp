@@ -47,6 +47,12 @@
                 </table>
                 <br />
                 ${pagingString}
+                <br />
+                <div class="clearfix">
+                	<div class="float-right">
+                		<button id="passDateOnNotice" type="button" class="btn btn-warning btn-fw" data-toggle="tooltip" data-placement="top" title="공고 종료 일자가 지난 공고를 삭제 합니다">공고 삭제</button>
+                	</div>
+                </div>
             </div>
         </div>
     </div>
