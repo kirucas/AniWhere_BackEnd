@@ -2,6 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:if test="${not empty noticeDeleteResult}">
+	<c:if test="${noticeDeleteResult eq 1 }" var="otherResult">
+		<script>alert("삭제 성공 ㅇㅇ");</script>
+	</c:if>
+	<c:if test="${not otherResult}">
+		<script>alert("삭제 실패 ㅉㅉ");</script>
+	</c:if>
+</c:if>
+
 <style>
     @import '<c:url value="/resources/css/table_css.css" />';
 </style>
@@ -57,8 +66,8 @@
 			<div class="modal-body">
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-warning btn-fw" type="button">수정</button>
-				<button class="btn btn-danger btn-fw" type="button">삭제</button>
+				<!-- <button class="btn btn-warning btn-fw" type="button" id="noticeEdit">수정</button>
+				<button class="btn btn-danger btn-fw" type="button" id="noticeDelete">삭제</button> -->
 			</div>
 		</div>
 	</div>

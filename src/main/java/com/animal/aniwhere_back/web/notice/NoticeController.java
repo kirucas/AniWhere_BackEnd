@@ -69,5 +69,16 @@ public class NoticeController {
 		
 		return json.toJSONString();
 	}////////// notice_one
+	
+	@RequestMapping("/notice/delete.aw")
+	public String notice_delete(@RequestParam Map map, Model model) throws Exception {
+		
+		int affected = service.delete(map);
+		
+		model.addAttribute("noticeDeleteResult", affected);
+		
+		return "forward:/notice.aw";
+		
+	}
 
 }//////////////////// NoticeController class

@@ -29,7 +29,7 @@
 	                                <td>${shelterList.end_notice}</td>
 	                                <td>${shelterList.kind}</td>
 	                                <td>${shelterList.addr}</td>
-	                                <td>${shelterList.careNm}</td>
+	                                <td>${shelterList.carenm}</td>
 	                                <td>
 	                                	<button type="button" class="btn btn-info btn-fw" title="${shelterList.img_src }" data-toggle="modal" data-target="#animal_image_shelter" id="shelter_link">
 	                                		<i class="ti-gallery"></i>사진보기
