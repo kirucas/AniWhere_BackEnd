@@ -40,6 +40,7 @@ public class AdministratorController {
 		session.setAttribute("am_level", dto.getAm_level());
 		session.setAttribute("am_level_str", amLeveltoString(Integer.parseInt(dto.getAm_level())));
 		session.setAttribute("am_profile", dto.getAm_profile_link());
+		session.setAttribute("am_no", dto.getAm_no());
 
 		return "forward:/main.aw";
 	}////////// signInProcess
