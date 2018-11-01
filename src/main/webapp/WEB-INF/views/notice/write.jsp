@@ -8,10 +8,8 @@
 			<div class="card-body">
 				<h4 class="card-title">공지사항</h4>
 				<div style="width: 100%">
-					<form method="post"
-						action="<c:url value='/animal/freeboard/write.aw'/>">
 						<div class="form-group form-row">
-							<div class="form-row" style="width: 87.5%;" id="titlediv">
+							<div class="form-row" style="width: 87.5%;">
 								<input type="text" class="form-control" id="title" name="title"
 									placeholder="제목을 입력하세요">
 							</div>
@@ -29,7 +27,6 @@
 								</a>
 							</div>
 						</div>
-					</form>
 				</div>
 			</div>
 		</div>

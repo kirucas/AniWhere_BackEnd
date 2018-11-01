@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,7 +31,7 @@ public class NoticeController {
 	@Value("${BLOCKPAGE}")
 	private int blockPage;
 
-	@RequestMapping("/notice.aw")
+	@RequestMapping(value = "/notice.aw")
 	public String notice(@RequestParam Map map, @RequestParam(required = false, defaultValue = "1") int nowPage,
 			Model model) throws Exception {
 
@@ -55,19 +56,25 @@ public class NoticeController {
 
 	// 등록 폼으로 이동 및 입력처리]
 	@RequestMapping(value = "/notice/write.aw", method = RequestMethod.GET)
-	public String write() throws Exception {
+	public String write(@RequestParam Map map,HttpSession session) throws Exception {
+		map.put("am_no",session.getAttribute("am_no"));
+		service.insert(map);
 		return "notice/write.tiles";
 	}////////////////
 	
 	// 수정 처리]
-	@RequestMapping("notice/update.aw")
+	@RequestMapping("/notice/update.aw")
 	public String edit(HttpServletRequest req,@RequestParam Map map,Model model) throws Exception{
-		if(req.getMethod().equals("GET")) {
 			//서비스 호출]
 			NoticeDTO record = service.selectOne(map);
 			//수정 폼으로 이동]
 			model.addAttribute("record", record);
-		}
+			//서비스 호출
+			int affected=service.update(map);
+			//데이타 저장
+			model.addAttribute("WHERE", "EDT");
+			model.addAttribute("successFail", affected);		
+			//뷰정보 반환
 			return "notice/update.tiles";
 	}//////////////edit()
 	
@@ -90,5 +97,16 @@ public class NoticeController {
 
 		return json.toJSONString();
 	}////////// notice_one
+	
+	@RequestMapping("/notice/delete.aw")
+	public String notice_delete(@RequestParam Map map, Model model) throws Exception {
+		
+		int affected = service.delete(map);
+		
+		model.addAttribute("noticeDeleteResult", affected);
+		
+		return "forward:/notice.aw";
+		
+	}
 
 }//////////////////// NoticeController class
