@@ -48,8 +48,8 @@ public class LostAnimalDAO implements AllCommonService {
 		return template.delete("lostDelete", map);
 	}////////// delete
 	
-	public int passDateOnNotice() {
-		return template.delete("passDateOnNotice");
+	public int passDateOnNotice(Map map) {
+		return template.delete("passDateOnNotice", map);
 	}////////// passDateOnNotice
 
 }//////////////////// LostAnimalDAO class

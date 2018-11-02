@@ -28,6 +28,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
+import com.animal.aniwhere_back.service.impl.StatisticsService;
 import com.animal.aniwhere_back.service.impl.StoreLocationServiceImpl;
 import com.animal.aniwhere_back.service.impl.miss.LostAnimalServiceImpl;
 
@@ -43,6 +44,9 @@ public class SchedulerService {
 
 	@Resource(name = "storeLocService")
 	private StoreLocationServiceImpl serviceStore;
+	
+	@Resource(name = "statisticsService")
+	private StatisticsService serviceStatis;
 
 	@Scheduled(cron = "0 0 21 * * *")
 //	@Scheduled(cron = "30 11 * * * *")
@@ -51,7 +55,9 @@ public class SchedulerService {
 	}////////// doingScheduled
 
 	@Scheduled(cron = "0 0 0 * * *")
+//	@Scheduled(cron = "0 30 * * * *")
 	public void doingDeletingDataScheduler() throws Exception {
+		createCountingRow();
 		startDeletingDataProcess();
 	}//////////
 	
@@ -65,6 +71,15 @@ public class SchedulerService {
 		thread.start();
 	}
 
+	public void createCountingRow() throws Exception {
+		
+		Map map = new HashMap();
+		
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
+		
+		serviceStatis.createCountingRow(map);
+	}
+	
 	class GetDataThread extends Thread {
 		@Override
 		public void run() {
@@ -331,7 +346,12 @@ public class SchedulerService {
 	}////////// queryOperatingStore
 	
 	public void passDateOnNotice() {
-		serviceLost.passDateOnNotice();
+		
+		Map map = new HashMap();
+		
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
+		
+		serviceLost.passDateOnNotice(map);
 	}////////// passDateOnNotice
 
 }//////////////////// SchedulerService class

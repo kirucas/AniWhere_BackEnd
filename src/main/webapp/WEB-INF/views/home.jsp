@@ -15,7 +15,7 @@
             <div class="col-12 col-sm-6 col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2>19</h2>
+                        <h2>${todayVisitor}</h2>
                         <p class="text-gray">오늘의 방문자 수</p>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
             <div class="col-12 col-sm-6 col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2>10</h2>
+                        <h2>${todayRecords }</h2>
                         <p class="text-gray">오늘의 게시글 수</p>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             <div class="d-flex flex-column ml-2">
                                 <span class="d-flex flex-column">
                                     <small class="mb-0">전체 회원수</small>
-                                    <span class="font-weight-bold">30</span>
+                                    <span class="font-weight-bold">${allMemberCount}</span>
                                 </span>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                             <div class="d-flex flex-column ml-2">
                                 <span class="d-flex flex-column">
                                     <small class="mb-0">전체 방문자</small>
-                                    <span class="font-weight-bold">440</span>
+                                    <span class="font-weight-bold">${allVisitor}</span>
                                 </span>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                             <div class="d-flex flex-column ml-2">
                                 <span class="d-flex flex-column">
                                     <small class="mb-0">등록된 유기동물</small>
-                                    <span class="font-weight-bold">74</span>
+                                    <span class="font-weight-bold">${allLostAnimal}</span>
                                 </span>
                             </div>
                         </div>
@@ -84,15 +84,15 @@
                             <div class="d-flex flex-column ml-2">
                                 <span class="d-flex flex-column">
                                     <small class="mb-0">전체 게시글 등록수</small>
-                                    <span class="font-weight-bold">25</span>
+                                    <span class="font-weight-bold">${allBoardCount}</span>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+        
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -101,7 +101,7 @@
                         <div class="col-md-12 grid-margin stretch-card">
                             <div class="col-md-12">
                                 <div class="google-chart-container d-flex justify-content-center h-100">
-                                    <div id="visitor-chart" class="google-charts"></div>
+                                    <div id="visitor-count-chart" class="google-charts"></div>
                                 </div>
                             </div>
                         </div>
@@ -109,12 +109,26 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-
-        </div>
+        
     </div>
+	<%-- <div class="col-md-12 gird-margin">    
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class='card-body'>
+						<h4 class="card-title">방문자 통계 2</h4>
+						<div class="col-md-12 grid-margin stretch-card">
+							<div class="col-md-12">
+								<canvas id="visitor_count_chart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> --%>
 
-    <div class="col-md-12 grid-margin">
+	<div class="col-md-12 grid-margin">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">

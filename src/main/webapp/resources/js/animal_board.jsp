@@ -29,7 +29,7 @@ $(function(){
 			data : {nowPage : $(this).attr('title')},
 			dataType : 'json',
 			success : function(data){
-				clearAllList();
+				clearAnimalList();
 				changePhoto(data);
 			},
 			error : function(request, status, error){
@@ -46,7 +46,7 @@ $(function(){
 			data : {nowPage : 1},
 			dataType : 'json',
 			success : function(data){
-				clearAllList();
+				clearAnimalList();
 				changeMovie(data);
 			},
 			error : function(request, status, error){
@@ -63,7 +63,7 @@ $(function(){
 			data : {nowPage : $(this).attr("title")},
 			dataType : 'json',
 			success : function(data){
-				clearAllList();
+				clearAnimalList();
 				changeMovie(data);
 			},
 			error : function(request, status, error){
@@ -80,7 +80,7 @@ $(function(){
 			data : {nowPage : 1},
 			dataType : 'json',
 			success : function(data){
-				clearAllList();
+				clearAnimalList();
 				changeTip(data);
 			},
 			error : function(request, status, error){
@@ -97,7 +97,7 @@ $(function(){
 			data : {nowPage : $(this).attr('title')},
 			dataType : 'json',
 			success : function(data){
-				clearAllList();
+				clearAnimalList();
 				changeTip(data);
 			},
 			error : function(request, status, error){
@@ -114,7 +114,7 @@ $(function(){
 			data : {nowPage : 1},
 			dataType : 'json',
 			success : function(data){
-				clearAllList();
+				clearAnimalList();
 				changeQuest(data);
 			},
 			error : function(request, status, error){
@@ -131,7 +131,7 @@ $(function(){
 			data : {nowPage : $(this).attr('title')},
 			dataType : 'json',
 			success : function(data){
-				clearAllList();
+				clearAnimalList();
 				changeQuest(data);
 			},
 			error : function(request, status, error){
@@ -165,7 +165,7 @@ var changePhoto = function(data){
 			
 			tableString += '<td>' + value.no + '</td>';
 			tableString += '<td>' + value.photo_title + '</td>';
-			tableString += '<td>' + value.mem_nickname + '</td>';
+			tableString += '<td>' + (value.mem_nickname == null ? '탈퇴한 회원 ㅠ' : value.mem_nickname) + '</td>';
 			tableString += '<td>' + value.photo_regidate + '</td>';
 			tableString += '<td>' + value.photo_count + '</td>';
 			tableString += '<td>' + value.photo_hit + '</td>';
@@ -176,14 +176,11 @@ var changePhoto = function(data){
 	}
 	
 	$("#photo tbody").html(tableString);
-	$("##pagingPhoto").html(data.pagingString);
+	$("#pagingPhoto").html(data.pagingString);
 	
 };
 
 var changeMovie = function(data){
-	
-	console.log(data.records);
-	console.log(data.pagingString);
 	
 	var tableString = '';
 	
@@ -196,7 +193,7 @@ var changeMovie = function(data){
 			
 			tableString += '<td>' + value.no + '</td>';
 			tableString += '<td>' + value.movie_title + '</td>';
-			tableString += '<td>' + value.mem_nickname + '</td>';
+			tableString += '<td>' + (value.mem_nickname == null ? '탈퇴한 회원 ㅠ' : value.mem_nickname) + '</td>';
 			tableString += '<td>' + value.movie_regidate + '</td>';
 			tableString += '<td>' + value.movie_count + '</td>';
 			tableString += '<td>' + value.movie_hit + '</td>';
@@ -226,7 +223,7 @@ var changeTip = function(data){
 			
 			tableString += '<td>' + value.no + '</td>';
 			tableString += '<td>' + value.tip_title + '</td>';
-			tableString += '<td>' + value.mem_nickname + '</td>';
+			tableString += '<td>' + (value.mem_nickname == null ? '탈퇴한 회원 ㅠ' : value.mem_nickname) + '</td>';
 			tableString += '<td>' + value.tip_regidate + '</td>';
 			tableString += '<td>' + value.tip_count + '</td>';
 			tableString += '<td>' + value.tip_hit + '</td>';
@@ -259,7 +256,7 @@ var changeQuest = function(data){
 				tableString += '<td><span class="badge badge-success badge-pill">답글</span>';
 			}
 			tableString += value.quest_title + '</td>';
-			tableString += '<td>' + value.mem_nickname + '</td>';
+			tableString += '<td>' + (value.mem_nickname == null ? '탈퇴한 회원 ㅠ' : value.mem_nickname) + '</td>';
 			tableString += '<td>' + value.quest_regidate + '</td>';
 			tableString += '<td>' + value.quest_count + '</td>';
 			tableString += '<td>' + value.quest_hit + '</td>';

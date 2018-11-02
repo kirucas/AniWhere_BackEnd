@@ -44,7 +44,14 @@
                                                 <tr>
                                                     <td>${item.no}</td>
                                                     <td>${item.photo_title }</td>
-                                                    <td>${item.mem_nickname }</td>
+                                                    <td>
+                                                    	<c:if test="${not empty item.mem_nickname}" var="nickResult">
+                                                    		${item.mem_nickname}
+                                                    	</c:if>
+                                                    	<c:if test="${not nickResult}">
+                                                    		탈퇴한 회원 ㅠ
+                                                    	</c:if>
+                                                    </td>
                                                     <td>${item.photo_regidate }</td>
                                                     <td>${item.photo_count }</td>
                                                     <td>${item.photo_hit }</td>

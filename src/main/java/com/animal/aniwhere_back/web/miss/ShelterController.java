@@ -56,7 +56,11 @@ public class ShelterController {
 	@RequestMapping(value="/miss/passDateOnNotice.awa", produces = "text/plain; charset=UTF-8")
 	public String passDateOnNotice() throws Exception {
 
-		int affected = service.passDateOnNotice();
+		Map map = new HashMap();
+		
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
+		
+		int affected = service.passDateOnNotice(map);
 		
 		JSONObject json = new JSONObject();
 		
