@@ -70,15 +70,15 @@
                                 <div class="form-group d-flex justify-content-between">
                                     <div class="form-check form-check-flat mt-0">
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" checked>아이디 저장
+                                            <input type="checkbox" class="form-check-input">아이디 저장
                                         </label>
                                     </div>
                                     <a href="#" class="text-small forgot-password text-black">비밀번호를 잊어버렸어요</a>
                                 </div>
-                                <div class="text-block text-center my-3">
+                                <!-- <div class="text-block text-center my-3">
                                     <span class="text-small font-weight-semibold">아직 회원이 아니세요?</span>
                                     <a href="register.html" class="text-black text-small">가입하러 가기</a>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                         <ul class="auth-footer">

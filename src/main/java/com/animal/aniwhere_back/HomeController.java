@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.animal.aniwhere_back.service.impl.StatisticsService;
 import com.animal.aniwhere_back.service.impl.miss.LostAnimalServiceImpl;
 import com.animal.aniwhere_back.service.miss.LostAnimalDTO;
 
@@ -49,6 +50,9 @@ public class HomeController {
 	@Resource(name="lostAniService")
 	private LostAnimalServiceImpl lostService;
 	
+	@Resource(name="statisticsService")
+	private StatisticsService statisService;
+	
 	@RequestMapping(value="/main.aw")
 	public String main(Model model) {
 		
@@ -69,6 +73,21 @@ public class HomeController {
 		
 		model.addAttribute("lost_data", list.get(random.nextInt(end)));
 		model.addAttribute("today", today);
+		
+		/* 메인 페이지 통계를 구하기 시작 */
+		
+		model.addAttribute("todayVisitor", statisService.todayVisitCount(map));
+		model.addAttribute("todayRecords", statisService.todayAllBoardCount(map));
+		model.addAttribute("allMemberCount", statisService.allMemberCount());
+		model.addAttribute("allVisitor", statisService.allVisitor());
+		model.addAttribute("allLostAnimal", statisService.allLostAnimal());
+		model.addAttribute("allBoardCount", statisService.allBoardCount());
+		
+		List<Map> countList = statisService.allVisitCount();
+		model.addAttribute("allVisitCount", countList);
+		
+		/* 메인 페이지 통계를 구하기 끝 */
+		
 		return "home.tiles";
 		
 	}////////// main

@@ -148,9 +148,6 @@ function drawAnimal() {
   Donutchart.draw(data, options);
   //반응형 적용
   //window.addEventListener('resize', function() { chart.draw(data, options); }, false);
-  $(window).resize(function(){ 
-	  drawAnimal(); 
-	     }); 
 }
 
 //////////////////////////////// 동물 별 통계 끝 ////////////////////////////////////////////////
