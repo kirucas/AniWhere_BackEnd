@@ -31,9 +31,17 @@
           			<td>${memberInfo.mem_id }</td>
           			<td>${memberInfo.mem_name }</td>
           			<td>${memberInfo.mem_nickname }</td>
-          			<td>${memberInfo.mem_gender }</td>
           			<td>
-          				
+          				<c:choose>
+          					<c:when test="${memberInfo.mem_gender eq 'M' }">
+          						남자
+          					</c:when>
+          					<c:otherwise>
+          						여자
+          					</c:otherwise>
+          				</c:choose>
+          			</td>
+          			<td>
           				<c:choose>
           					<c:when test="${memberInfo.mem_log eq '0'}">
           						자체가입자
@@ -47,16 +55,31 @@
           				</c:choose>
           			</td>
           			<td>
-          				<%-- <c:set var="inter" value="${memberInfo.mem_interani }"/>
+          				<c:set var="inter" value="${memberInfo.mem_interani }"/>
           				<c:choose>
           					<c:when test="${inter eq 0}">
           						없음
           					</c:when>
           					<c:when test="${fn:contains(inter,'1')}">
-          						
+          						<c:set var="interTemp1" value="강아지"/>
           					</c:when>
-          				</c:choose> --%>
-          				${memberInfo.mem_interani }
+          					<c:when test="${fn:contains(inter,'2')}">
+          						<c:set var="interTemp2" value="고양이"/>
+          					</c:when>
+          					<c:when test="${fn:contains(inter,'3')}">
+          						<c:set var="interTemp3" value="파충류"/>
+          					</c:when>
+          					<c:when test="${fn:contains(inter,'4')}">
+          						<c:set var="interTemp4" value="양서류"/>
+          					</c:when>
+          					<c:when test="${fn:contains(inter,'5')}">
+          						<c:set var="interTemp5" value="조류"/>
+          					</c:when>
+          					<c:when test="${fn:contains(inter,'6')}">
+          						<c:set var="interTemp6" value="기타포유류"/>
+          					</c:when>
+          				</c:choose>
+          				${interTemp} ${interTemp2} ${interTemp3} ${interTemp4} ${interTemp5} ${interTemp6}
           			</td>
           		</tr>
           	</c:forEach>
