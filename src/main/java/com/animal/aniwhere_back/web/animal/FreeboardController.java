@@ -38,6 +38,10 @@ public class FreeboardController {
 
 		List<FreeBoardDTO> list = service.selectList(map);
 
+		for(FreeBoardDTO dto : list) {
+			dto.setFree_category(changeCategoryFormat(dto.getFree_category()));
+		}
+		
 		int totalRecordCount = service.getTotalRecord(map);
 		
 		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage, "freeboard.aw?");
@@ -47,4 +51,15 @@ public class FreeboardController {
 
 		return "board/animal/freeboard.tiles";
 	}
+	
+	public String changeCategoryFormat(String numCategory) {
+		switch(numCategory) {
+		case "1": return "잡담";
+		case "2": return "정보";
+		case "3": return "유머";
+		case "4": return "이슈";
+		default: return "시사";
+		}
+	}
+	
 }
