@@ -33,7 +33,7 @@
                 google.charts.setOnLoadCallback(drawBoardRegi);
 
                 function drawBoardRegi() {
-                    var dataChart = [['', '개']];
+                    var dataChart = [['전체 게시글 통계', '개']];
                     dataChart.push(['1월', data.jan == null ? 0 : data.jan]);
                     dataChart.push(['2월', data.feb == null ? 0 : data.feb]);
                     dataChart.push(['3월', data.mar == null ? 0 : data.mar]);
@@ -122,7 +122,7 @@
                 google.charts.setOnLoadCallback(drawReservation);
 
                 function drawReservation() {
-                    var dataChart = [['월별 통계', '횟수']];
+                    var dataChart = [['월별 예약 통계', '횟수']];
                     dataChart.push(['1월', data.jan == null ? 0 : data.jan]);
                     dataChart.push(['2월', data.feb == null ? 0 : data.feb]);
                     dataChart.push(['3월', data.mar == null ? 0 : data.mar]);
