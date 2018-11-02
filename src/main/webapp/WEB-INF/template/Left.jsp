@@ -153,9 +153,9 @@
 			</a>
 			<div class="collapse" id="location_tab">
 				<ul class="nav flex-column sub-menu">
-					<li class="nav-item">
+					<%-- <li class="nav-item">
 						<a class="nav-link" href="<c:url value='/where/map.aw'/>">&nbsp;&nbsp;&nbsp;지도</a>
-					</li>
+					</li> --%>
 					<li class="nav-item">
 						<a class="nav-link" href="<c:url value='/where/store.aw'/>">&nbsp;&nbsp;&nbsp;업체 관리</a>
 					</li>

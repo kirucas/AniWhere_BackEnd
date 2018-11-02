@@ -12,8 +12,8 @@ $(function(){
 			data : {nowPage : 1},
 			dataType : 'json',
 			success : function(data){
-				clearAllList();
-				appendPhoto(data);
+				clearAnimalList();
+				changePhoto(data);
 			},
 			error : function(request, status, error){
 				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
@@ -30,7 +30,7 @@ $(function(){
 			dataType : 'json',
 			success : function(data){
 				clearAllList();
-				appendPhoto(data);
+				changePhoto(data);
 			},
 			error : function(request, status, error){
 				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
@@ -47,7 +47,7 @@ $(function(){
 			dataType : 'json',
 			success : function(data){
 				clearAllList();
-				appendMovie(data);
+				changeMovie(data);
 			},
 			error : function(request, status, error){
 				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
@@ -64,7 +64,7 @@ $(function(){
 			dataType : 'json',
 			success : function(data){
 				clearAllList();
-				appendMovie(data);
+				changeMovie(data);
 			},
 			error : function(request, status, error){
 				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
@@ -81,7 +81,7 @@ $(function(){
 			dataType : 'json',
 			success : function(data){
 				clearAllList();
-				appendTip(data);
+				changeTip(data);
 			},
 			error : function(request, status, error){
 				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
@@ -98,7 +98,7 @@ $(function(){
 			dataType : 'json',
 			success : function(data){
 				clearAllList();
-				appendTip(data);
+				changeTip(data);
 			},
 			error : function(request, status, error){
 				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
@@ -115,7 +115,7 @@ $(function(){
 			dataType : 'json',
 			success : function(data){
 				clearAllList();
-				appendQuest(data);
+				changeQuest(data);
 			},
 			error : function(request, status, error){
 				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
@@ -132,7 +132,7 @@ $(function(){
 			dataType : 'json',
 			success : function(data){
 				clearAllList();
-				appendQuest(data);
+				changeQuest(data);
 			},
 			error : function(request, status, error){
 				console.log("code : %s\r\nmessage : %s\r\nerror : %s\r\nstatus : %s", request.status, request.responseText, error, status);
@@ -141,7 +141,7 @@ $(function(){
 	});
 });
 
-var clearAllList = function(){
+var clearAnimalList = function(){
 	$("#photo tbody").html('');
 	$("#photo #pagingPhoto").html('');
 	$("#movie tbody").html('');
@@ -152,7 +152,7 @@ var clearAllList = function(){
 	$("#qna #pagingQna").html('');
 };
 
-var appendPhoto = function(data){
+var changePhoto = function(data){
 	
 	var tableString = '';
 	
@@ -176,11 +176,11 @@ var appendPhoto = function(data){
 	}
 	
 	$("#photo tbody").html(tableString);
-	$("#photo #pagingPhoto").html(data.pagingString);
+	$("##pagingPhoto").html(data.pagingString);
 	
 };
 
-var appendMovie = function(data){
+var changeMovie = function(data){
 	
 	console.log(data.records);
 	console.log(data.pagingString);
@@ -209,11 +209,11 @@ var appendMovie = function(data){
 	console.log(data.pagingString);
 	
 	$("#movie tbody").html(tableString);
-	$("#movie #pagingMovie").html(data.pagingString);
+	$("#pagingMovie").html(data.pagingString);
 	
 };
 
-var appendTip = function(data){
+var changeTip = function(data){
 
 	var tableString = '';
 	
@@ -236,12 +236,11 @@ var appendTip = function(data){
 	}
 	
 	$("#tip tbody").html(tableString);
-	$("#tip #pagingTip").html(data.pagingString);
+	$("#pagingTip").html(data.pagingString);
 	
 };
 
-var appendQuest = function(data){
-	console.log("appendQuest check");
+var changeQuest = function(data){
 	
 	var tableString = '';
 	
@@ -270,7 +269,7 @@ var appendQuest = function(data){
 	}
 	
 	$("#qna tbody").html(tableString);
-	$("#qna #pagingQna").html(data.pagingString);
+	$("#pagingQna").html(data.pagingString);
 	
 };
 </script>

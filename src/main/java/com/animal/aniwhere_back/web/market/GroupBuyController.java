@@ -38,7 +38,7 @@ public class GroupBuyController {
 		int start = (nowPage - 1) * pageSize + 1;
 		int end = nowPage * pageSize;
 
-		map.put("start", 1);
+		map.put("start", start);
 		map.put("end", end);
 
 		List<GroupBuyDTO> list = service.selectList(map);

@@ -41,7 +41,7 @@
 						</c:if>
 						<c:if test="${not result}">
 							<tr>
-								<td colspan="8" style="text-align: center;"></td>
+								<td colspan="8" style="text-align: center;">등록 된 글이 없습니다</td>
 							</tr>
 						</c:if>
 					</tbody>

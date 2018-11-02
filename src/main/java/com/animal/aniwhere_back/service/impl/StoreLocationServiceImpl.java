@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.animal.aniwhere_back.service.AllCommonService;
 import com.animal.aniwhere_back.service.StoreLocationDTO;
 
-@Service("StoreLocService")
+@Service("storeLocService")
 public class StoreLocationServiceImpl implements AllCommonService {
 
 	@Resource(name = "storeLocationDAO")

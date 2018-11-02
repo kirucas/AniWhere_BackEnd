@@ -6,38 +6,45 @@
 </style>
 <!-- partial -->
 <div class="card">
-  <div class="card-body">
-    <h4 class="card-title">예약 정보</h4>
-    <div class="row">
-      <div class="col-12">
-        <table id="order-listing" class="table">
-          <thead>
-            <tr>
-              <th>구분번호</th>
-              <th>회원이름(회원번호)</th>
-              <th>상호명(지점명)</th>
-              <th>신청일</th>
-              <th>예약일</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>김길동(1)</td>
-              <td>코스모(가산점)</td>
-              <td>2018/10/10</td>
-              <td>2018/10/28</td>
-            </tr>
-                        <tr>
-              <td>2</td>
-              <td>박길동(2)</td>
-              <td>코스모(가산점)</td>
-              <td>2018/10/10</td>
-              <td>2018/10/28</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+	<div class="card-body">
+		<h4 class="card-title">예약 정보</h4>
+		<div class="row">
+			<div class="col-12">
+				<table id="order-listing" class="table">
+					<thead>
+						<tr>
+							<th>구분번호</th>
+							<th>회원이름(회원번호)</th>
+							<th>상호명(지점명)</th>
+							<th>신청일</th>
+							<th>예약일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:if test="${not empty list}" var="result">
+							<c:forEach items="${list}" var="item">
+								<tr>
+									<td>${item.rv_no}</td>
+									<td>${item.mem_name}(${item.mem_no})</td>
+									<td>
+										${item.bizesnm}
+										<c:if test="${not empty item.brchnm}">
+											(${item.brchnm})
+										</c:if>
+									</td>
+									<td>${item.apply_date}</td>
+									<td>${item.booking_date}</td>
+								</tr>
+							</c:forEach>
+						</c:if>
+						<c:if test="${not result}">
+							<tr>
+								<td colspan="5" style="text-align: center;">등록 된 예약 목록이 없습니다</td>
+							</tr>
+						</c:if>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </div>
