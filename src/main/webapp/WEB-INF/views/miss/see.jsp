@@ -13,56 +13,22 @@
             <thead>
               <tr>
                 <th>번호</th>
-                <th>카테고리</th>
                 <th>제목</th>
                 <th>글쓴이</th>
                 <th>날짜</th>
               </tr>
             </thead>
             <tbody>
+            <c:forEach items="${slist }" var="${sList }">
               <tr>
-                <td>1</td>
-                <td>봤어요</td>
+                <td>${sList.no }</td>
                 <td>
-                	안녕하세요 샘플입니다. <label class="badge badge-success">20</label>
+               		${sList.title } <label class="badge badge-success">20</label>
                 </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
+                <td>${sList.mem_no }</td>
+                <td>${sList.regidate }</td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>봤어요</td>
-                <td>
-                	안녕하세요 샘플입니다. <label class="badge badge-success">15</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>봤어요</td>
-                <td>
-                	안녕하세요 샘플입니다. <label class="badge badge-success">1</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>봤어요</td>
-                <td>안녕하세요 샘플입니다.</td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>봤어요</td>
-                <td>
-                	안녕하세요 샘플입니다. <label class="badge badge-success">99</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
+              </c:forEach>
             </tbody>
           </table>
           <!-- 페이징 -->

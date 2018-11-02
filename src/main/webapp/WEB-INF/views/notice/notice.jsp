@@ -19,44 +19,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>
-                	안녕하세요 공지사항입니다. <label class="badge badge-success">20</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>
-                	안녕하세요 공지사항입니다. <label class="badge badge-success">15</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>
-                	안녕하세요 공지사항입니다. <label class="badge badge-success">1</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>안녕하세요 공지사항입니다.</td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>
-                	안녕하세요 공지사항입니다. <label class="badge badge-success">99</label>
-                </td>
-                <td>최성욱</td>
-                <td>2018-10-04</td>
-              </tr>
+            	<c:forEach items="${notice_list }" var="noticeList">
+            		<tr>
+	                <td>${noticeList.no}</td>
+	                <td>
+	                	${noticeList.content} <label class="badge badge-success">20</label>
+	                </td>
+	                <td>${noticeList.am_no}</td>
+	                <td>${noticeList.regidate}</td>
+	                </tr>
+            	</c:forEach>
             </tbody>
           </table>
           
