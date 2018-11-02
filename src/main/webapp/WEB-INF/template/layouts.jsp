@@ -82,7 +82,6 @@
     <script src="<c:url value='/resources/assets/js/shared/modal-demo.js' />"></script>
     <script src="<c:url value='/resources/assets/vendors/summernote/dist/summernote-bs4.min.js' />"></script>
     <script src="<c:url value='/resources/assets/js/shared/chart.js' />"></script>
-    <jsp:include page="/resources/js/mainChart_js.jsp" />
     <jsp:include page="/resources/js/animal_board.jsp" />
     <jsp:include page="/resources/js/shelter_js.jsp" />
     <jsp:include page="/resources/js/store_location.jsp" />

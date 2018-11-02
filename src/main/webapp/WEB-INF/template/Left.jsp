@@ -204,12 +204,6 @@
 			</div>
 		</li>
 
-		<li class="nav-item">
-			<a class="nav-link" href="<c:url value='/statistics.aw'/>">
-				<i class="menu-icon mdi mdi-elevation-rise"></i>
-				<span class="menu-title">통계</span>
-			</a>
-		</li>
 	</ul>
 </nav>
 <!-- left side bar end -->

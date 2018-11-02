@@ -57,7 +57,6 @@ public class SchedulerService {
 	@Scheduled(cron = "0 0 0 * * *")
 //	@Scheduled(cron = "0 30 * * * *")
 	public void doingDeletingDataScheduler() throws Exception {
-		createCountingRow();
 		startDeletingDataProcess();
 	}//////////
 	
@@ -71,15 +70,6 @@ public class SchedulerService {
 		thread.start();
 	}
 
-	public void createCountingRow() throws Exception {
-		
-		Map map = new HashMap();
-		
-		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
-		
-		serviceStatis.createCountingRow(map);
-	}
-	
 	class GetDataThread extends Thread {
 		@Override
 		public void run() {
