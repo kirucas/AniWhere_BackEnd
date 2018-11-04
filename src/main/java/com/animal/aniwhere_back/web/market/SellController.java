@@ -1,16 +1,18 @@
 package com.animal.aniwhere_back.web.market;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.impl.market.BuySellServiceImpl;
 import com.animal.aniwhere_back.service.market.BuySellDTO;
 
@@ -18,26 +20,37 @@ import com.animal.aniwhere_back.service.market.BuySellDTO;
 public class SellController {
 
 	private static final String TABLE_NAME = "sell";
-	
+
 	@Resource(name = "buySellService")
-	private BuySellServiceImpl serviceBS;
+	private BuySellServiceImpl service;
+
+	@Value("${PAGESIZE}")
+	private int pageSize;
+	@Value("${BLOCKPAGE}")
+	private int blockPage;
 
 	@RequestMapping("/market/sell.aw")
-	public String sell(Model model) throws Exception {
-		
-		Map map = new HashMap();
-		
+	public String sell(@RequestParam Map map, @RequestParam(required = false, defaultValue = "1") int nowPage,
+			Model model) throws Exception {
+
 		map.put("table_name", TABLE_NAME);
-		map.put("start", 1);
-		map.put("end", serviceBS.getTotalRecord(map));
+
+		int start = (nowPage - 1) * pageSize + 1;
+		int end = nowPage * pageSize;
+
+		map.put("start", start);
+		map.put("end", end);
+
+		List<BuySellDTO> list = service.selectList(map);
+
+		int totalRecordCount = service.getTotalRecord(map);
 		
-		List<BuySellDTO> list = new Vector();
-		
-		list = serviceBS.selectList(map);
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage, "/sell.aw?");
 		
 		model.addAttribute("list", list);
-		
+		model.addAttribute("pagingString", pagingString);
+
 		return "market/sell.tiles";
 	}//////////
-	
+
 }//////////////////// SellController class

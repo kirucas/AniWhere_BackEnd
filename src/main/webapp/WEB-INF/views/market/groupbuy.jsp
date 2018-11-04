@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<style>
+    @import '<c:url value="/resources/css/table_css.css" />';
+</style>
 <div class="row">
 	<div class="col-lg-12 grid-margin stretch-card">
 		<div class="card">
@@ -27,7 +30,14 @@
 									<td>${item.no }</td>
 									<td>${item.animal_name }</td>
 									<td>${item.title }</td>
-									<td>${item.mem_nickname }</td>
+									<td>
+                                    	<c:if test="${not empty item.mem_nickname}" var="nickResult">
+                                    		${item.mem_nickname}
+                                    	</c:if>
+                                    	<c:if test="${not nickResult}">
+                                    		탈퇴한 회원 ㅠ
+                                    	</c:if>
+                                    </td>
 									<td>${item.regidate }</td>
 									<td>${item.deadline }</td>
 									<td>${item.gole }</td>
@@ -38,31 +48,14 @@
 						</c:if>
 						<c:if test="${not result}">
 							<tr>
-								<td colspan="8" style="text-align: center;"></td>
+								<td colspan="8" style="text-align: center;">등록 된 글이 없습니다</td>
 							</tr>
 						</c:if>
 					</tbody>
 				</table>
 				<!-- 페이징 -->
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<nav>
-						<ul class="pagination rounded-flat pagination-success">
-							<li class="page-item"><a class="page-link" href="#"> <i
-									class="mdi mdi-chevron-left"></i>
-							</a></li>
-							<li class="page-item active"><a class="page-link" href="#">1</a>
-							</li>
-							<li class="page-item"><a class="page-link" href="#">2</a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#">4</a></li>
-							<li class="page-item"><a class="page-link" href="#"> <i
-									class="mdi mdi-chevron-right"></i>
-							</a></li>
-						</ul>
-						</nav>
-					</div>
-				</div>
+				<br />
+				${pagingString}
 				<!-- 페이징 끝 -->
 
 			</div>

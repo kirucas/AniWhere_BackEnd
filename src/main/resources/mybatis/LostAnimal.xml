@@ -9,6 +9,9 @@
 	<select id="lostCount" parameterType="java.util.Map" resultType="int">
 		SELECT COUNT(*)
 		FROM lost_animal
+		<if test="today != null">
+			WHERE end_notice = TO_CHAR(#{today})
+		</if>
 	</select>
 	
 	<select id="lostSelectList" parameterType="java.util.Map" resultType="LostDTO">
@@ -18,6 +21,10 @@
 			FROM (
 				SELECT *
 				FROM lost_animal
+				<if test="today != null">
+					WHERE end_notice = TO_CHAR(#{today})
+				</if>
+				ORDER BY end_notice, no
 				) T
 			)
 		WHERE R BETWEEN #{start} AND #{end}
@@ -31,18 +38,23 @@
 	
 	<insert id="lostInsert" parameterType="java.util.Map">
 		INSERT INTO lost_animal
-		VALUES(#{no}, #{place}, #{kind}, #{start_notice}, #{end_notice}, #{img_src}, #{gender}, #{neuter}, #{addr}, #{careNm}, #{careTel}, #{chargeNm})
+		VALUES(#{no}, #{place}, #{kind}, #{start_notice}, #{end_notice}, #{img_src}, #{gender}, #{neuter}, #{addr}, #{carenm}, #{caretel}, #{chargenm})
 	</insert>
 	
 	<update id="lostUpdate" parameterType="java.util.Map">
 		UPDATE lost_animal
-		SET place=#{place}, kind=#{kind}, start_notice=#{start_notice}, end_notice=#{end_notice}, img_src=#{img_src}, gender=#{gender}, neuter=#{neuter}, addr=#{addr}, careNm=#{careNm}, careTel=#{careTel}, chargeNm=#{chargeNm}
+		SET place=#{place}, kind=#{kind}, start_notice=#{start_notice}, end_notice=#{end_notice}, img_src=#{img_src}, gender=#{gender}, neuter=#{neuter}, addr=#{addr}, carenm=#{carenm}, caretel=#{caretel}, chargenm=#{chargenm}
 		WHERE no=#{no}
 	</update>
 	
 	<delete id="lostDelete" parameterType="java.util.Map">
 		DELETE FROM lost_animal
 		WHERE no=#{no}
+	</delete>
+	
+	<delete id="passDateOnNotice" parameterType="java.util.Map">
+		DELETE FROM lost_animal
+		WHERE #{today} - end_notice >= 1
 	</delete>
 
 </mapper>

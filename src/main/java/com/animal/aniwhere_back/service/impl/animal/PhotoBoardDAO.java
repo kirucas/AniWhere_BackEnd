@@ -30,11 +30,14 @@ public class PhotoBoardDAO implements PhotoService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public PhotoBoardDTO selectOne(Map map) {
+		if(map.get("view") != null)
+			template.update("addCountPhoto", map);
 		return template.selectOne("photoSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
 		return template.insert("photoInsert", map);
 	}////////// insert
 
@@ -80,5 +83,10 @@ public class PhotoBoardDAO implements PhotoService {
 	public void linkDelete(Map map) {
 		template.delete("linkDelete", map);
 	}////////// linkDelete
+
+	@Override
+	public int addHitCount(Map map) {
+		return template.update("addHitCountPhoto", map);
+	}////////// addHitCount
 
 }//////////////////// PhotoBoardDAO

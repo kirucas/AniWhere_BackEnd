@@ -8,11 +8,11 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.AllCommonService;
 import com.animal.aniwhere_back.service.NoticeDTO;
 
 @Repository
-public class NoticeDAO implements AllBoardService {
+public class NoticeDAO implements AllCommonService {
 
 	@Resource(name = "template")
 	private SqlSessionTemplate template;
@@ -30,11 +30,14 @@ public class NoticeDAO implements AllBoardService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public NoticeDTO selectOne(Map map) {
+		if(map.get("view") != null)
+			template.update("addCountNotice", map);
 		return template.selectOne("noticeSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
 		return template.insert("noticeInsert", map);
 	}////////// insert
 

@@ -24,14 +24,6 @@
 			<span class="mdi mdi-menu"></span>
 		</button>
 		
-		<ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-			<li class="nav-item">
-				<a href="<c:url value='/statistics.aw'/>" class="nav-link">
-					<i class="mdi mdi-elevation-rise"></i>통계
-				</a>
-			</li>
-		</ul>
-		
 		<ul class="navbar-nav navbar-nav-right">
 
 

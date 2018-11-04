@@ -40,8 +40,9 @@ public class AdministratorController {
 		session.setAttribute("am_level", dto.getAm_level());
 		session.setAttribute("am_level_str", amLeveltoString(Integer.parseInt(dto.getAm_level())));
 		session.setAttribute("am_profile", dto.getAm_profile_link());
+		session.setAttribute("am_no", dto.getAm_no());
 
-		return "home.tiles";
+		return "forward:/main.aw";
 	}////////// signInProcess
 
 	@RequestMapping(value = "/admin/sign_out.aw")
@@ -77,6 +78,9 @@ public class AdministratorController {
 			break;
 		case 6:
 			string_level = "Where Manager";
+			break;
+		case 7:
+			string_level = "Layout Manager";
 		}
 
 		return string_level;

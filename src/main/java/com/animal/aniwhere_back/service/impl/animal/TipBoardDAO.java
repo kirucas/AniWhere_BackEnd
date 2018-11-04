@@ -30,11 +30,14 @@ public class TipBoardDAO implements AllBoardService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public TipBoardDTO selectOne(Map map) {
+		if(map.get("view") != null)
+			template.update("addCountTip", map);
 		return template.selectOne("tipSelectOne", map);
 	}////////// getTotalRecord
 
 	@Override
 	public int insert(Map map) {
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
 		return template.insert("tipInsert", map);
 	}////////// insert
 
@@ -47,5 +50,10 @@ public class TipBoardDAO implements AllBoardService {
 	public int delete(Map map) {
 		return template.delete("tipDelete", map);
 	}////////// delete
+
+	@Override
+	public int addHitCount(Map map) {
+		return template.update("addHitCountTip", map);
+	}////////// addHitCount
 
 }//////////////////// TipBoardDAO class

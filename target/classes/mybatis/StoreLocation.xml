@@ -8,18 +8,31 @@
 	<select id="storeCount" parameterType="java.util.Map" resultType="int">
 		SELECT COUNT(*)
 		FROM store_location
-		<if test="indssclscd">
+		<if test="indssclscd != null">
 			WHERE indssclscd=#{indssclscd}
+		</if>
+		<if test="indssclscd1 != null">
+			WHERE indssclscd = #{indssclscd1} OR indssclscd = #{indssclscd2}
 		</if>
 	</select>
 	
 	<select id="storeSelectList" parameterType="java.util.Map" resultType="StoreDTO">
 		SELECT *
-		FROM store_location
-		<if test="indssclscd">
-			WHERE indssclscd=#{indssclscd}
-		</if>
-		ORDER BY bizesid
+		FROM (
+			SELECT T.*, ROWNUM R
+			FROM (
+				SELECT *
+				FROM store_location
+				<if test="indssclscd != null">
+					WHERE indssclscd=#{indssclscd}
+				</if>
+				<if test="indssclscd1 != null">
+					WHERE indssclscd = #{indssclscd1} OR indssclscd = #{indssclscd2}
+				</if>
+				ORDER BY bizesid
+				) T
+			)
+		WHERE R BETWEEN #{start} AND #{end}
 	</select>
 	
 	<select id="storeSelectOne" parameterType="java.util.Map" resultType="StoreDTO">

@@ -1,13 +1,17 @@
 package com.animal.aniwhere_back.web.statistics;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import javax.annotation.Resource;
 
-@Controller
+import org.springframework.web.bind.annotation.RestController;
+
+import com.animal.aniwhere_back.service.impl.StatisticsService;
+
+@RestController
 public class StatisticsController {
+
+	@Resource(name = "statisticsService")
+	private StatisticsService service;
+
 	
-	@RequestMapping("/statistics.aw")
-	public String statistics() throws Exception {
-		return "statistics/statistics.tiles";
-	}
-}
+
+}//////////////////// StatisticsController class

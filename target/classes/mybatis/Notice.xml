@@ -39,8 +39,8 @@
 	</select>
 	
 	<insert id="noticeInsert" parameterType="java.util.Map">
-		INSERT INTO notice(no, am_no, title, content)
-		VALUES(seq_notice.nextval, #{am_no}, #{title}, #{content})
+		INSERT INTO notice(no, am_no, title, content, regidate)
+		VALUES(seq_notice.nextval, #{am_no}, #{title}, #{content}, #{today})
 	</insert>
 	
 	<update id="noticeUpdate" parameterType="java.util.Map">
@@ -53,5 +53,11 @@
 		DELETE FROM notice
 		WHERE no=#{no}
 	</delete>
+	
+	<update id="addCountNotice" parameterType="java.util.Map">
+		UPDATE notice
+		SET count=count + 1
+		WHERE no=#{no}
+	</update>
 	
 </mapper>

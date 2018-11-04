@@ -30,11 +30,14 @@ public class FreeBoardDAO implements AllBoardService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public FreeBoardDTO selectOne(Map map) {
+		if(map.get("view") != null)
+			template.update("addCountFree", map);
 		return template.selectOne("freeSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
 		return template.insert("freeInsert", map);
 	}////////// insert
 
@@ -47,5 +50,10 @@ public class FreeBoardDAO implements AllBoardService {
 	public int delete(Map map) {
 		return template.delete("freeDelete", map);
 	}////////// delete
+
+	@Override
+	public int addHitCount(Map map) {
+		return template.update("addHitCountFree", map);
+	}////////// addHitCount
 
 }//////////////////// FreeBoardDAO class

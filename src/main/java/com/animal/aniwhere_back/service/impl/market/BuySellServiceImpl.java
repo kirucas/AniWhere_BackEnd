@@ -7,11 +7,11 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.AllCommonService;
 import com.animal.aniwhere_back.service.market.BuySellDTO;
 
 @Service("buySellService")
-public class BuySellServiceImpl implements AllBoardService {
+public class BuySellServiceImpl implements AllCommonService {
 
 	@Resource(name = "buySellDAO")
 	private BuySellDAO dao;
