@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.addons.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/ti-icons/css/themify-icons.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/summernote/dist/summernote-bs4.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/simple-line-icon/css/simple-line-icons.css' />">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.min.css" />
     <!-- endinject -->
     <!-- plugin css for this page -->
