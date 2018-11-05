@@ -86,7 +86,7 @@
                                 <a href="<c:url value='/main.aw' />">문의하기</a>
                             </li>
                             <li>
-                                <a href="#">도움말</a>
+                                <a href="<c:url value='/qr_generator.aw' />">도움말</a>
                             </li>
                         </ul>
                         <p class="footer-text text-center">copyright © 2018 AniWhere. All rights reserved.</p>
