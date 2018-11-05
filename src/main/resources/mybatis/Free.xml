@@ -40,8 +40,8 @@
 	</select>
 	
 	<insert id="freeInsert" parameterType="java.util.Map">
-		INSERT INTO freeboard(no, mem_no, free_title, free_content, free_category)
-		VALUES(seq_freeboard.nextval, #{mem_no}, #{free_title}, #{free_content}, #{free_category})
+		INSERT INTO freeboard(no, mem_no, free_title, free_content, free_category, free_regidate)
+		VALUES(seq_freeboard.nextval, #{mem_no}, #{free_title}, #{free_content}, #{free_category}, #{today})
 	</insert>
 	
 	<update id="freeUpdate" parameterType="java.util.Map">

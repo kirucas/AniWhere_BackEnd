@@ -37,6 +37,7 @@ public class PhotoBoardDAO implements PhotoService {
 
 	@Override
 	public int insert(Map map) {
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
 		return template.insert("photoInsert", map);
 	}////////// insert
 

@@ -36,6 +36,7 @@ public class MatingDAO implements AllCommonService {
 
 	@Override
 	public int insert(Map map) {
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
 		return template.insert("matingInsert", map);
 	}////////// insert
 
