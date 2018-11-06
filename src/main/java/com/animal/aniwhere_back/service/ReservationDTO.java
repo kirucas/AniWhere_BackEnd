@@ -14,6 +14,8 @@ public class ReservationDTO {
 	// 신청한 상가명을 저장하기 위한 속성 추가
 	private String bizesnm;
 	private String brchnm;
+	private String rdnmadr;
+	
 
 	public String getRv_no() {
 		return rv_no;
@@ -85,6 +87,14 @@ public class ReservationDTO {
 
 	public void setQr_link(String qr_link) {
 		this.qr_link = qr_link;
+	}//////////
+
+	public String getRdnmadr() {
+		return rdnmadr;
+	}//////////
+
+	public void setRdnmadr(String rdnmadr) {
+		this.rdnmadr = rdnmadr;
 	}//////////
 
 }//////////////////// ReservationDTO class

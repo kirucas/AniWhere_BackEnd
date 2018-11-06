@@ -82,6 +82,15 @@ public class HomeController {
 		model.addAttribute("lost_data", list.get(random.nextInt(end)));
 		model.addAttribute("today", today);
 		
+		model.addAttribute("registerAnimal", statisService.registerAnimal());
+		model.addAttribute("todayRegisterAni", statisService.todayRegisterAni());
+		model.addAttribute("averageAnimal", statisService.averageAnimal());
+		model.addAttribute("registerStore", statisService.registerStore());
+		model.addAttribute("registerLostAnimal", statisService.registerLostAnimal());
+		model.addAttribute("todayRegisterLost", statisService.todayRegisterLost());
+		model.addAttribute("applyMating", statisService.applyMating());
+		model.addAttribute("matingSuccess", statisService.matingSuccess());
+		
 		return "home.tiles";
 		
 	}////////// main

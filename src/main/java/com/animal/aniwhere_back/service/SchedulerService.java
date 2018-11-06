@@ -48,13 +48,13 @@ public class SchedulerService {
 	@Resource(name = "statisticsService")
 	private StatisticsService serviceStatis;
 
-	@Scheduled(cron = "0 0 21 * * *")
+	@Scheduled(cron = "0 0 12 * * *")
 //	@Scheduled(cron = "30 11 * * * *")
 	public void doingGetApiDataScheduler() throws Exception {
 		startGetApiDataProcess();
 	}////////// doingScheduled
 
-	@Scheduled(cron = "0 0 0 * * *")
+	@Scheduled(cron = "0 0 12 * * *")
 //	@Scheduled(cron = "0 30 * * * *")
 	public void doingDeletingDataScheduler() throws Exception {
 		startDeletingDataProcess();
