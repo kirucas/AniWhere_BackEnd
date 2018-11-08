@@ -19,6 +19,7 @@
                             <th>날짜</th>
                             <th>조회수</th>
                             <th>추천수</th>
+                            <th>삭제</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,6 +40,7 @@
 	                        		<td>${item.free_regidate}</td>
 	                        		<td>${item.free_count}</td>
 	                        		<td>${item.free_hit}</td>
+	                        		<td><button id="freeDelete" class="btn btn-danger" title="${item.no}">삭제하기</button></td>
 	                        	</tr>
                         	</c:forEach>
                         </c:if>

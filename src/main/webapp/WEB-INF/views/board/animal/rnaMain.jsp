@@ -36,6 +36,7 @@
                                             <th>날짜</th>
                                             <th>조회수</th>
                                             <th>추천수</th>
+                                            <th>삭제</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -55,6 +56,7 @@
                                                     <td>${item.photo_regidate }</td>
                                                     <td>${item.photo_count }</td>
                                                     <td>${item.photo_hit }</td>
+                                                    <td><button id="rna" class='photoDelete btn btn-danger' title="${item.no}">삭제하기</button></td>
                                                 </tr>
                                             </c:forEach>
                                         </c:if>
@@ -83,6 +85,7 @@
                                             <th>날짜</th>
                                             <th>조회수</th>
                                             <th>추천수</th>
+                                            <th>삭제</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -100,6 +103,7 @@
                                             <th>날짜</th>
                                             <th>조회수</th>
                                             <th>추천수</th>
+                                            <th>삭제</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -117,6 +121,7 @@
                                             <th>날짜</th>
                                             <th>조회수</th>
                                             <th>추천수</th>
+                                            <th>삭제</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>

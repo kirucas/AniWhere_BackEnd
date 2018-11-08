@@ -5,11 +5,13 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.animal.FreeBoardDTO;
@@ -50,7 +52,7 @@ public class FreeboardController {
 		model.addAttribute("pagingString", pagingString);
 
 		return "board/animal/freeboard.tiles";
-	}
+	}////////// freeboard
 	
 	public String changeCategoryFormat(String numCategory) {
 		switch(numCategory) {
@@ -60,6 +62,25 @@ public class FreeboardController {
 		case "4": return "이슈";
 		default: return "시사";
 		}
-	}
+	}////////// changeCategoryFormat
 	
-}
+	@ResponseBody
+	@RequestMapping(value="/freeboard/delete.awa", produces="text/plain; charset=UTF-8")
+	public String free_delete(@RequestParam Map map) throws Exception {
+		
+		int affected = service.delete(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(affected == 1) {
+			json.put("result", "success");
+		}
+		else {
+			json.put("result", "fail");
+		}
+		
+		return json.toJSONString();
+		
+	}////////// free_delete
+	
+}//////////////////// FreeboardController class

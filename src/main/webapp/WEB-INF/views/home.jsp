@@ -153,16 +153,16 @@
 	<div class="col-lg-6 grid-margin stretch-card">
 		<div class="card">
 			<div class="card-body">
-				<h4 class="card-title">카테고리별 매칭 신청 수</h4>
-				<canvas id="categoryMating" style="width:230px;"></canvas>
+				<h4 class="card-title">분류 별 저장 된 상가 정보 수</h4>
+				<canvas id="categoryStore" style="width:230px;"></canvas>
 			</div>
 		</div>
 	</div>
 	<div class="col-lg-6 grid-margin stretch-card">
 		<div class="card">
 			<div class="card-body">
-				<h4 class="card-title">분류 별 저장 된 상가 정보 수</h4>
-				<canvas id="categoryStore" style="width:230px;"></canvas>
+				<h4 class="card-title">카테고리별 매칭 신청 수</h4>
+				<canvas id="categoryMating" style="width:230px;"></canvas>
 			</div>
 		</div>
 	</div>
@@ -173,7 +173,9 @@
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title">매칭 수락/거부율</h4>
-				<canvas id="matingResult" style="width:230px;"></canvas>
+				<div class="google-chart-container">
+					<div id="matingDrafting" class="google-charts"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -181,7 +183,7 @@
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title">카테고리 별 매칭 수락/거부율</h4>
-				<canvas id="categoryMating" style="width:230px;"></canvas>
+				<canvas id="categoryDrafting" style="width:230px;"></canvas>
 			</div>
 		</div>
 	</div>

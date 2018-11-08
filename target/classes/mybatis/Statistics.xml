@@ -49,10 +49,127 @@
 	</select>
 	
 	<select id="categoryAnimalCount" resultType="java.util.Map">
-		SELECT ani_species, COUNT(*) count
-		FROM animal
-		GROUP BY ani_species
-		ORDER BY ani_species
+		SELECT animal_code code, animal_name category, NVL(COUNT(*), 0) count
+		FROM animal an RIGHT JOIN animal_category ac ON an.ani_species=ac.animal_code
+		GROUP BY animal_code, animal_name
+		ORDER BY animal_code
+	</select>
+	
+	<select id="categoryLostCount" resultType="java.util.Map">
+		SELECT SUBSTR(kind, INSTR(kind, '[') + 1, INSTR(kind, ']') - INSTR(kind, '[') - 1) kind, COUNT(*) count
+		FROM lost_animal
+		GROUP BY SUBSTR(kind, INSTR(kind, '[') + 1, INSTR(kind, ']') - INSTR(kind, '[') - 1)
+		ORDER BY kind
+	</select>
+	
+	<select id="categoryStoreCount" resultType="java.util.Map">
+		SELECT *
+		FROM 
+			(SELECT indssclsnm category, COUNT(*) count FROM store_location WHERE indssclscd='Q12A07' GROUP BY indssclsnm)
+			UNION
+			(SELECT indssclsnm category, COUNT(*) count FROM store_location WHERE indssclscd='D09A02' GROUP BY indssclsnm)
+			UNION
+			(SELECT hos.category category, hos.count + syn.count count
+			FROM (
+				SELECT indssclsnm category, COUNT(*) count
+				FROM store_location
+				WHERE indssclscd='S04A01'
+				GROUP BY indssclsnm
+				) syn,
+				(
+				SELECT indssclsnm category, COUNT(*) count
+				FROM store_location
+				WHERE indssclscd='S04A02'
+				GROUP BY indssclsnm
+				) hos
+			)
+			UNION
+			(SELECT REPLACE(indssclsnm, indssclsnm, '동물약국') category, COUNT(*) count FROM store_location WHERE indssclscd='D25A16' GROUP BY indssclsnm)
+			UNION
+			(SELECT etc.category, etc.count + goods.count count
+			FROM (
+				SELECT indssclsnm category, COUNT(*) count
+				FROM store_location
+				WHERE indssclscd='D09A01'
+				GROUP BY indssclsnm
+				) goods,
+				(
+				SELECT SUBSTR(indssclsnm, INSTR(indssclsnm, '-') + 1) category, COUNT(*) count
+				FROM store_location
+				WHERE indssclscd='S04A03'
+				GROUP BY SUBSTR(indssclsnm, INSTR(indssclsnm, '-') + 1)
+				) etc
+			)
+	</select>
+	
+	<select id="categoryMatingCount" resultType="java.util.Map">
+		SELECT animal_code, animal_name category, NVL(count, 0) count
+		FROM (
+			SELECT ani_species category, COUNT(*) count
+			FROM mating m JOIN animal a ON m.ani_no=a.ani_no
+			GROUP BY ani_species
+			) ma
+			RIGHT JOIN animal_category ac ON ma.category=ac.animal_code
+		ORDER BY animal_code
+	</select>
+	
+	<select id="matingDraftingRate" resultType="java.util.Map">
+		SELECT *
+		FROM 
+			(
+			SELECT REPLACE(apply, apply, 'ongoing') status, NVL(COUNT(*), 0) count
+			FROM drafting
+			WHERE apply=0
+			GROUP BY apply
+			)
+			UNION
+			(
+			SELECT REPLACE(apply, apply, 'success') status, NVL(COUNT(*), 0) count
+			FROM drafting
+			WHERE apply=1
+			GROUP BY apply
+			)
+			UNION
+			(
+			SELECT REPLACE(apply, apply, 'fail') status, NVL(COUNT(*), 0) count
+			FROM drafting
+			WHERE apply=2
+			GROUP BY apply
+			)
+	</select>
+	
+	<select id="categoryDraftingCount" resultType="java.util.Map">
+		SELECT NVL(s0.code, NVL(s1.code, s2.code)) code, NVL(s0.category, NVL(s1.category, s2.category)) category, NVL(s0.ongoing, 0) ongoing, NVL(success, 0) success, NVL(fail, 0) fail
+		FROM (
+			SELECT animal_code code, animal_name category, NVL(COUNT(*), 0) ongoing
+			FROM drafting dr JOIN mating ma ON dr.receive_no=ma.mating_no
+			JOIN animal an ON ma.ani_no=an.ani_no
+			JOIN animal_category ac ON an.ani_species=ac.animal_code
+			WHERE apply=0
+			GROUP BY animal_code, animal_name, apply
+			ORDER BY code
+			) s0
+			FULL JOIN
+			(
+			SELECT animal_code code, animal_name category, NVL(COUNT(*), 0) success
+			FROM drafting dr JOIN mating ma ON dr.receive_no=ma.mating_no
+			JOIN animal an ON ma.ani_no=an.ani_no
+			JOIN animal_category ac ON an.ani_species=ac.animal_code
+			WHERE apply=1
+			GROUP BY animal_code, animal_name, apply
+			ORDER BY code
+			) s1 ON s0.code=s1.code
+			FULL JOIN
+			(
+			SELECT animal_code code, animal_name category, NVL(COUNT(*), 0) fail
+			FROM drafting dr JOIN mating ma ON dr.receive_no=ma.mating_no
+			JOIN animal an ON ma.ani_no=an.ani_no
+			JOIN animal_category ac ON an.ani_species=ac.animal_code
+			WHERE apply=2
+			GROUP BY animal_code, animal_name, apply
+			ORDER BY code
+			) s2 ON s1.code=s2.code
+		ORDER BY s0.code
 	</select>
 	
 </mapper>

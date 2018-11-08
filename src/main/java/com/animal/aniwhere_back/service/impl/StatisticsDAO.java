@@ -55,6 +55,26 @@ public class StatisticsDAO {
 		return template.selectList("categoryAnimalCount");
 	}////////// categoryAnimalCount
 
+	public List<Map> categoryLostCount() {
+		return template.selectList("categoryLostCount");
+	}////////// categoryLostCount
+
+	public List<Map> categoryStoreCount() {
+		return template.selectList("categoryStoreCount");
+	}////////// categoryStoreCount
+
+	public List<Map> categoryMatingCount() {
+		return template.selectList("categoryMatingCount");
+	}////////// categoryMatingCount
+
+	public List<Map> matingDraftingRate() {
+		return template.selectList("matingDraftingRate");
+	}////////// matingDraftingRate
+
+	public List<Map> categoryDraftingCount() {
+		return template.selectList("categoryDraftingCount");
+	}////////// categoryDraftingCount
+
 }//////////////////// StatisticsDAO class
 /*
  * ============== 통계 변경 사항===============
