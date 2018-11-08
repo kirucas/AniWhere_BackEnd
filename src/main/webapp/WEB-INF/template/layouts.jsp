@@ -88,6 +88,8 @@
     <jsp:include page="/resources/js/store_location.jsp" />
     <jsp:include page="/resources/js/notice_js.jsp" />
     <jsp:include page="/resources/js/statistics_js.jsp" />
+    <jsp:include page="/resources/js/market_js.jsp" />
+    <jsp:include page="/resources/js/miss_js.jsp" />
     <!-- End custom js for this page-->
 </body>
 

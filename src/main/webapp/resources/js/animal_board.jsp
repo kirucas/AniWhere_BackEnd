@@ -129,7 +129,7 @@
                     success: function (data) {
                         if (data.result == 'success') {
                             alert('삭제에 성공했습니다');
-                            callPhotoList(board_name);
+                            callMovieList(board_name);
                         }
                         else {
                             alert("삭제에 실패했습니다");
@@ -154,7 +154,7 @@
                     success: function (data) {
                         if (data.result == 'success') {
                             alert('삭제에 성공했습니다');
-                            callPhotoList(board_name);
+                            callTipList(board_name);
                         }
                         else {
                             alert("삭제에 실패했습니다");
@@ -179,7 +179,7 @@
                     success: function (data) {
                         if (data.result == 'success') {
                             alert('삭제에 성공했습니다');
-                            callPhotoList(board_name);
+                            callQnaList(board_name);
                         }
                         else {
                             alert("삭제에 실패했습니다");

@@ -43,10 +43,10 @@
 						</c:if>
 				</a>
 				<div class="dropdown-menu dropdown-menu-right navbar-dropdown">
-					<a class="dropdown-item mt-2"> 회원 정보 수정 </a>
-                    <a class="dropdown-item"> 비밀번호 변경 </a>
-                    <a class="dropdown-item"> 마이페이지 </a>
-                    <a class="dropdown-item" href="<c:url value='/admin/sign_out.aw' />"> 로그아웃 </a>
+					<!-- <a class="dropdown-item mt-2"> 회원 정보 수정 </a> -->
+                    <!-- <a class="dropdown-item"> 비밀번호 변경 </a>
+                    <a class="dropdown-item"> 마이페이지 </a> -->
+                    <a class="dropdown-item mt-2" href="<c:url value='/admin/sign_out.aw' />"> 로그아웃 </a>
 				</div>
 			</li>
 		</ul>

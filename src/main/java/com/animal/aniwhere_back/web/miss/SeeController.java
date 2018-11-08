@@ -5,11 +5,13 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.impl.miss.FindSeeServiceImpl;
@@ -51,5 +53,24 @@ public class SeeController {
 		
 		return "miss/see.tiles";
 	}////////// see
+	
+	@ResponseBody
+	@RequestMapping(value="/miss/see_delete.awa", produces="text/plain; charset=UTF-8")
+	public String see_delete(@RequestParam Map map) throws Exception {
+		
+		map.put("table_name", TABLE_NAME);
+		
+		int affected = service.delete(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(affected == 1)
+			json.put("result", "success");
+		else
+			json.put("result", "fail");
+		
+		return json.toJSONString();			
+		
+	}////////// see_delete
 
 }//////////////////// SeeController class

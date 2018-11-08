@@ -56,11 +56,20 @@ public class NoticeController {
 
 	// 등록 폼으로 이동 및 입력처리]
 	@RequestMapping(value = "/notice/write.aw", method = RequestMethod.GET)
-	public String write(@RequestParam Map map,HttpSession session) throws Exception {
-		map.put("am_no",session.getAttribute("am_no"));
-		service.insert(map);
+	public String write(@RequestParam Map map) throws Exception {
 		return "notice/write.tiles";
-	}////////////////
+	}////////// write _GET
+	
+	@RequestMapping(value="/notice/write.aw", method=RequestMethod.POST)
+	public String write(@RequestParam Map map, HttpSession session) throws Exception {
+		
+		map.put("am_no", session.getAttribute("am_no"));
+		
+		service.insert(map);
+		
+		return "forward:/notice.aw";
+		
+	}////////// write _POST
 	
 	// 수정 처리]
 	@RequestMapping("/notice/update.aw")
@@ -107,6 +116,6 @@ public class NoticeController {
 		
 		return "forward:/notice.aw";
 		
-	}
+	}////////// notice_delete
 
 }//////////////////// NoticeController class

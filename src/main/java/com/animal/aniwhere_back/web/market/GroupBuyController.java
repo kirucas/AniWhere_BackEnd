@@ -6,11 +6,13 @@ import java.util.Vector;
 
 import javax.annotation.Resource;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.impl.market.GroupBuyServiceImpl;
@@ -53,5 +55,22 @@ public class GroupBuyController {
 		return "market/groupbuy.tiles";
 		
 	}////////// groupbuy
+	
+	@ResponseBody
+	@RequestMapping(value = "/market/group_delete.awa", produces="text/plain; charset=UTF-8")
+	public String group_delete(@RequestParam Map map) throws Exception {
+		
+		int affected = service.delete(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(affected == 1)
+			json.put("result", "success");
+		else
+			json.put("result", "fail");
+		
+		return json.toJSONString();
+		
+	}////////// group_delete
 
 }//////////////////// GroupBuyController class

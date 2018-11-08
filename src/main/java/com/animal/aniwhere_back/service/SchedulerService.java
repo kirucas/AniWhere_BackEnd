@@ -49,7 +49,7 @@ public class SchedulerService {
 	private StatisticsService serviceStatis;
 
 	@Scheduled(cron = "0 0 12 * * *")
-//	@Scheduled(cron = "40 7 * * * *")
+//	@Scheduled(cron = "00 32 * * * *")
 	public void doingGetApiDataScheduler() throws Exception {
 		startGetApiDataProcess();
 	}////////// doingScheduled

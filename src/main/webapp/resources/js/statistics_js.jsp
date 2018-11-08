@@ -260,12 +260,12 @@
                 var ongoingSet = [];
                 var successSet = [];
                 var failSet = [];
-                
-                $.each(result.list, function(colName, value){
-                	labelSet.push(value.CATEGORY);
-                	ongoingSet.push(value.ONGOING);
-                	successSet.push(value.SUCCESS);
-                	failSet.push(value.FAIL);
+
+                $.each(result.list, function (colName, value) {
+                    labelSet.push(value.CATEGORY);
+                    ongoingSet.push(value.ONGOING);
+                    successSet.push(value.SUCCESS);
+                    failSet.push(value.FAIL);
                 });
 
                 var data = {

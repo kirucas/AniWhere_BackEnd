@@ -21,6 +21,7 @@
 							<th>판매 목표</th>
 							<th>판매 수량</th>
 							<th>조회수</th>
+							<th>삭제</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -40,9 +41,10 @@
                                     </td>
 									<td>${item.regidate }</td>
 									<td>${item.deadline }</td>
-									<td>${item.gole }</td>
+									<td>${item.goal }</td>
 									<td>${item.buy_count }</td>
 									<td>${count }</td>
+									<td><button id="groupDelete" class="btn btn-danger" title="${item.no}">삭제하기</button></td>
 								</tr>
 							</c:forEach>
 						</c:if>
