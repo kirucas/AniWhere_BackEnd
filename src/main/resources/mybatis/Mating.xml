@@ -12,9 +12,11 @@
 			FROM (
 				SELECT *
 				FROM mating m JOIN animal a ON m.ani_no=a.ani_no
-				WHERE ani_species=#{ani_species} AND ani_gender=#{ani_gender}
-				<if test="ani_kind != null">
-					AND ani_kind=#{ani_kind}
+				<if test="ani_species != null">
+					WHERE ani_species=#{ani_species} AND ani_gender=#{ani_gender}
+					<if test="ani_kind != null">
+						AND ani_kind=#{ani_kind}
+					</if>
 				</if>
 				) T
 			)
@@ -25,12 +27,15 @@
 		FROM (
 			SELECT T.*, ROWNUM R
 			FROM (
-				SELECT mt.mating_no, mt.mating_loc, mt.mating_regidate, a.*, mem_nickname
+				SELECT mt.mating_no, mt.mating_loc, mt.mating_regidate, a.*, mem_nickname, animal_name
 				FROM mating mt JOIN animal a ON mt.ani_no=a.ani_no
 				JOIN member mb ON a.mem_no=mb.mem_no
-				WHERE ani_species=#{ani_species} AND ani_gender=#{ani_gender}
-				<if test="ani_kind != null">
-					AND ani_kind=#{ani_kind}
+				JOIN animal_category ac ON a.ani_species = ac.animal_code
+				<if test="ani_species != null">
+					WHERE ani_species=#{ani_species} AND ani_gender=#{ani_gender}
+					<if test="ani_kind != null">
+						AND ani_kind=#{ani_kind}
+					</if>
 				</if>
 				) T
 			)
@@ -45,9 +50,10 @@
 	</select>
 	
 	<select id="matingSelectOne" parameterType="java.util.Map" resultType="MatingDTO">
-		SELECT m.mating_no, m.mating_loc, m.mating_regidate, a.*, mem_nickname
+		SELECT m.mating_no, m.mating_loc, m.mating_regidate, a.*, mem_nickname, animal_name
 		FROM mating m JOIN animal a ON m.ani_no = a.ani_no
 		JOIN member mb ON a.mem_no = mb.mem_no
+		JOIN animal_category ac ON a.ani_species=ac.animal_code
 		WHERE mating_no=#{mating_no}
 	</select>
 	

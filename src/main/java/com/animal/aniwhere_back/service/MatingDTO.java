@@ -18,6 +18,9 @@ public class MatingDTO {
 	// 해당 동물의 주인 정보
 	private String mem_no;
 	private String mem_nickname;
+	
+	// 분류 명을 저장하기 위한 속성
+	private String animal_name;
 
 	public String getMating_no() {
 		return mating_no;
@@ -113,6 +116,14 @@ public class MatingDTO {
 	
 	public void setAni_gender(String ani_gender) {
 		this.ani_gender = ani_gender;
+	}//////////
+
+	public String getAnimal_name() {
+		return animal_name;
+	}//////////
+
+	public void setAnimal_name(String animal_name) {
+		this.animal_name = animal_name;
 	}//////////
 
 }//////////////////// MatinBoardDTO class
