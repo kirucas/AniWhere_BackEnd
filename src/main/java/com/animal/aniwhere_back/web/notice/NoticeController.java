@@ -59,35 +59,37 @@ public class NoticeController {
 	public String write(@RequestParam Map map) throws Exception {
 		return "notice/write.tiles";
 	}////////// write _GET
-	
-	@RequestMapping(value="/notice/write.aw", method=RequestMethod.POST)
+
+	@RequestMapping(value = "/notice/write.aw", method = RequestMethod.POST)
 	public String write(@RequestParam Map map, HttpSession session) throws Exception {
-		
+
 		map.put("am_no", session.getAttribute("am_no"));
-		
+
 		service.insert(map);
+
+		return "forward:/notice.aw";
+
+	}////////// write _POST
+
+	// 수정 처리]
+	@RequestMapping(value = "/notice/update.aw", method = RequestMethod.GET)
+	public String edit(@RequestParam Map map, Model model) throws Exception {
+		
+		NoticeDTO dto = service.selectOne(map);
+		
+		model.addAttribute("dto", dto);
+		
+		return "notice/update.tiles";
+	}////////////// edit()
+	
+	@RequestMapping(value = "/notice/update.aw", method = RequestMethod.POST)
+	public String edit(@RequestParam Map map) throws Exception {
+		
+		service.update(map);
 		
 		return "forward:/notice.aw";
-		
-	}////////// write _POST
-	
-	// 수정 처리]
-	@RequestMapping("/notice/update.aw")
-	public String edit(HttpServletRequest req,@RequestParam Map map,Model model) throws Exception{
-			//서비스 호출]
-			NoticeDTO record = service.selectOne(map);
-			//수정 폼으로 이동]
-			model.addAttribute("record", record);
-			//서비스 호출
-			int affected=service.update(map);
-			//데이타 저장
-			model.addAttribute("WHERE", "EDT");
-			model.addAttribute("successFail", affected);		
-			//뷰정보 반환
-			return "notice/update.tiles";
-	}//////////////edit()
-	
-	
+	}
+
 	@ResponseBody
 	@RequestMapping(value = "/notice_one.awa", produces = "text/plain; charset=UTF-8")
 	public String notice_one(@RequestParam Map map) throws Exception {
@@ -106,16 +108,16 @@ public class NoticeController {
 
 		return json.toJSONString();
 	}////////// notice_one
-	
+
 	@RequestMapping("/notice/delete.aw")
 	public String notice_delete(@RequestParam Map map, Model model) throws Exception {
-		
+
 		int affected = service.delete(map);
-		
+
 		model.addAttribute("noticeDeleteResult", affected);
-		
+
 		return "forward:/notice.aw";
-		
+
 	}////////// notice_delete
 
 }//////////////////// NoticeController class
