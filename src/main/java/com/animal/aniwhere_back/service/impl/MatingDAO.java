@@ -8,44 +8,50 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.AllCommonService;
 import com.animal.aniwhere_back.service.MatingDTO;
+import com.animal.aniwhere_back.service.member.AnimalDTO;
 
 @Repository
-public class MatingDAO implements AllBoardService {
+public class MatingDAO implements AllCommonService {
 
 	@Resource(name = "template")
 	private SqlSessionTemplate template;
 
 	@Override
 	public List<MatingDTO> selectList(Map map) {
-		return null;
+		return template.selectList("matingSelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("matingCount", map);
 	}////////// getTotalRecord
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public MatingDTO selectOne(Map map) {
-		return null;
+		return template.selectOne("matingSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
+		return template.insert("matingInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("matingUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("matingDelete", map);
 	}////////// delete
+	
+	public List<AnimalDTO> selectMyMating(Map map){
+		return template.selectList("selectMyMating", map);
+	}////////// selectMyMating
 
 }//////////////////// MatingBoardDAO

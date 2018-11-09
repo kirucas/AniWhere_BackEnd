@@ -2,24 +2,17 @@ package com.animal.aniwhere_back.service.animal;
 
 public class MovieBoardDTO {
 
-	private String movie_no;
+	private String no;
 	private String mem_no;
 	private String movie_title;
 	private String movie_count;
 	private String movie_content;
 	private String movie_hit;
 	private java.sql.Date movie_regidate;
+	private String ani_category;
 	
 	// 작성자의 별명을 저장하기 위한 속성 추가
 	private String mem_nickname;
-
-	public String getMovie_no() {
-		return movie_no;
-	}//////////
-
-	public void setMovie_no(String movie_no) {
-		this.movie_no = movie_no;
-	}//////////
 
 	public String getMem_no() {
 		return mem_no;
@@ -75,6 +68,22 @@ public class MovieBoardDTO {
 
 	public void setMem_nickname(String mem_nickname) {
 		this.mem_nickname = mem_nickname;
+	}//////////
+
+	public String getAni_category() {
+		return ani_category;
+	}//////////
+
+	public void setAni_category(String ani_category) {
+		this.ani_category = ani_category;
+	}//////////
+
+	public String getNo() {
+		return no;
+	}//////////
+
+	public void setNo(String no) {
+		this.no = no;
 	}//////////
 	
 }//////////////////// MovieBoardDTO class

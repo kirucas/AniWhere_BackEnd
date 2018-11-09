@@ -19,32 +19,41 @@ public class TipBoardDAO implements AllBoardService {
 	
 	@Override
 	public List<TipBoardDTO> selectList(Map map) {
-		return null;
+		return template.selectList("tipSelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("tipCount", map);
 	}////////// getTotalRecord
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public TipBoardDTO selectOne(Map map) {
-		return null;
+		if(map.get("view") != null)
+			template.update("addCountTip", map);
+		return template.selectOne("tipSelectOne", map);
 	}////////// getTotalRecord
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
+		return template.insert("tipInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("tipUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("tipDelete", map);
 	}////////// delete
+
+	@Override
+	public int addHitCount(Map map) {
+		return template.update("addHitCountTip", map);
+	}////////// addHitCount
 
 }//////////////////// TipBoardDAO class

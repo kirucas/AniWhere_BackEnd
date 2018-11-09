@@ -1,5 +1,6 @@
 package com.animal.aniwhere_back.web.administrator;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -10,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.support.SessionStatus;
 
 import com.animal.aniwhere_back.service.impl.member.AdministratorServiceImpl;
 import com.animal.aniwhere_back.service.member.AdministratorDTO;
@@ -28,7 +28,6 @@ public class AdministratorController {
 
 	@RequestMapping(value = "/admin/signInProcess.aw", method = RequestMethod.POST)
 	public String signInProcess(@RequestParam Map map, Model model, HttpSession session) throws Exception {
-		System.out.println(String.format("signInProcess - id는 : %s | pw는 : %s", map.get("am_id"), map.get("am_pw")));
 
 		if (!service.isMember(map)) {
 			model.addAttribute("signInFail", "ID or PW가 틀립니다");
@@ -41,14 +40,15 @@ public class AdministratorController {
 		session.setAttribute("am_level", dto.getAm_level());
 		session.setAttribute("am_level_str", amLeveltoString(Integer.parseInt(dto.getAm_level())));
 		session.setAttribute("am_profile", dto.getAm_profile_link());
+		session.setAttribute("am_no", dto.getAm_no());
 
-		return "home.tiles";
+		return "forward:/main.aw";
 	}////////// signInProcess
 
 	@RequestMapping(value = "/admin/sign_out.aw")
-	public String signOut(SessionStatus session, Model model) throws Exception {
+	public String signOut(HttpSession session, Model model) throws Exception {
 
-		session.setComplete();
+		session.invalidate();
 
 		model.addAttribute("signOutSuccess", "성공적으로 로그아웃 했습니다 ㅂㅂ~");
 
@@ -78,10 +78,23 @@ public class AdministratorController {
 			break;
 		case 6:
 			string_level = "Where Manager";
+			break;
+		case 7:
+			string_level = "Layout Manager";
 		}
 
 		return string_level;
 
 	}////////// amLeveltoString
-
+	
+	@RequestMapping("/adminInfo.aw")
+	public String admin_info(Model model) throws Exception {
+		
+		List<AdministratorDTO> list = service.selectList(null);
+		
+		model.addAttribute("admin_list", list);
+		
+		return "administrator/admin.tiles";
+	}////////// admin_info
+	
 }//////////////////// AdministratorController class

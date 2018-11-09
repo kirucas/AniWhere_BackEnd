@@ -6,7 +6,9 @@
 <mapper namespace="mybatis.Administrator">
 
 	<select id="adminMemberCheck" parameterType="java.util.Map" resultType="int">
-		SELECT COUNT(*) FROM admin_member WHERE am_id=#{am_id} AND am_pw=#{am_pw}
+		SELECT COUNT(*) 
+		FROM admin_member 
+		WHERE am_id=#{am_id} AND am_pw=#{am_pw}
 	</select>
 	
 	<select id="adminSelectOne" parameterType="java.util.Map" resultType="AdminDTO">
@@ -19,5 +21,27 @@
 			WHERE am_no=#{am_no}
 		</if>
 	</select>
+	
+	<select id="adminSelectList" parameterType="java.util.Map" resultType="AdminDTO">
+		SELECT *
+		FROM admin_member
+		ORDER BY am_no
+	</select>
+	
+	<insert id="adminInsert" parameterType="java.util.Map">
+		INSERT INTO admin_member
+		VALUES(seq_admin_member.nextval, #{am_id}, #{am_pw}, #{am_level}, #{am_profile})
+	</insert>
+	
+	<update id="adminUpdate" parameterType="java.util.Map">
+		UPDATE admin_member
+		SET am_pw=#{am_pw}, #{am_level}, #{am_profile}
+		WHERE am_no=#{am_no}
+	</update>
+	
+	<delete id="adminDelete" parameterType="java.util.Map">
+		DELETE FROM admin_member
+		WHERE am_no=#{am_no}
+	</delete>
 	
 </mapper>

@@ -183,6 +183,44 @@
 		</dependency>
 		<!-- MultipartHttpServletRequest를 사용하기 위한 dependency 추가 끝 -->
 		
+		<dependency>
+		    <groupId>com.servlets</groupId>
+		    <artifactId>cos</artifactId>
+		    <version>09May2002</version>
+		</dependency>
+		
+		<!-- Amazon Web Service -->
+		<!-- Amazon SDK -->
+	    <!-- Amazon S3 -->
+	    <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
+		<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk-s3</artifactId>
+		    <version>1.11.436</version>
+		</dependency>
+		<!-- Amazon S3 끗 -->
+		
+		<!-- Java.lang.NoClassDefFoundError : com / fasterxml / jackson / databind / exc / InvalidDefinitionException 방지용 -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.9.4</version>
+		</dependency>
+		
+		<!-- QR Code Generator 사용을 위한 dependency 추가 -->
+		<dependency>
+		    <groupId>com.google.zxing</groupId>
+		    <artifactId>core</artifactId>
+		    <version>3.3.3</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.google.zxing</groupId>
+		    <artifactId>javase</artifactId>
+		    <version>3.3.3</version>
+		</dependency>
+		<!-- QR Code Generator 사용을 위한 dependency 추가 끝 -->
+		
 	</dependencies>
     <build>
         <plugins>

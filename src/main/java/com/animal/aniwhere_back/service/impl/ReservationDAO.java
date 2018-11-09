@@ -8,44 +8,45 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.animal.aniwhere_back.service.AllBoardService;
+import com.animal.aniwhere_back.service.AllCommonService;
 import com.animal.aniwhere_back.service.ReservationDTO;
 
 @Repository
-public class ReservationDAO implements AllBoardService {
+public class ReservationDAO implements AllCommonService {
 
 	@Resource(name = "template")
 	private SqlSessionTemplate template;
 
 	@Override
 	public List<ReservationDTO> selectList(Map map) {
-		return null;
+		return template.selectList("reservationSelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("reservationCount", map);
 	}////////// getTotalRecord
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public ReservationDTO selectOne(Map map) {
-		return null;
+		return template.selectOne("reservationSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
+		return template.insert("reservationInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("reservationUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("reservationDelete", map);
 	}////////// delete
 
 }//////////////////// ReservationDAO class

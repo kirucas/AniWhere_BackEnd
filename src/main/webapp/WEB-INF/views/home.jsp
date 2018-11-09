@@ -1,194 +1,216 @@
-<%@ page language="java" 
+<%@ page language="java"
 	contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!--
-<div class="row">
-    <div class="col-12 grid-margin">
-    <h1>
-        Hello world!
-    </h1>
-    </div>
-</div>
-<div class="row">
-    <div class="col-12 grid-margin">
-        <P>The time on the server is ${serverTime}.</P>
-        <a href="<c:url value='/sign_in.aw'/>">로그인 페이지</a>
-    </div>
-</div>
--->
+
+<style>
+    h4 {
+        font-family: 메이플스토리;
+    }
+</style>
 
 <div class="row">
-    <div class="col-md-7 grid-margin">
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-5 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="mb-0">19,999,999,999명</h2>
-                        <p class="text-gray">전체 방문자 수</p>
-                        <canvas id="dashoard-line-chart" height="165"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-7 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="font-weight-medium">Sales Statistics</p>
-                        <div class="d-flex justify-content-between mt-2">
-                            <small class="text-muted">Dashboard</small>
-                            <small class="text-info">73%</small>
-                        </div>
-                        <div class="progress progress-md mt-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p class="mt-4 font-weight-medium">Monthly Sales</p>
-                        <div class="d-flex justify-content-between mt-2">
-                            <small class="text-muted">Charts</small>
-                            <small class="text-primary">30%</small>
-                        </div>
-                        <div class="progress progress-md mt-2">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Visitors Statistics</h4>
-                        <canvas id="dashboard-bar-chart" height="100"></canvas>
-                        <div class="row dashboard-bar-chart-legend mt-5 mb-3">
-                            <div class="col">
-                                <h2>13</h2>
-                                <small class="text-muted">SNOOZED</small>
-                                <div class="bg"></div>
-                            </div>
-                            <div class="col">
-                                <h2>45</h2>
-                                <small class="text-muted">COMPLETED</small>
-                                <div class="bg"></div>
-                            </div>
-                            <div class="col">
-                                <h2>24</h2>
-                                <small class="text-muted">OVERDUE</small>
-                                <div class="bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-5 grid-margin">
-        <div class="row">
-            <!-- <div class="col-md-12 grid-margin">
-                <div class="card bg-warning text-white">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div>
-                                <h3 class="mb-0 font-weight-bold"><span id="weather_city"></span></h3>
-                                <small class="font-weight-light">DAY - 12:07 PM</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <h1 class="mr-3 font-weight-bold"><span id="weather_cel"></span></h1>
-                                <img src="#" id="weather_img" />
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="text-gray">2018 10/11  목요일</p>
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-						오늘의 동물<br />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="col-12 grid-margin">
+		<div class="card card-statistics">
+			<div class="row">
+				<div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+					<div class="card-body"> <!-- 회원이 등록 한 동물 수 -->
+						<div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+							<i class="mdi mdi-paw text-primary mr-0 mr-sm-4 icon-lg"></i>
+							<div class="wrapper text-center text-sm-left">
+								<p class="card-test mb-0">등록 된 동물 수</p>
+								<div class="fluid-container">
+									<h3 class="card-title mb-0">${registerAnimal} 마리</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+					<div class="card-body"> <!-- 신규로 등록 된 동물 수 -->
+						<div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+							<i class="fa fa-edit text-primary mr-0 mr-sm-4 icon-lg"></i>
+							<div class="wrapper text-center text-sm-left">
+								<p class="card-test mb-0">오늘 등록 된 동물 수</p>
+								<div class="fluid-container">
+									<h3 class="card-title mb-0">${todayRegisterAni} 마리</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+					<div class="card-body"> <!-- 회원 한 명이 평균 등록하는 동물 수 -->
+						<div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+							<i class="fa fa-link text-primary mr-0 mr-sm-4 icon-lg"></i>
+							<div class="wrapper text-center text-sm-left">
+								<p class="card-test mb-0">한 명이 평균 등록하는 동물 수</p>
+								<div class="fluid-container">
+									<h3 class="card-title mb-0">${averageAnimal} 마리</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+					<div class="card-body"> <!-- 저장 된 상가 정보 수 -->
+						<div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+							<i class="fa fa-map-marker text-primary mr-0 mr-sm-4 icon-lg"></i>
+							<div class="wrapper text-center text-sm-left">
+								<p class="card-test mb-0">저장 된 상가 정보 수</p>
+								<div class="fluid-container">
+									<h3 class="card-title mb-0">${registerStore} 개</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-------------------------------------------------------------------------------------------------------------------->
+	<div class="col-12 grid-margin">
+		<div class="card card-statistics">
+			<div class="row">
+				<div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+					<div class="card-body"> <!-- 회원이 등록 한 동물 수 -->
+						<div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+							<i class="mdi mdi-paw text-primary mr-0 mr-sm-4 icon-lg"></i>
+							<div class="wrapper text-center text-sm-left">
+								<p class="card-test mb-0">등록 된 유기동물 수</p>
+								<div class="fluid-container">
+									<h3 class="card-title mb-0">${registerLostAnimal} 마리</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+					<div class="card-body"> <!-- 신규로 등록 된 동물 수 -->
+						<div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+							<i class="mdi mdi-checkbox-marked-circle-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
+							<div class="wrapper text-center text-sm-left">
+								<p class="card-test mb-0">오늘 등록 된 유기동물 수(12시에 갱신)</p>
+								<div class="fluid-container">
+									<h3 class="card-title mb-0">${todayRegisterLost} 마리</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+					<div class="card-body"> <!-- 회원 한 명이 평균 등록하는 동물 수 -->
+						<div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+							<i class="fa fa-heart-o text-primary mr-0 mr-sm-4 icon-lg"></i>
+							<div class="wrapper text-center text-sm-left">
+								<p class="card-test mb-0">매칭을 신청 한 동물 수</p>
+								<div class="fluid-container">
+									<h3 class="card-title mb-0">${applyMating} 마리</h3>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+					<div class="card-body"> <!-- 저장 된 상가 정보 수 -->
+						<div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+							<i class="fa fa-heart text-primary mr-0 mr-sm-4 icon-lg"></i>
+							<div class="wrapper text-center text-sm-left">
+								<p class="card-test mb-0">매칭이 성사 된 수</p>
+								<div class="fluid-container">
+									<h3 class="card-title mb-0">${matingSuccess} 회</h3>
+								</div>
+							</div>
+						</div>
+					</div>                                                                                                             
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+<!-------------------------------------------------------------------------------------------------------------------->
 <div class="row">
-    <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex">
-                    <i class="mdi mdi-file-outline icon-lg"></i>
-                    <div class="d-flex flex-column ml-2">
-                        <span class="d-flex flex-column">
-                            <small class="mb-0">전체 게시글 등록수</small>
-                            <span class="font-weight-bold">25개</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex">
-                    <i class="mdi mdi-account-outline icon-lg"></i>
-                    <div class="d-flex flex-column ml-2">
-                        <span class="d-flex flex-column">
-                            <small class="mb-0">전체 회원수</small>
-                            <span class="font-weight-bold">30</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex">
-                    <i class="mdi mdi-laptop icon-lg"></i>
-                    <div class="d-flex flex-column ml-2">
-                        <span class="d-flex flex-column">
-                            <small class="mb-0">오늘의 게시글 등록수</small>
-                            <span class="font-weight-bold">74</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex">
-                    <i class="mdi mdi-earth icon-lg"></i>
-                    <div class="d-flex flex-column ml-2">
-                        <span class="d-flex flex-column">
-                            <small class="mb-0">오늘의 방문자</small>
-                            <span class="font-weight-bold">440</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="col-lg-6 grid-margin stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">카테고리별 등록 된 동물 수</h4>
+				<canvas id="categoryAnimal" style="width:230px;"></canvas>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 grid-margin stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">유기동물 분류 별 등록 수</h4>
+				<canvas id="categoryLost" style="width:230px;"></canvas>
+			</div>
+		</div>
+	</div>
+</div>
+<!-------------------------------------------------------------------------------------------------------------------->
+<div class="row">
+	<div class="col-lg-6 grid-margin stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">분류 별 저장 된 상가 정보 수</h4>
+				<canvas id="categoryStore" style="width:230px;"></canvas>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 grid-margin stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">카테고리별 매칭 신청 수</h4>
+				<canvas id="categoryMating" style="width:230px;"></canvas>
+			</div>
+		</div>
+	</div>
+</div>
+<!-------------------------------------------------------------------------------------------------------------------->
+<div class="row">
+	<div class="col-lg-6 grid-margin stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">매칭 수락/거부율</h4>
+				<div class="google-chart-container">
+					<div id="matingDrafting" class="google-charts"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 grid-margin stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">카테고리 별 매칭 수락/거부율</h4>
+				<canvas id="categoryDrafting" style="width:230px;"></canvas>
+			</div>
+		</div>
+	</div>
+</div>
+<!-------------------------------------------------------------------------------------------------------------------->
+<div class="row">
+	<div class="col-md-12 grid-margin">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">${today} 오늘의 입양 동물</h3>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-5 d-flex align-items-center">
+						<img class="img-fluid rounded" src="${lost_data.img_src}" />
+					</div>
+					<div class="col-md-7">
+						<ul class="list-arrow">
+							<li><span class="display-4">품종 : ${lost_data.kind}</span></li>
+							<li><span class="display-4">기관명 : ${lost_data.carenm}</span></li>
+							<li><span class="display-4">기관 주소 : ${lost_data.addr}</span></li>
+							<li><span class="display-4">기관 전화번호 : ${lost_data.caretel}</span></li>
+							<li><span class="display-4">공고 종료일 : ${lost_data.end_notice}</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

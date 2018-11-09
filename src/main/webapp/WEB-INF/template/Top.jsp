@@ -24,14 +24,6 @@
 			<span class="mdi mdi-menu"></span>
 		</button>
 		
-		<ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-			<li class="nav-item">
-				<a href="<c:url value='/statistics.aw'/>" class="nav-link">
-					<i class="mdi mdi-elevation-rise"></i>통계
-				</a>
-			</li>
-		</ul>
-		
 		<ul class="navbar-nav navbar-nav-right">
 
 
@@ -43,13 +35,18 @@
 			<li class="nav-item dropdown d-none d-xl-inline-block">
 				<a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown">
 					<span class="profile-text">반갑습니다. ${am_id}님!</span>
-					<img class="img-xs rounded-circle" src="<c:url value='/resources/assets/images/faces/choi.jpg'/>" alt="Profile-image" />
+					<c:if test="${am_profile eq '#@!no_exist!@#' }" var="result">
+							<img class="img-xs rounded-circle" src="<c:url value='/resources/images/profile_404.jpg'/>" alt="profile-image" />
+						</c:if>
+						<c:if test="${not result }">
+							<img class="img-xs rounded-circle" src="<c:url value='${am_profile}' />" alt="profile-image" />
+						</c:if>
 				</a>
 				<div class="dropdown-menu dropdown-menu-right navbar-dropdown">
-					<a class="dropdown-item mt-2"> 회원 정보 수정 </a>
-                    <a class="dropdown-item"> 비밀번호 변경 </a>
-                    <a class="dropdown-item"> 마이페이지 </a>
-                    <a class="dropdown-item" href="<c:url value='/admin/sign_out.aw' />"> 로그아웃 </a>
+					<!-- <a class="dropdown-item mt-2"> 회원 정보 수정 </a> -->
+                    <!-- <a class="dropdown-item"> 비밀번호 변경 </a>
+                    <a class="dropdown-item"> 마이페이지 </a> -->
+                    <a class="dropdown-item mt-2" href="<c:url value='/admin/sign_out.aw' />"> 로그아웃 </a>
 				</div>
 			</li>
 		</ul>

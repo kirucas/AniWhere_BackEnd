@@ -19,33 +19,41 @@ public class FreeBoardDAO implements AllBoardService {
 
 	@Override
 	public List<FreeBoardDTO> selectList(Map map) {
-		return null;
+		return template.selectList("freeSelectList", map);
 	}////////// selectList
 
 	@Override
 	public int getTotalRecord(Map map) {
-		return 0;
+		return template.selectOne("freeCount", map);
 	}////////// getTotalRecord
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public FreeBoardDTO selectOne(Map map) {
-		return null;
+		if(map.get("view") != null)
+			template.update("addCountFree", map);
+		return template.selectOne("freeSelectOne", map);
 	}////////// selectOne
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
+		return template.insert("freeInsert", map);
 	}////////// insert
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return template.update("freeUpdate", map);
 	}////////// update
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return template.delete("freeDelete", map);
 	}////////// delete
+
+	@Override
+	public int addHitCount(Map map) {
+		return template.update("addHitCountFree", map);
+	}////////// addHitCount
 
 }//////////////////// FreeBoardDAO class

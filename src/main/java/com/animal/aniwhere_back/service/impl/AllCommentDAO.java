@@ -19,32 +19,33 @@ public class AllCommentDAO implements AllCommentService {
 
 	@Override
 	public List<AllCommentDTO> selectList(Map map) {
-		// TODO Auto-generated method stub
-		return null;
+		return template.selectList("commentSelectList", map);
 	}////////// selectList
 
 	@Override
 	public void insert(Map map) {
-		// TODO Auto-generated method stub
-
+		map.put("today", new java.sql.Date(new java.util.Date().getTime()));
+		template.insert("commentInsert", map);
 	}////////// insert
 
 	@Override
 	public void update(Map map) {
-		// TODO Auto-generated method stub
-
+		template.update("commentUpdate", map);
 	}////////// update
 
 	@Override
 	public void delete(Map map) {
-		// TODO Auto-generated method stub
-
+		template.delete("commentDelete", map);
 	}////////// delete
 
 	@Override
 	public int commentCount(Map map) {
-		// TODO Auto-generated method stub
-		return 0;
+		return template.selectOne("commentCount", map);
 	}////////// commentCount
+
+	@Override
+	public int addHitCountComment(Map map) {
+		return template.update("addHitCountComment", map);
+	}////////// addHitCountComment
 
 }//////////////////// AllCommentDAO class
