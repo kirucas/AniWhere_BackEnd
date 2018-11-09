@@ -15,8 +15,13 @@
 	<!-- plugins:css -->
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/puse-icons-feather/feather.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.base.css' />">
     <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/css/vendor.bundle.addons.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/ti-icons/css/themify-icons.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/summernote/dist/summernote-bs4.css' />">
+    <link rel="stylesheet" href="<c:url value='/resources/assets/vendors/iconfonts/simple-line-icon/css/simple-line-icons.css' />">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.min.css" />
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -66,8 +71,26 @@
     <script src="<c:url value='/resources/assets/js/shared/settings.js' />"></script>
     <script src="<c:url value='/resources/assets/js/shared/todolist.js' />"></script>
     <!-- endinject -->
+    
     <!-- Custom js for this page-->
     <script src="<c:url value='/resources/assets/js/demo_1/dashboard.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/demo_1/dashboard_2.js' />"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="<c:url value='/resources/assets/js/shared/google-charts.js'/>"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a4fb652ba7630c5395293fd0480943a"></script>
+    <script src="<c:url value='/resources/js/integration_js.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/shared/tooltips.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/shared/modal-demo.js' />"></script>
+    <script src="<c:url value='/resources/assets/vendors/summernote/dist/summernote-bs4.min.js' />"></script>
+    <script src="<c:url value='/resources/assets/js/shared/chart.js' />"></script>
+    <jsp:include page="/resources/js/animal_board.jsp" />
+    <jsp:include page="/resources/js/shelter_js.jsp" />
+    <jsp:include page="/resources/js/store_location.jsp" />
+    <jsp:include page="/resources/js/notice_js.jsp" />
+    <jsp:include page="/resources/js/statistics_js.jsp" />
+    <jsp:include page="/resources/js/market_js.jsp" />
+    <jsp:include page="/resources/js/miss_js.jsp" />
+    <jsp:include page="/resources/js/mating_js.jsp" />
     <!-- End custom js for this page-->
 </body>
 
