@@ -7,7 +7,6 @@ import java.util.Vector;
 
 import javax.annotation.Resource;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

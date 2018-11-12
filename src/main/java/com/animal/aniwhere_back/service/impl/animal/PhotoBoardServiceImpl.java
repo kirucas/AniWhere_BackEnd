@@ -7,7 +7,6 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.animal.aniwhere_back.service.AllBoardService;
 import com.animal.aniwhere_back.service.animal.PhotoBoardDTO;
 import com.animal.aniwhere_back.service.animal.PhotoService;
 

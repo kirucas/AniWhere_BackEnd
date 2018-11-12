@@ -1,7 +1,5 @@
 package com.animal.aniwhere_back.web.animal;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +7,6 @@ import java.util.Vector;
 
 import javax.annotation.Resource;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
