@@ -2,7 +2,6 @@ package com.animal.aniwhere_back.web.market;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 import javax.annotation.Resource;
 

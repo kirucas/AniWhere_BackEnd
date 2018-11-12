@@ -1,4 +1,4 @@
-﻿package com.animal.aniwhere_back.service;
+package com.animal.aniwhere_back.service;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
