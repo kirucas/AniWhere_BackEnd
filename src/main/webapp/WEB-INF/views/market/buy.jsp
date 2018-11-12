@@ -18,6 +18,7 @@
 							<th>작성자</th>
 							<th>날짜</th>
 							<th>조회수</th>
+							<th>삭제</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -37,6 +38,7 @@
                                     </td>
 									<td>${item.regidate}</td>
 									<td>${item.count}</td>
+									<td><button id="buyDelete" class="btn btn-danger" title="${item.no}">삭제하기</button></td>
 								</tr>
 							</c:forEach>
 						</c:if>

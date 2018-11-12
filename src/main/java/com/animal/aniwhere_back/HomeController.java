@@ -1,5 +1,6 @@
 package com.animal.aniwhere_back;
 
+import java.io.File;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -8,14 +9,23 @@ import java.util.Map;
 import java.util.Random;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.animal.aniwhere_back.service.QRCode_Generator;
+import com.animal.aniwhere_back.service.ReservationDTO;
+import com.animal.aniwhere_back.service.SchedulerService;
+import com.animal.aniwhere_back.service.StoreLocationDTO;
+import com.animal.aniwhere_back.service.impl.ReservationServiceImpl;
 import com.animal.aniwhere_back.service.impl.StatisticsService;
+import com.animal.aniwhere_back.service.impl.StoreLocationServiceImpl;
 import com.animal.aniwhere_back.service.impl.miss.LostAnimalServiceImpl;
 import com.animal.aniwhere_back.service.miss.LostAnimalDTO;
 
@@ -74,8 +84,61 @@ public class HomeController {
 		model.addAttribute("lost_data", list.get(random.nextInt(end)));
 		model.addAttribute("today", today);
 		
+		model.addAttribute("registerAnimal", statisService.registerAnimal());
+		model.addAttribute("todayRegisterAni", statisService.todayRegisterAni());
+		model.addAttribute("averageAnimal", statisService.averageAnimal());
+		model.addAttribute("registerStore", statisService.registerStore());
+		model.addAttribute("registerLostAnimal", statisService.registerLostAnimal());
+		model.addAttribute("todayRegisterLost", statisService.todayRegisterLost());
+		model.addAttribute("applyMating", statisService.applyMating());
+		model.addAttribute("matingSuccess", statisService.matingSuccess());
+		
 		return "home.tiles";
 		
 	}////////// main
+	
+	@Resource(name="reservationService")
+	private ReservationServiceImpl reserService;
+	@Resource(name="storeLocService")
+	private StoreLocationServiceImpl storeService;
+	
+	@RequestMapping("qr_generator.aw")
+	public String qr_Generator(HttpServletRequest req) throws Exception {
+		
+		File folder = new File(req.getServletContext().getRealPath("/Upload"));
+		
+		if(!folder.exists()) {
+			folder.mkdirs();
+		}
+		
+		String fileType = "png";
+		
+		JSONObject json = new JSONObject();
+		
+		Map map = new HashMap();
+		map.put("rv_no", 7);
+		
+		ReservationDTO dto = reserService.selectOne(map);
+		
+		json.put("name", dto.getMem_name());
+		json.put("store_name", dto.getBizesnm() + " " + dto.getBrchnm());
+		json.put("apply_date", dto.getApply_date().toString());
+		json.put("booking_date", dto.getBooking_date());
+		
+		map.put("bizesid", dto.getStore_no());
+		
+		StoreLocationDTO storeDTO = storeService.selectOne(map);
+		
+		json.put("location", storeDTO.getRdnmadr());
+		
+		if(QRCode_Generator.createQRCodeImage(json.toJSONString(), folder, fileType).equals("success")){
+			System.out.println("성공");
+		}
+		else {
+			System.out.println("실패");
+		}
+		
+		return "administrator/sign_in";
+	}//////////
 	
 }//////////////////// HomeController class

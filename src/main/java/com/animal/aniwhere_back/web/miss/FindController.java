@@ -5,11 +5,13 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.impl.miss.FindSeeServiceImpl;
@@ -36,20 +38,40 @@ public class FindController {
 
 		int start = (nowPage - 1) * pageSize + 1;
 		int end = nowPage * pageSize;
-		
+
 		map.put("start", start);
 		map.put("end", end);
-		
+
 		List<FindSeeDTO> list = service.selectList(map);
-		
+
 		int totalRecordCount = service.getTotalRecord(map);
-		
-		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage, "find.aw?");
-		
+
+		String pagingString = PagingUtil.pagingBootStrapStyle(totalRecordCount, pageSize, blockPage, nowPage,
+				"find.aw?");
+
 		model.addAttribute("list", list);
 		model.addAttribute("pagingString", pagingString);
 
 		return "miss/find.tiles";
 	}////////// find
+
+	@ResponseBody
+	@RequestMapping(value = "/miss/find_delete.awa", produces = "text/plain; charset=UTF-8")
+	public String find_delete(@RequestParam Map map) throws Exception {
+
+		map.put("table_name", TABLE_NAME);
+
+		int affected = service.delete(map);
+
+		JSONObject json = new JSONObject();
+
+		if (affected == 1)
+			json.put("result", "success");
+		else
+			json.put("result", "fail");
+
+		return json.toJSONString();
+
+	}////////// find_delete
 
 }//////////////////// FindController class

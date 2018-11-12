@@ -245,4 +245,80 @@ public class DogController {
 
 	}////////// quest_list
 
+	@ResponseBody
+	@RequestMapping(value = "/dog/photo_delete.awa", produces="text/plain; charset=UTF-8")
+	public String photo_delete(@RequestParam Map map) throws Exception {
+		
+		int affected = pService.delete(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(affected != 1) {
+			json.put("result", "fail");
+		}
+		else {
+			json.put("result", "success");
+		}
+			
+		return json.toJSONString();
+		
+	}////////// photo_delete
+	
+	@ResponseBody
+	@RequestMapping(value = "/dog/movie_delete.awa", produces="text/plain; charset=UTF-8")
+	public String movie_delete(@RequestParam Map map) throws Exception {
+		
+		int affected = mService.delete(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(affected != 1) {
+			json.put("result", "fail");
+		}
+		else {
+			json.put("result", "success");
+		}
+			
+		return json.toJSONString();
+		
+	}////////// movie_delete
+	
+	@ResponseBody
+	@RequestMapping(value = "/dog/tip_delete.awa", produces="text/plain; charset=UTF-8")
+	public String tip_delete(@RequestParam Map map) throws Exception {
+		
+		int affected = tService.delete(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(affected != 1) {
+			json.put("result", "fail");
+		}
+		else {
+			json.put("result", "success");
+		}
+			
+		return json.toJSONString();
+		
+	}////////// tip_delete
+	
+	@ResponseBody
+	@RequestMapping(value = "/dog/quest_delete.awa", produces="text/plain; charset=UTF-8")
+	public String quest_delete(@RequestParam Map map) throws Exception {
+		
+		int affected = qService.delete(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(affected != 1) {
+			json.put("result", "fail");
+		}
+		else {
+			json.put("result", "success");
+		}
+			
+		return json.toJSONString();
+		
+	}////////// quest_delete
+	
 }//////////////////// DogController class

@@ -37,7 +37,7 @@ public class SchedulerService {
 
 	private static final String SERVICE_KEY = "1zLzET%2FMkwIpN%2F3VKRAl5vki1mzNsqQ5oKnR3oCnr1YWgOCtn8JOvSdIT8DYsv9vjCCUGt%2F0ENoh8ity5agNiQ%3D%3D";
 
-	private String[] store_codes = { "D09A01", "D09A02", "D25A16", "D25A25", "Q12A07", "S04A01", "S04A02", "S04A03" };
+	private String[] store_codes = { "D09A01", "D09A02", "D25A16", "Q12A07", "S04A01", "S04A02", "S04A03" };
 
 	@Resource(name = "lostAniService")
 	private LostAnimalServiceImpl serviceLost;
@@ -48,14 +48,14 @@ public class SchedulerService {
 	@Resource(name = "statisticsService")
 	private StatisticsService serviceStatis;
 
-	@Scheduled(cron = "0 0 21 * * *")
-//	@Scheduled(cron = "30 11 * * * *")
+	@Scheduled(cron = "0 0 12 * * *")
+//	@Scheduled(cron = "00 32 * * * *")
 	public void doingGetApiDataScheduler() throws Exception {
 		startGetApiDataProcess();
 	}////////// doingScheduled
 
 	@Scheduled(cron = "0 0 0 * * *")
-//	@Scheduled(cron = "0 30 * * * *")
+//	@Scheduled(cron = "50 58 * * * *")
 	public void doingDeletingDataScheduler() throws Exception {
 		startDeletingDataProcess();
 	}//////////
@@ -196,7 +196,7 @@ public class SchedulerService {
 						map.put("addr", node.getTextContent());
 						break;
 					default:
-						map.put(node.getNodeName(), node.getTextContent());
+						map.put(node.getNodeName().toLowerCase(), node.getTextContent());
 					}
 
 				}
@@ -229,12 +229,12 @@ public class SchedulerService {
 	public void queryOperatingLost(Map<String, Object> map) {
 		System.out.println(map.toString());
 
-		if (map.get("processState").toString().contains("종료")) {
+		if (map.get("processstate").toString().contains("종료")) {
 			serviceLost.delete(map);
 		} else {
 			System.out.println(serviceLost.selectOne(map));
-			if (map.get("chargeNm") == null)
-				map.put("chargeNm", "");
+			if (map.get("chargenm") == null)
+				map.put("chargenm", "");
 			if (serviceLost.selectOne(map) != null) {
 				serviceLost.update(map);
 			} else {

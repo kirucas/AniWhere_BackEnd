@@ -6,11 +6,13 @@ import java.util.Vector;
 
 import javax.annotation.Resource;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.animal.aniwhere_back.service.PagingUtil;
 import com.animal.aniwhere_back.service.impl.market.BuySellServiceImpl;
@@ -51,6 +53,25 @@ public class SellController {
 		model.addAttribute("pagingString", pagingString);
 
 		return "market/sell.tiles";
-	}//////////
+	}////////// sell
+	
+	@ResponseBody
+	@RequestMapping(value = "/market/sell_delete.awa", produces="text/plain; charset=UTF-8")
+	public String sell_delete(@RequestParam Map map) throws Exception {
+		
+		map.put("table_name", TABLE_NAME);
+		
+		int affected = service.delete(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(affected == 1)
+			json.put("result", "success");
+		else
+			json.put("result", "fail");
+		
+		return json.toJSONString();
+		
+	}////////// sell_delete
 
 }//////////////////// SellController class
