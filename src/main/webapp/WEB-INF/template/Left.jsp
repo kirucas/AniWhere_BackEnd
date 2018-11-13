@@ -113,9 +113,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="<c:url value='/market/sell.aw'/>">&nbsp;&nbsp;&nbsp;팝니다</a>
 					</li>
-					<li class="nav-item">
+					<%-- <li class="nav-item">
 						<a class="nav-link" href="<c:url value='/market/groupbuy.aw'/>">&nbsp;&nbsp;&nbsp;공동 구매</a>
-					</li>
+					</li> --%>
 				</ul>
 			</div>
 		</li>
